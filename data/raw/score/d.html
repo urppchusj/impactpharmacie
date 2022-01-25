@@ -1,0 +1,987 @@
+
+	<div class="row">
+		<div class="col-md-12 top-col" style="background:transparent url('images/art-splash.jpg') no-repeat center center /cover">
+			<div class="jumbotron" style="text-align: center;">
+				<h1 class="display-3 text-white" style="font-weight: bold">Consulter les données</h1>
+				<hr class="my-4">
+				<p class="lead" style="font-weight: bold; color:white;">Le site Impact Pharmacie repose sur un recensement des meilleures données publiées et disponibles sur le rôle et les retombées du pharmacien.&nbsp;Le site est mis à jour périodiquement selon une <a href="http://indicible.ca/urpp/20140130_IMPACTPHARMACIE2_Annales.pdf" target="_blank"> méthode structurée et reproductible</a></p>
+			</div>
+		</div>
+	</div> 
+	<div class="row closed-methode" style="display: none;">
+		<div class="col-md-12">
+			<div id="synthmethodemenu" style="display: none;">
+				<div style="left:0; right:0; width:100%; background-color:#007bff; height:50px; margin-top:30px; text-align:center;"><h2 style="color:white; line-height:50px; font-weight:bold;">Exploration par thèmes</h2></div>
+				<h1>Explorer les thèmes et le nombre d’indicateurs positifs, neutres ou négatifs découlant d’interventions pharmaceutiques</h1>
+				<a href="lister.php?arq=1"><div class="gs-click" style="width:100%; overflow: hidden; background:transparent url('images/fs-activity.jpg') no-repeat center center /cover; height:10vmax;"><br><p style="font-size:2.5vw;line-height:100%; float:right; margin-right: 5vw;">Thèmes relatifs à des  <br><span style="font-size:3.2vw;line-height: 100%;">ACTIVITÉS</span></p></div></a>
+				<a href="lister.php?arq=2"><div class="gs-click" style="width:100%; overflow: hidden; background:transparent url('images/fs-affection.jpg') no-repeat center center /cover; height:10vmax;"><br><p style="font-size:2.5vw;line-height:100%; float:left; margin-left: 5vw;">Thèmes relatifs à des  <br><span style="font-size:3.2vw;line-height: 100%;">AFFECTIONS</span></p></div></a>
+				<a href="lister.php?arq=3"><div class="gs-click" style="width:100%; overflow: hidden; background:transparent url('images/fs-program.jpg') no-repeat center center /cover; height:10vmax;"><br><p style="font-size:2.5vw;line-height:100%; float:right; margin-right: 5vw;">Thèmes relatifs à des  <br><span style="font-size:3.2vw; line-height: 100%;">PROGRAMMES</span></p></div></a>
+				<br>
+			</div>
+		</div>
+	</div>
+	<div class="row closed-methode" style="display: none;">
+		<div class="col-md-12">
+			<div style="left:0; right:0; width:100%; background-color:#007bff; height:50px; margin-top:30px; text-align:center;"><h2 style="color:white;margin-top:30px; line-height:50px; font-weight:bold;">Exploration par filtres</h2></div>
+			<div><h1>Utiliser un des six filtres ci-dessous pour obtenir une liste d'articles pertinents en ordre décroissant d'année de publication&nbsp;&nbsp;</h1></div>
+			<div class="row">
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Activite" ipimage="images/act-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-act.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">ACTIVITÉS</span></p></div></a>
+				</div>
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Affection" ipimage="images/aff-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-aff.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">AFFECTIONS</span></p></div></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Programme" ipimage="images/prg-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-prg.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">PROGRAMMES</span></p></div></a>
+				</div>
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Provenance" ipimage="images/pay-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-pro.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">PAYS</span></p></div></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Score" ipimage="images/scr-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-scr.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">SCORE URPP</span></p></div></a>
+				</div>
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Local" ipimage="images/loc-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-loc.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">LOCALISATION</span></p></div></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Devis" ipimage="images/dev-btn.jpg"><div class="gs-click" style="background:transparent url('images/fil-dev.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">DEVIS D'ÉTUDE</span></p></div></a>
+				</div>
+				<div class="col-md-6" style="padding:0;">
+					<a class="toggleFilter" iptype="Journal" ipimage=""><div class="gs-click" style="background:transparent url('images/fil-dev.jpg') no-repeat center center /cover; overflow: hidden; width:100%;height:10vmax;text-align: center;"><p style="font-size:2.5vw;line-height:10vmax; width:100%;height:100%">Articles triés par <span style="font-size:3.2vw;">Journaux</span></p></div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row open-methode" style="">
+		<div class="col-md-8" style="margin-right:5px; margin-left:-5px">
+			<div id="geocharttitle" style="display:none;"><h1>Les articles proviennent de plusieurs pays</h1></div>
+			<div id="geochartdiv" style="display:none;width:100%;"></div>
+			<div id="listerdiv" class="noselect" ismobile="0">
+ <button type="button" onclick="ImpactModules.MethodeModule.reloadSynthmethode()" style="line-height:100%; margin-top:15px; font-size:24px;" class="btn btn-primary">Retourner au menu des données</button>
+<h3 style="margin-top: 20px;">Articles dont <span style="font-weight:700">le score</span> est <span style="font-weight:700">D</span></h3>
+<hr class="my-4">
+<dl class="row">
+<dt class="col-md-1">
+  <ref_annee> 
+     2016 
+  </ref_annee> 
+</dt>
+<dd class="col-md-11">
+  <ref> 
+     Sturrock A, Preshaw PM, Hayes C, Wilkes S. Attitudes and perceptions of GPs
+and community pharmacists towards their role in the prevention of
+bisphosphonate-related osteonecrosis of the jaw: a qualitative study in the North
+East of England. BMJ Open. 2017 Sep 29;7(9):e016047. doi:
+10.1136/bmjopen-2017-016047. Erratum in: BMJ Open. 2017 Oct 11;7(10
+):e016047corr1. 
+  </ref>
+  <a><pmid>PMID28965092   </pmid></a> 
+</dd> 
+</dl>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44707829-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</div>
+		</div>
+		<div class="col-md-4" style="padding-bottom: 10px;">
+			<div id="refImage" style="background:transparent url('images/scr-btn.jpg') no-repeat center center /cover; width:100%;height:30vh;"></div>
+			<div id="refList" style=""><button type="button" onclick="ImpactModules.MethodeModule.reloadRefmethode()" style="line-height:100%; margin-bottom:15px; font-size:24px;" class="btn btn-primary">Retourner au menu précédent</button><div id="refListcontent">
+
+												<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="358" param="le score" valeur="A">A</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="359" param="le score" valeur="B">B</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="360" param="le score" valeur="C">C</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="361" param="le score" valeur="D">D</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="418" param="le score" valeur="Non-défini">Non-défini</a></span>&nbsp;-&nbsp;
+											</div></div>
+			<div id="desktop-explorez" style="display: none;">
+			</div>
+
+			<!-- Sidebar -->
+
+			<section class="noselect" style="display:none;">
+				<div class="explorez toggleActivite" style="cursor:pointer">Par activités&nbsp;<i id="cueActivite" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocActivite">
+												<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="113" param="l'activité" valeur="Autres activités pharmaceutiques">Autres activités pharmaceutiques</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="56" param="l'activité" valeur="Bilan comparatif des médicaments à l'arrivée">Bilan comparatif des médicaments à l'arrivée</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="57" param="l'activité" valeur="Bilan comparatif des médicaments au départ">Bilan comparatif des médicaments au départ</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.85em"><a style="color:#2788b2" class="listeRef" ipfilter="258" param="l'activité" valeur="Comité d'éthique">Comité d'éthique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.87736842105263em"><a style="color:#298ab5" class="listeRef" ipfilter="256" param="l'activité" valeur="Comité de pharmacologie">Comité de pharmacologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.4178947368421em"><a style="color:#53c6f5" class="listeRef" ipfilter="60" param="l'activité" valeur="Conseils aux patients - groupes">Conseils aux patients - groupes</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="59" param="l'activité" valeur="Conseils aux patients - individuels">Conseils aux patients - individuels</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.11em"><a style="color:#3ba4d0" class="listeRef" ipfilter="255" param="l'activité" valeur="Contrôle qualité">Contrôle qualité</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="253" param="l'activité" valeur="Économie de la santé">Économie de la santé</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="249" param="l'activité" valeur="Éducation thérapeutique">Éducation thérapeutique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="62" param="l'activité" valeur="Enseignement à l'extérieur du département de pharmacie">Enseignement à l'extérieur du département de pharmacie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3768421052632em"><a style="color:#50c1f0" class="listeRef" ipfilter="61" param="l'activité" valeur="Enseignement au sein du département de pharmacie">Enseignement au sein du département de pharmacie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3905263157895em"><a style="color:#51c3f2" class="listeRef" ipfilter="385" param="l'activité" valeur="Enseignement aux pairs">Enseignement aux pairs</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="63" param="l'activité" valeur="Évaluation de l'utilisation des médicaments">Évaluation de l'utilisation des médicaments</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="55" param="l'activité" valeur="Évaluer la pharmacothérapie">Évaluer la pharmacothérapie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0142105263158em"><a style="color:#3399c5" class="listeRef" ipfilter="257" param="l'activité" valeur="Exposition professionnelle">Exposition professionnelle</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3357894736842em"><a style="color:#4dbdeb" class="listeRef" ipfilter="250" param="l'activité" valeur="Gestion">Gestion</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.11em"><a style="color:#3ba4d0" class="listeRef" ipfilter="236" param="l'activité" valeur="Gestion des dispositifs médicaux">Gestion des dispositifs médicaux</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1168421052632em"><a style="color:#3ba5d1" class="listeRef" ipfilter="254" param="l'activité" valeur="Hospitalisation à domicile">Hospitalisation à domicile</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93210526315789em"><a style="color:#2d90bb" class="listeRef" ipfilter="238" param="l'activité" valeur="Humanitaire">Humanitaire</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.86368421052632em"><a style="color:#2889b3" class="listeRef" ipfilter="382" param="l'activité" valeur="Hygiène">Hygiène</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0826315789474em"><a style="color:#39a1cd" class="listeRef" ipfilter="261" param="l'activité" valeur="Informatique">Informatique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.94578947368421em"><a style="color:#2e92bd" class="listeRef" ipfilter="64" param="l'activité" valeur="Nutrition parentérale">Nutrition parentérale</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3631578947368em"><a style="color:#4fc0ee" class="listeRef" ipfilter="65" param="l'activité" valeur="Pharmacocinétique">Pharmacocinétique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.92526315789474em"><a style="color:#2c90ba" class="listeRef" ipfilter="247" param="l'activité" valeur="Pharmacogénétique">Pharmacogénétique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.94578947368421em"><a style="color:#2e92bd" class="listeRef" ipfilter="265" param="l'activité" valeur="Pharmacotechnie">Pharmacotechnie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="252" param="l'activité" valeur="Prescription">Prescription</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.85em"><a style="color:#2788b2" class="listeRef" ipfilter="228" param="l'activité" valeur="Radiopharmacie">Radiopharmacie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.89789473684211em"><a style="color:#2a8db7" class="listeRef" ipfilter="66" param="l'activité" valeur="Réanimation">Réanimation</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.4315789473684em"><a style="color:#54c7f6" class="listeRef" ipfilter="67" param="l'activité" valeur="Recherche clinique">Recherche clinique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="68" param="l'activité" valeur="Recherche évaluative">Recherche évaluative</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="69" param="l'activité" valeur="Réponses aux questions">Réponses aux questions</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.85em"><a style="color:#2788b2" class="listeRef" ipfilter="278" param="l'activité" valeur="Rétrocession">Rétrocession</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="74" param="l'activité" valeur="Réunion multidisciplinaire">Réunion multidisciplinaire</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="70" param="l'activité" valeur="Risques et prévention">Risques et prévention</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="71" param="l'activité" valeur="Suivi de la conformité">Suivi de la conformité</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="72" param="l'activité" valeur="Surveillance de la pharmacothérapie (tests de lab)">Surveillance de la pharmacothérapie (tests de lab)</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1715789473684em"><a style="color:#40abd8" class="listeRef" ipfilter="419" param="l'activité" valeur="Technicien en pharmacie">Technicien en pharmacie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.4110526315789em"><a style="color:#53c5f4" class="listeRef" ipfilter="260" param="l'activité" valeur="Télépharmacie">Télépharmacie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="73" param="l'activité" valeur="Tournée clinique">Tournée clinique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5em"><a style="color:#5acfff" class="listeRef" ipfilter="76" param="l'activité" valeur="Vigilance et effets indésirables">Vigilance et effets indésirables</a></span>&nbsp;-&nbsp;
+											</div>
+				<div class="explorez toggleAffection" style="cursor:pointer">Par affections&nbsp;<i id="cueAffection" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocAffection">
+
+												<span style="font-size:1.26em"><a style="color:#3aa2cf" class="listeRef" ipfilter="205" param="l'affection" valeur="Addiction tabagique">Addiction tabagique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1em"><a style="color:#3196c2" class="listeRef" ipfilter="201" param="l'affection" valeur="Allergie">Allergie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.76em"><a style="color:#55c8f7" class="listeRef" ipfilter="168" param="l'affection" valeur="Asthme">Asthme</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.39em"><a style="color:#41acd9" class="listeRef" ipfilter="417" param="l'affection" valeur="BPCO">BPCO</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="184" param="l'affection" valeur="Cancer">Cancer</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.49em"><a style="color:#46b4e1" class="listeRef" ipfilter="187" param="l'affection" valeur="Dépression">Dépression</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="173" param="l'affection" valeur="Diabète">Diabète</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.52em"><a style="color:#48b6e4" class="listeRef" ipfilter="181" param="l'affection" valeur="Douleur">Douleur</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.06em"><a style="color:#2f93be" class="listeRef" ipfilter="179" param="l'affection" valeur="Épilepsie">Épilepsie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.96em"><a style="color:#2a8cb6" class="listeRef" ipfilter="169" param="l'affection" valeur="Fibrose kystique">Fibrose kystique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.21em"><a style="color:#379fcb" class="listeRef" ipfilter="216" param="l'affection" valeur="Grippe">Grippe</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.96em"><a style="color:#2a8cb6" class="listeRef" ipfilter="178" param="l'affection" valeur="Hémophilie">Hémophilie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="209" param="l'affection" valeur="Hyperlipidémie">Hyperlipidémie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="210" param="l'affection" valeur="Hypertension artérielle">Hypertension artérielle</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.91em"><a style="color:#2788b2" class="listeRef" ipfilter="194" param="l'affection" valeur="Hypertension artérielle pulmonaire">Hypertension artérielle pulmonaire</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.51em"><a style="color:#47b5e3" class="listeRef" ipfilter="206" param="l'affection" valeur="Infarctus du myocarde">Infarctus du myocarde</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.14em"><a style="color:#3399c5" class="listeRef" ipfilter="211" param="l'affection" valeur="Infection aiguë des voies respiratoires">Infection aiguë des voies respiratoires</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="183" param="l'affection" valeur="Infections">Infections</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.92em"><a style="color:#2889b3" class="listeRef" ipfilter="259" param="l'affection" valeur="Infertilité">Infertilité</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="191" param="l'affection" valeur="Insuffisance cardiaque">Insuffisance cardiaque</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.6em"><a style="color:#4cbcea" class="listeRef" ipfilter="176" param="l'affection" valeur="Insuffisance rénale">Insuffisance rénale</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.02em"><a style="color:#2d90bb" class="listeRef" ipfilter="174" param="l'affection" valeur="Maladie d'Alzheimer">Maladie d'Alzheimer</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.97em"><a style="color:#2a8db7" class="listeRef" ipfilter="175" param="l'affection" valeur="Maladie de Parkinson">Maladie de Parkinson</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1em"><a style="color:#3196c2" class="listeRef" ipfilter="171" param="l'affection" valeur="Obésité">Obésité</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.25em"><a style="color:#39a2ce" class="listeRef" ipfilter="190" param="l'affection" valeur="Ostéoporose">Ostéoporose</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.96em"><a style="color:#2a8cb6" class="listeRef" ipfilter="170" param="l'affection" valeur="Polyarthrite rhumatoïde">Polyarthrite rhumatoïde</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.17em"><a style="color:#359cc7" class="listeRef" ipfilter="192" param="l'affection" valeur="Troubles de l'humeur">Troubles de l'humeur</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93em"><a style="color:#288ab4" class="listeRef" ipfilter="208" param="l'affection" valeur="Tuberculose">Tuberculose</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.85em"><a style="color:#5acfff" class="listeRef" ipfilter="219" param="l'affection" valeur="VIH">VIH</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.51em"><a style="color:#47b5e3" class="listeRef" ipfilter="221" param="l'affection" valeur="Virus">Virus</a></span>&nbsp;-&nbsp;
+											</div>		
+				<div class="explorez toggleProgramme" style="cursor:pointer">Par programmes&nbsp;<i id="cueProgramme" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocProgramme">
+
+												<span style="font-size:1.5136842105263em"><a style="color:#48b7e5" class="listeRef" ipfilter="15" param="le programme" valeur="Anticoagulothérapie">Anticoagulothérapie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0484210526316em"><a style="color:#2c90ba" class="listeRef" ipfilter="251" param="le programme" valeur="Armée">Armée</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.7552631578947em"><a style="color:#57cbfa" class="listeRef" ipfilter="16" param="le programme" valeur="Asthme/allergie/pneumologie">Asthme/allergie/pneumologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5539473684211em"><a style="color:#4bbae8" class="listeRef" ipfilter="43" param="le programme" valeur="Autres programmes">Autres programmes</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="17" param="le programme" valeur="Cardiologie/dyslipidémie">Cardiologie/dyslipidémie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.035em"><a style="color:#2c8fb9" class="listeRef" ipfilter="263" param="le programme" valeur="Centre d'information">Centre d'information</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.2094736842105em"><a style="color:#369dc9" class="listeRef" ipfilter="18" param="le programme" valeur="Chirurgie">Chirurgie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0081578947368em"><a style="color:#2a8cb7" class="listeRef" ipfilter="233" param="le programme" valeur="Dermatologie">Dermatologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="19" param="le programme" valeur="Diabète/endocrinologie">Diabète/endocrinologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0439473684211em"><a style="color:#2c8fba" class="listeRef" ipfilter="225" param="le programme" valeur="Gastroenterologie">Gastroenterologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="22" param="le programme" valeur="Gériatrie">Gériatrie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.6255263157895em"><a style="color:#4fc0ef" class="listeRef" ipfilter="20" param="le programme" valeur="Hémato-oncologie">Hémato-oncologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="21" param="le programme" valeur="Infectiologie">Infectiologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0081578947368em"><a style="color:#2a8cb7" class="listeRef" ipfilter="25" param="le programme" valeur="Néonatologie">Néonatologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3078947368421em"><a style="color:#3ca5d2" class="listeRef" ipfilter="23" param="le programme" valeur="Néphrologie">Néphrologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.2318421052632em"><a style="color:#379fcb" class="listeRef" ipfilter="26" param="le programme" valeur="Neurologie">Neurologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0484210526316em"><a style="color:#2c90ba" class="listeRef" ipfilter="27" param="le programme" valeur="Obstétrique-gynécologie">Obstétrique-gynécologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="222" param="le programme" valeur="Ophtalmologie">Ophtalmologie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.96342105263158em"><a style="color:#2789b3" class="listeRef" ipfilter="276" param="le programme" valeur="Orthopédie">Orthopédie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.375em"><a style="color:#40abd8" class="listeRef" ipfilter="28" param="le programme" valeur="Pédiatrie">Pédiatrie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.4555263157895em"><a style="color:#45b2df" class="listeRef" ipfilter="29" param="le programme" valeur="Psychiatrie">Psychiatrie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="30" param="le programme" valeur="Réadaptation">Réadaptation</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1334210526316em"><a style="color:#3297c2" class="listeRef" ipfilter="229" param="le programme" valeur="Santé publique">Santé publique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3615789473684em"><a style="color:#3faad7" class="listeRef" ipfilter="31" param="le programme" valeur="Soins intensifs">Soins intensifs</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0126315789474em"><a style="color:#2a8db7" class="listeRef" ipfilter="32" param="le programme" valeur="Soins palliatifs">Soins palliatifs</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="220" param="le programme" valeur="Stérilisation">Stérilisation</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1423684210526em"><a style="color:#3298c3" class="listeRef" ipfilter="33" param="le programme" valeur="Transplantation">Transplantation</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3884210526316em"><a style="color:#41acd9" class="listeRef" ipfilter="34" param="le programme" valeur="Urgence">Urgence</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.29em"><a style="color:#3ba4d0" class="listeRef" ipfilter="215" param="le programme" valeur="Vaccination">Vaccination</a></span>&nbsp;-&nbsp;
+							
+				</div>				
+				<div class="explorez toggleProvenance" style="cursor:pointer">Par provenance&nbsp;<i id="cueProvenance" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocProvenance">
+												<span style="font-size:0.91473684210526em"><a style="color:#2889b3" class="listeRef" ipfilter="200" param="le pays" valeur="Afrique du Sud">Afrique du Sud</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.99210526315789em"><a style="color:#2d91bc" class="listeRef" ipfilter="124" param="le pays" valeur="Allemagne">Allemagne</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.91842105263158em"><a style="color:#2889b4" class="listeRef" ipfilter="139" param="le pays" valeur="Arabie-Saoudite">Arabie-Saoudite</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.2426315789474em"><a style="color:#3faad7" class="listeRef" ipfilter="120" param="le pays" valeur="Australie">Australie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="177" param="le pays" valeur="Autriche">Autriche</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.99578947368421em"><a style="color:#2d91bc" class="listeRef" ipfilter="126" param="le pays" valeur="Belgique">Belgique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="240" param="le pays" valeur="Bosnie-Herzégovine">Bosnie-Herzégovine</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="439" param="le pays" valeur="Botswana">Botswana</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0105263157895em"><a style="color:#2f93be" class="listeRef" ipfilter="165" param="le pays" valeur="Brésil">Brésil</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="182" param="le pays" valeur="Bulgarie">Bulgarie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="243" param="le pays" valeur="Cambodge">Cambodge</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.6em"><a style="color:#5acfff" class="listeRef" ipfilter="118" param="le pays" valeur="Canada">Canada</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="150" param="le pays" valeur="Chili">Chili</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0547368421053em"><a style="color:#3297c3" class="listeRef" ipfilter="137" param="le pays" valeur="Chine">Chine</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="431" param="le pays" valeur="Chypre">Chypre</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="381" param="le pays" valeur="Colombie">Colombie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="213" param="le pays" valeur="Corée du Sud">Corée du Sud</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="423" param="le pays" valeur="Côte d'Ivoire">Côte d'Ivoire</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.91105263157895em"><a style="color:#2789b3" class="listeRef" ipfilter="133" param="le pays" valeur="Danemark">Danemark</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="197" param="le pays" valeur="Écosse">Écosse</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="266" param="le pays" valeur="Egypte">Egypte</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="196" param="le pays" valeur="Émirats-Arabes Unis">Émirats-Arabes Unis</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.1284210526316em"><a style="color:#379fcb" class="listeRef" ipfilter="125" param="le pays" valeur="Espagne">Espagne</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.6em"><a style="color:#5acfff" class="listeRef" ipfilter="119" param="le pays" valeur="États-Unis">États-Unis</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="429" param="le pays" valeur="Éthiopie">Éthiopie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="131" param="le pays" valeur="Finlande">Finlande</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.53em"><a style="color:#54c7f7" class="listeRef" ipfilter="123" param="le pays" valeur="France">France</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="239" param="le pays" valeur="Gabon">Gabon</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="151" param="le pays" valeur="Guyana">Guyana</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="242" param="le pays" valeur="Haiti">Haiti</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="207" param="le pays" valeur="Hongrie">Hongrie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93315789473684em"><a style="color:#298bb5" class="listeRef" ipfilter="140" param="le pays" valeur="Inde">Inde</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="425" param="le pays" valeur="Indonésie">Indonésie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.91473684210526em"><a style="color:#2889b3" class="listeRef" ipfilter="167" param="le pays" valeur="Iran">Iran</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.91842105263158em"><a style="color:#2889b4" class="listeRef" ipfilter="147" param="le pays" valeur="Irlande">Irlande</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="138" param="le pays" valeur="Israel">Israel</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93315789473684em"><a style="color:#298bb5" class="listeRef" ipfilter="134" param="le pays" valeur="Italie">Italie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="198" param="le pays" valeur="Jamaique">Jamaique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.99947368421053em"><a style="color:#2e92bc" class="listeRef" ipfilter="127" param="le pays" valeur="Japon">Japon</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93315789473684em"><a style="color:#298bb5" class="listeRef" ipfilter="185" param="le pays" valeur="Jordanie">Jordanie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="149" param="le pays" valeur="Kenya">Kenya</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="180" param="le pays" valeur="Koweit">Koweit</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="199" param="le pays" valeur="Kuwait">Kuwait</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="428" param="le pays" valeur="Liban">Liban</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.94421052631579em"><a style="color:#2a8cb6" class="listeRef" ipfilter="148" param="le pays" valeur="Malaisie">Malaisie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="440" param="le pays" valeur="Malawi">Malawi</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="237" param="le pays" valeur="Mali">Mali</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="160" param="le pays" valeur="Malte">Malte</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="214" param="le pays" valeur="Mexique">Mexique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.6em"><a style="color:#5acfff" class="listeRef" ipfilter="141" param="le pays" valeur="Multi-pays">Multi-pays</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="267" param="le pays" valeur="Nepal">Nepal</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.92210526315789em"><a style="color:#288ab4" class="listeRef" ipfilter="234" param="le pays" valeur="Nigeria">Nigeria</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.90368421052632em"><a style="color:#2788b2" class="listeRef" ipfilter="135" param="le pays" valeur="Norvège">Norvège</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.90368421052632em"><a style="color:#2788b2" class="listeRef" ipfilter="121" param="le pays" valeur="Nouvelle-Zélande">Nouvelle-Zélande</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="430" param="le pays" valeur="Oman">Oman</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="424" param="le pays" valeur="Pakistan">Pakistan</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0142105263158em"><a style="color:#2f93be" class="listeRef" ipfilter="128" param="le pays" valeur="Pays-Bas">Pays-Bas</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="426" param="le pays" valeur="Porto Rico">Porto Rico</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="164" param="le pays" valeur="Portugal">Portugal</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="217" param="le pays" valeur="Qatar">Qatar</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="264" param="le pays" valeur="République Tchèque">République Tchèque</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.4047368421053em"><a style="color:#4bbbe9" class="listeRef" ipfilter="122" param="le pays" valeur="Royaume-Uni">Royaume-Uni</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="241" param="le pays" valeur="Russie">Russie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="441" param="le pays" valeur="Serbie">Serbie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.91473684210526em"><a style="color:#2889b3" class="listeRef" ipfilter="162" param="le pays" valeur="Singapour">Singapour</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="422" param="le pays" valeur="Slovénie">Slovénie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="231" param="le pays" valeur="Soudan">Soudan</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93315789473684em"><a style="color:#298bb5" class="listeRef" ipfilter="129" param="le pays" valeur="Suède">Suède</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.93315789473684em"><a style="color:#298bb5" class="listeRef" ipfilter="132" param="le pays" valeur="Suisse">Suisse</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="432" param="le pays" valeur="Syrie">Syrie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.92210526315789em"><a style="color:#288ab4" class="listeRef" ipfilter="163" param="le pays" valeur="Taiwan">Taiwan</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="386" param="le pays" valeur="Tanzanie">Tanzanie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.92210526315789em"><a style="color:#288ab4" class="listeRef" ipfilter="166" param="le pays" valeur="Thailande">Thailande</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="212" param="le pays" valeur="Togo">Togo</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="277" param="le pays" valeur="Tunisie">Tunisie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="195" param="le pays" valeur="Turquie">Turquie</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="248" param="le pays" valeur="Uguanda">Uguanda</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="161" param="le pays" valeur="Vietnam">Vietnam</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.9em"><a style="color:#2788b2" class="listeRef" ipfilter="427" param="le pays" valeur="Zimbabwe">Zimbabwe</a></span>&nbsp;-&nbsp;
+											</div>
+				<div class="explorez toggleScore" style="cursor:pointer">Par score&nbsp;<i id="cueScore" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocScore">
+
+												<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="358" param="le score" valeur="A">A</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="359" param="le score" valeur="B">B</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="360" param="le score" valeur="C">C</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="361" param="le score" valeur="D">D</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="418" param="le score" valeur="Non-défini">Non-défini</a></span>&nbsp;-&nbsp;
+											</div>
+				<div class="explorez toggleLocal" style="cursor:pointer">Par lieu de pratique&nbsp;<i id="cueLocal" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocLocal">
+
+												<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="438" param="la localisation" valeur="Autre">Autre</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="436" param="la localisation" valeur="Clinique externe">Clinique externe</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="435" param="la localisation" valeur="Hôpital">Hôpital</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="437" param="la localisation" valeur="Mixte">Mixte</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="434" param="la localisation" valeur="Officine">Officine</a></span>&nbsp;-&nbsp;
+							
+				</div>
+				<div class="explorez toggleDevis" style="cursor:pointer">Par devis d'étude&nbsp;<i id="cueDevis" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocDevis">
+
+												<span style="font-size:1.0663157894737em"><a style="color:#2d91bc" class="listeRef" ipfilter="" param="le devis" valeur=""></a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.6031578947368em"><a style="color:#4ebeed" class="listeRef" ipfilter="110" param="le devis" valeur="Autres">Autres</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="106" param="le devis" valeur="Étude avant-après">Étude avant-après</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0171052631579em"><a style="color:#2b8db8" class="listeRef" ipfilter="103" param="le devis" valeur="Étude cas-témoin">Étude cas-témoin</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3257894736842em"><a style="color:#3da7d4" class="listeRef" ipfilter="102" param="le devis" valeur="Étude cohorte">Étude cohorte</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0842105263158em"><a style="color:#2f93be" class="listeRef" ipfilter="104" param="le devis" valeur="Étude de cas">Étude de cas</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.7328947368421em"><a style="color:#55c9f8" class="listeRef" ipfilter="152" param="le devis" valeur="Étude de cohorte prospective">Étude de cohorte prospective</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="153" param="le devis" valeur="Étude de cohorte rétrospective">Étude de cohorte rétrospective</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.96789473684211em"><a style="color:#2889b3" class="listeRef" ipfilter="155" param="le devis" valeur="Étude de série de cas">Étude de série de cas</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="105" param="le devis" valeur="Étude observationnelle">Étude observationnelle</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.545em"><a style="color:#4ab9e7" class="listeRef" ipfilter="146" param="le devis" valeur="Étude qualitative">Étude qualitative</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.2452631578947em"><a style="color:#38a0cc" class="listeRef" ipfilter="145" param="le devis" valeur="Étude quasi-randomisée contrôlée">Étude quasi-randomisée contrôlée</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="101" param="le devis" valeur="Étude randomisée contrôlée">Étude randomisée contrôlée</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3213157894737em"><a style="color:#3da7d3" class="listeRef" ipfilter="154" param="le devis" valeur="Étude transversale">Étude transversale</a></span>&nbsp;-&nbsp;
+														<span style="font-size:0.99473684210526em"><a style="color:#298bb6" class="listeRef" ipfilter="158" param="le devis" valeur="Lignes directrices">Lignes directrices</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.0886842105263em"><a style="color:#2f93be" class="listeRef" ipfilter="114" param="le devis" valeur="Méta-analyse">Méta-analyse</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.3436842105263em"><a style="color:#3ea8d5" class="listeRef" ipfilter="157" param="le devis" valeur="Opinion d'experts">Opinion d'experts</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.5047368421053em"><a style="color:#48b6e4" class="listeRef" ipfilter="116" param="le devis" valeur="Revue de littérature">Revue de littérature</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.7418421052632em"><a style="color:#56caf9" class="listeRef" ipfilter="115" param="le devis" valeur="Revue systématique">Revue systématique</a></span>&nbsp;-&nbsp;
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="159" param="le devis" valeur="Sondage">Sondage</a></span>&nbsp;-&nbsp;
+							
+				</div>
+				<div class="explorez toggleJournal" style="cursor:pointer">Par journal de publication&nbsp;<i id="cueJournal" class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
+				<div style="padding:0;line-height:normal;display:none;overflow:auto;text-overflow:ellipsis" id="blocJournal">
+
+												<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="565" param="le journal" valeur="Acad Pediatr">Acad Pediatr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="101" param="le journal" valeur="Acta Anaesthesiol Scand">Acta Anaesthesiol Scand</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="783" param="le journal" valeur="Acta Cardiol Sin">Acta Cardiol Sin</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="419" param="le journal" valeur="Acta Clin Belg">Acta Clin Belg</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="350" param="le journal" valeur="Acta Derm Venereol">Acta Derm Venereol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="160" param="le journal" valeur="Acta Med Iran">Acta Med Iran</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="312" param="le journal" valeur="Acta Paediatr">Acta Paediatr</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="251" param="le journal" valeur="Addiction">Addiction</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="705" param="le journal" valeur="Adv Ther">Adv Ther</a></span><br>
+														<span style="font-size:1.0027131782946em"><a style="color:#2a8cb6" class="listeRef" ipfilter="8" param="le journal" valeur="Age Ageing">Age Ageing</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="339" param="le journal" valeur="AIDS">AIDS</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="564" param="le journal" valeur="AIDS Behav">AIDS Behav</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="41" param="le journal" valeur="AIDS Care">AIDS Care</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="309" param="le journal" valeur="AIDS Patient Care STDS">AIDS Patient Care STDS</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1611" param="le journal" valeur="AIDS Rev">AIDS Rev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="782" param="le journal" valeur="AIMS Public Health">AIMS Public Health</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="259" param="le journal" valeur="Allerg Immunol (Paris)">Allerg Immunol (Paris)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="484" param="le journal" valeur="Allergy Asthma Clin Immunol">Allergy Asthma Clin Immunol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="85" param="le journal" valeur="Allergy Asthma Proc">Allergy Asthma Proc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="503" param="le journal" valeur="Altern Ther Health Med">Altern Ther Health Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="761" param="le journal" valeur="Am Health Drug Benefits">Am Health Drug Benefits</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="214" param="le journal" valeur="Am Heart J">Am Heart J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="709" param="le journal" valeur="Am J
+Manag Care">Am J
+Manag Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="517" param="le journal" valeur="Am J 
+Pharm Educ">Am J 
+Pharm Educ</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="238" param="le journal" valeur="Am J Cardiol">Am J Cardiol</a></span><br>
+														<span style="font-size:1.0158914728682em"><a style="color:#2a8db7" class="listeRef" ipfilter="170" param="le journal" valeur="Am J Emerg Med">Am J Emerg Med</a></span><br>
+														<span style="font-size:1.0158914728682em"><a style="color:#2a8db7" class="listeRef" ipfilter="17" param="le journal" valeur="Am J Geriatr Pharmacother">Am J Geriatr Pharmacother</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="545" param="le journal" valeur="Am J Geriatr Psychiatry">Am J Geriatr Psychiatry</a></span><br>
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="26" param="le journal" valeur="Am J Health Syst Pharm">Am J Health Syst Pharm</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="271" param="le journal" valeur="Am J Hosp Palliat Care">Am J Hosp Palliat Care</a></span><br>
+														<span style="font-size:1.0883720930233em"><a style="color:#2f93be" class="listeRef" ipfilter="69" param="le journal" valeur="Am J Hosp Pharm">Am J Hosp Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1588" param="le journal" valeur="Am J Hypertens">Am J Hypertens</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="302" param="le journal" valeur="Am J Infect Control">Am J Infect Control</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="105" param="le journal" valeur="Am J Kidney Dis">Am J Kidney Dis</a></span><br>
+														<span style="font-size:1.0093023255814em"><a style="color:#2a8cb7" class="listeRef" ipfilter="64" param="le journal" valeur="Am J Manag Care">Am J Manag Care</a></span><br>
+														<span style="font-size:1.022480620155em"><a style="color:#2b8eb8" class="listeRef" ipfilter="18" param="le journal" valeur="Am J Med">Am J Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="577" param="le journal" valeur="Am J Med Genet C Semin Med Genet">Am J Med Genet C Semin Med Genet</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="216" param="le journal" valeur="Am J Med Qual">Am J Med Qual</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="762" param="le journal" valeur="Am J Mens Health">Am J Mens Health</a></span><br>
+														<span style="font-size:1.0422480620155em"><a style="color:#2c8fba" class="listeRef" ipfilter="4" param="le journal" valeur="Am J Pharm Educ">Am J Pharm Educ</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="43" param="le journal" valeur="Am J Public Health">Am J Public Health</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="528" param="le journal" valeur="Am J Ther">Am J Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="532" param="le journal" valeur="Am J Transplant">Am J Transplant</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="129" param="le journal" valeur="Am Pharm">Am Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1589" param="le journal" valeur="American Journal of Pharmaceutical Education">American Journal of Pharmaceutical Education</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="205" param="le journal" valeur="AMIA Annu Symp Proc">AMIA Annu Symp Proc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="592" param="le journal" valeur="Amyotroph Lateral Scler">Amyotroph Lateral Scler</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="124" param="le journal" valeur="Anaesth Intensive Care">Anaesth Intensive Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="134" param="le journal" valeur="Anaesthesia">Anaesthesia</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="53" param="le journal" valeur="Ann Acad Med Singapore">Ann Acad Med Singapore</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="267" param="le journal" valeur="Ann Allergy">Ann Allergy</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="614" param="le journal" valeur="Ann Cardiol Angeiol (Paris)">Ann Cardiol Angeiol (Paris)</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="172" param="le journal" valeur="Ann Emerg Med">Ann Emerg Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="544" param="le journal" valeur="Ann Fam Med">Ann Fam Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="700" param="le journal" valeur="Ann Intensive Care">Ann Intensive Care</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="198" param="le journal" valeur="Ann Intern Med">Ann Intern Med</a></span><br>
+														<span style="font-size:1.1279069767442em"><a style="color:#3196c2" class="listeRef" ipfilter="94" param="le journal" valeur="Ann Pharm Fr">Ann Pharm Fr</a></span><br>
+														<span style="font-size:1.7341085271318em"><a style="color:#56c9f9" class="listeRef" ipfilter="30" param="le journal" valeur="Ann Pharmacother">Ann Pharmacother</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="144" param="le journal" valeur="Annales de l’Unité de recherche en pratique pharmaceutique">Annales de l’Unité de recherche en pratique pharmaceutique</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="638" param="le journal" valeur="Antibiotics (Basel)">Antibiotics (Basel)</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="171" param="le journal" valeur="Anticancer Res">Anticancer Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="51" param="le journal" valeur="Antivir Ther">Antivir Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="518" param="le journal" valeur="Appl Health Econ Health Policy">Appl Health Econ Health Policy</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="347" param="le journal" valeur="Arch Dis Child">Arch Dis Child</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="317" param="le journal" valeur="Arch Dis Child Fetal Neonatal Ed">Arch Dis Child Fetal Neonatal Ed</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="578" param="le journal" valeur="Arch Environ Occup Health">Arch Environ Occup Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="90" param="le journal" valeur="Arch Gen Psychiatry">Arch Gen Psychiatry</a></span><br>
+														<span style="font-size:1.1147286821705em"><a style="color:#3095c0" class="listeRef" ipfilter="15" param="le journal" valeur="Arch Intern Med">Arch Intern Med</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="535" param="le journal" valeur="Arch Pediatr">Arch Pediatr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="642" param="le journal" valeur="Arq Bras Endocrinol Metabol">Arq Bras Endocrinol Metabol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="497" param="le journal" valeur="Arthritis Care Res (Hoboken)">Arthritis Care Res (Hoboken)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="536" param="le journal" valeur="ASAIO J">ASAIO J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1607" param="le journal" valeur="Asia Pac J Clin Nutr">Asia Pac J Clin Nutr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="663" param="le journal" valeur="Asia Pac J Clin Oncol">Asia Pac J Clin Oncol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="615" param="le journal" valeur="Asian Pac J Cancer Prev">Asian Pac J Cancer Prev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="469" param="le journal" valeur="Asian Pacific Journal of Cancer Prevention">Asian Pacific Journal of Cancer Prevention</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="52" param="le journal" valeur="Aust J Rural Health">Aust J Rural Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="412" param="le journal" valeur="Aust N Z J Obstet Gynaecol">Aust N Z J Obstet Gynaecol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="294" param="le journal" valeur="Australas Psychiatry">Australas Psychiatry</a></span><br>
+														<span style="font-size:1.0027131782946em"><a style="color:#2a8cb6" class="listeRef" ipfilter="132" param="le journal" valeur="Basic Clin Pharmacol Toxicol">Basic Clin Pharmacol Toxicol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="257" param="le journal" valeur="Biochemistry">Biochemistry</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="180" param="le journal" valeur="Biol Blood Marrow Transplant">Biol Blood Marrow Transplant</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="107" param="le journal" valeur="Biol Pharm Bull">Biol Pharm Bull</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="604" param="le journal" valeur="Biomed Res Int">Biomed Res Int</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="737" param="le journal" valeur="Biosci Trends">Biosci Trends</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="584" param="le journal" valeur="Biosecur Bioterror">Biosecur Bioterror</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="602" param="le journal" valeur="BMC Cardiovasc Disord">BMC Cardiovasc Disord</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="504" param="le journal" valeur="BMC Endocr Disord">BMC Endocr Disord</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="197" param="le journal" valeur="BMC Fam Pract">BMC Fam Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="221" param="le journal" valeur="BMC Geriatr">BMC Geriatr</a></span><br>
+														<span style="font-size:1.1015503875969em"><a style="color:#3094bf" class="listeRef" ipfilter="150" param="le journal" valeur="BMC Health Serv Res">BMC Health Serv Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="634" param="le journal" valeur="BMC Infect Dis">BMC Infect Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="10" param="le journal" valeur="BMC Med Res Methodol">BMC Med Res Methodol</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="114" param="le journal" valeur="BMC Nephrol">BMC Nephrol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="603" param="le journal" valeur="BMC Psychiatry">BMC Psychiatry</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="420" param="le journal" valeur="BMC Public Health">BMC Public Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="732" param="le journal" valeur="BMC Res Notes">BMC Res Notes</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="35" param="le journal" valeur="BMJ">BMJ</a></span><br>
+														<span style="font-size:1.0290697674419em"><a style="color:#2b8eb9" class="listeRef" ipfilter="58" param="le journal" valeur="BMJ Open">BMJ Open</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="697" param="le journal" valeur="BMJ Open Qual">BMJ Open Qual</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="549" param="le journal" valeur="BMJ Qual Saf">BMJ Qual Saf</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="784" param="le journal" valeur="Bosn J Basic Med Sci">Bosn J Basic Med Sci</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="226" param="le journal" valeur="Br Dent J">Br Dent J</a></span><br>
+														<span style="font-size:1.0554263565891em"><a style="color:#2d90bb" class="listeRef" ipfilter="2" param="le journal" valeur="Br J Clin Pharmacol">Br J Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="839" param="le journal" valeur="Br J Clin Pract">Br J Clin Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="301" param="le journal" valeur="Br J Community Nurs">Br J Community Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1255" param="le journal" valeur="Br J Diabetes Vasc Dis">Br J Diabetes Vasc Dis</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="227" param="le journal" valeur="Br J Gen Pract">Br J Gen Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1585" param="le journal" valeur="Br J Psychiatry">Br J Psychiatry</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="607" param="le journal" valeur="Br J Surg">Br J Surg</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="553" param="le journal" valeur="Braz J Infect Dis">Braz J Infect Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="111" param="le journal" valeur="Can Fam Physician">Can Fam Physician</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="121" param="le journal" valeur="Can J Cardiol">Can J Cardiol</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="37" param="le journal" valeur="Can J Clin Pharmacol">Can J Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="694" param="le journal" valeur="Can J Diabetes">Can J Diabetes</a></span><br>
+														<span style="font-size:1.1147286821705em"><a style="color:#3095c0" class="listeRef" ipfilter="102" param="le journal" valeur="Can J Hosp Pharm">Can J Hosp Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="725" param="le journal" valeur="Can J Neurol Sci">Can J Neurol Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="218" param="le journal" valeur="Can J Nurs Res">Can J Nurs Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="353" param="le journal" valeur="Can J Public Health">Can J Public Health</a></span><br>
+														<span style="font-size:0.99612403100775em"><a style="color:#298bb6" class="listeRef" ipfilter="289" param="le journal" valeur="Can Pharm J (Ott)">Can Pharm J (Ott)</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="50" param="le journal" valeur="Can Respir J">Can Respir J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1273" param="le journal" valeur="Canadian Pharmaceutical Journal">Canadian Pharmaceutical Journal</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1543" param="le journal" valeur="Canadian Pharmacists Journal / Revue des Pharmaciens du Canada">Canadian Pharmacists Journal / Revue des Pharmaciens du Canada</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="266" param="le journal" valeur="Cancer Causes Control">Cancer Causes Control</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="284" param="le journal" valeur="Cancer Pract">Cancer Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="239" param="le journal" valeur="CANNT J">CANNT J</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="331" param="le journal" valeur="Caring">Caring</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="290" param="le journal" valeur="Chemotherapy">Chemotherapy</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="208" param="le journal" valeur="Chest">Chest</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="66" param="le journal" valeur="Cien Saude Colet">Cien Saude Colet</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="295" param="le journal" valeur="Circ Cardiovasc Qual Outcomes">Circ Cardiovasc Qual Outcomes</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="186" param="le journal" valeur="Circ Heart Fail">Circ Heart Fail</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="63" param="le journal" valeur="Circulation">Circulation</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="752" param="le journal" valeur="Clin
+Neuropharmacol">Clin
+Neuropharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="190" param="le journal" valeur="Clin Appl Thromb Hemost">Clin Appl Thromb Hemost</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="276" param="le journal" valeur="Clin Cardiol">Clin Cardiol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="55" param="le journal" valeur="Clin Drug Investig">Clin Drug Investig</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="228" param="le journal" valeur="Clin Infect Dis">Clin Infect Dis</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="155" param="le journal" valeur="Clin Interv Aging">Clin Interv Aging</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="478" param="le journal" valeur="Clin J Oncol Nurs">Clin J Oncol Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="496" param="le journal" valeur="Clin J Pain">Clin J Pain</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="408" param="le journal" valeur="Clin Med">Clin Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="719" param="le journal" valeur="Clin Mol Allergy">Clin Mol Allergy</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="117" param="le journal" valeur="Clin Nephrol">Clin Nephrol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="229" param="le journal" valeur="Clin Pediatr (Phila)">Clin Pediatr (Phila)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="780" param="le journal" valeur="Clin Pharmacol">Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="279" param="le journal" valeur="Clin Pharmacol Ther">Clin Pharmacol Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="340" param="le journal" valeur="Clin Teach">Clin Teach</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="292" param="le journal" valeur="Clin Ther">Clin Ther</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="97" param="le journal" valeur="Clin Transplant">Clin Transplant</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="391" param="le journal" valeur="Clin Trials">Clin Trials</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="715" param="le journal" valeur="Clinicoecon Outcomes Res">Clinicoecon Outcomes Res</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="643" param="le journal" valeur="Clinics (Sao Paulo)">Clinics (Sao Paulo)</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="1" param="le journal" valeur="CMAJ">CMAJ</a></span><br>
+														<span style="font-size:0.99612403100775em"><a style="color:#298bb6" class="listeRef" ipfilter="255" param="le journal" valeur="Cochrane Database Syst Rev">Cochrane Database Syst Rev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="671" param="le journal" valeur="Community Ment Health J">Community Ment Health J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1620" param="le journal" valeur="Consensus review of the Society of Infectious Diseases Pharmacis">Consensus review of the Society of Infectious Diseases Pharmacis</a></span><br>
+														<span style="font-size:1.1015503875969em"><a style="color:#3094bf" class="listeRef" ipfilter="40" param="le journal" valeur="Consult Pharm">Consult Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="574" param="le journal" valeur="Cont Lens Anterior Eye">Cont Lens Anterior Eye</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="647" param="le journal" valeur="Contemp Clin Trials">Contemp Clin Trials</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="585" param="le journal" valeur="Contraception">Contraception</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="130" param="le journal" valeur="Crit Care Med">Crit Care Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="550" param="le journal" valeur="Crit Care Nurs Q">Crit Care Nurs Q</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="282" param="le journal" valeur="Crit Rev Oncol Hematol">Crit Rev Oncol Hematol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1609" param="le journal" valeur="Cureus">Cureus</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="506" param="le journal" valeur="Curr Diab Rep">Curr Diab Rep</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="204" param="le journal" valeur="Curr Diabetes Rev">Curr Diabetes Rev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="534" param="le journal" valeur="Curr Geriatr Rep">Curr Geriatr Rep</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="660" param="le journal" valeur="Curr Heart Fail
+Rep">Curr Heart Fail
+Rep</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="772" param="le journal" valeur="Curr Hypertens Rep">Curr Hypertens Rep</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="605" param="le journal" valeur="Curr Med Res Opin">Curr Med Res Opin</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="281" param="le journal" valeur="Curr Oncol">Curr Oncol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="519" param="le journal" valeur="Curr Opin Cardiol">Curr Opin Cardiol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="110" param="le journal" valeur="Curr Opin Nephrol Hypertens">Curr Opin Nephrol Hypertens</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="744" param="le journal" valeur="Curr Pharm Teach Learn">Curr Pharm Teach Learn</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1542" param="le journal" valeur="Curr Probl Cancer">Curr Probl Cancer</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="606" param="le journal" valeur="Dan Med J">Dan Med J</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="561" param="le journal" valeur="Daru">Daru</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="194" param="le journal" valeur="Diabet Med">Diabet Med</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="13" param="le journal" valeur="Diabetes Care">Diabetes Care</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="59" param="le journal" valeur="Diabetes Educ">Diabetes Educ</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="60" param="le journal" valeur="Diabetes Res Clin Pract">Diabetes Res Clin Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="696" param="le journal" valeur="Diabetes Spectr">Diabetes Spectr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="210" param="le journal" valeur="Diabetes Technol Ther">Diabetes Technol Ther</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="515" param="le journal" valeur="Diagn Microbiol Infect Dis">Diagn Microbiol Infect Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="389" param="le journal" valeur="DICP">DICP</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="580" param="le journal" valeur="Disaster Med Public Health Prep">Disaster Med Public Health Prep</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="1321" param="le journal" valeur="Disease Management and Health Outcomes">Disease Management and Health Outcomes</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1618" param="le journal" valeur="Drug Healthc Patient Saf">Drug Healthc Patient Saf</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="529" param="le journal" valeur="Drug Metabol Drug Interact">Drug Metabol Drug Interact</a></span><br>
+														<span style="font-size:1.0158914728682em"><a style="color:#2a8db7" class="listeRef" ipfilter="57" param="le journal" valeur="Drug Saf">Drug Saf</a></span><br>
+														<span style="font-size:1.0817829457364em"><a style="color:#2e93bd" class="listeRef" ipfilter="3" param="le journal" valeur="Drugs Aging">Drugs Aging</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="672" param="le journal" valeur="Drugs Real World Outcomes">Drugs Real World Outcomes</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="169" param="le journal" valeur="Einstein (Sao Paulo)">Einstein (Sao Paulo)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="688" param="le journal" valeur="Emerg Med J">Emerg Med J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="358" param="le journal" valeur="Encyclopedia of Clinical Pharmacy">Encyclopedia of Clinical Pharmacy</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="770" param="le journal" valeur="Epidemiol Health">Epidemiol Health</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="502" param="le journal" valeur="Epilepsy Behav">Epilepsy Behav</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="405" param="le journal" valeur="Epilepsy Res Suppl">Epilepsy Res Suppl</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="372" param="le journal" valeur="Essential equipment, pharmaceuticals and supplies">Essential equipment, pharmaceuticals and supplies</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="247" param="le journal" valeur="Ethn Dis">Ethn Dis</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="185" param="le journal" valeur="Eur Heart J">Eur Heart J</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="687" param="le journal" valeur="Eur J Cancer Care (Engl)">Eur J Cancer Care (Engl)</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="758" param="le journal" valeur="Eur J Clin Microbiol Infect Dis">Eur J Clin Microbiol Infect Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="759" param="le journal" valeur="Eur J Clin Nutr">Eur J Clin Nutr</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="100" param="le journal" valeur="Eur J Clin Pharmacol">Eur J Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="698" param="le journal" valeur="Eur J Contracept
+Reprod Health Care">Eur J Contracept
+Reprod Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="667" param="le journal" valeur="Eur J Health Econ">Eur J Health Econ</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="213" param="le journal" valeur="Eur J Heart Fail">Eur J Heart Fail</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="530" param="le journal" valeur="Eur J Intern Med">Eur J Intern Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="475" param="le journal" valeur="Eur J Oncol Nurs">Eur J Oncol Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1605" param="le journal" valeur="Eur J Pain">Eur J Pain</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="589" param="le journal" valeur="Eur J Pediatr">Eur J Pediatr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="315" param="le journal" valeur="Eur J Public Health">Eur J Public Health</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="73" param="le journal" valeur="Eur Neuropsychopharmacol">Eur Neuropsychopharmacol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="84" param="le journal" valeur="Eur Respir J">Eur Respir J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="486" param="le journal" valeur="Eur Spine J">Eur Spine J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="260" param="le journal" valeur="Eval Health Prof">Eval Health Prof</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="575" param="le journal" valeur="Expert Opin Drug Saf">Expert Opin Drug Saf</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="233" param="le journal" valeur="Expert Opin Pharmacother">Expert Opin Pharmacother</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="181" param="le journal" valeur="Expert Rev Anticancer Ther">Expert Rev Anticancer Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="646" param="le journal" valeur="Expert Rev Cardiovasc
+Ther">Expert Rev Cardiovasc
+Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="516" param="le journal" valeur="Expert Rev Clin Pharmacol">Expert Rev Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="785" param="le journal" valeur="Expert Rev Pharmacoecon Outcomes Res">Expert Rev Pharmacoecon Outcomes Res</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="173" param="le journal" valeur="Fam Pract">Fam Pract</a></span><br>
+														<span style="font-size:1.0290697674419em"><a style="color:#2b8eb9" class="listeRef" ipfilter="16" param="le journal" valeur="Farm Hosp">Farm Hosp</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="624" param="le journal" valeur="Fed Pract">Fed Pract</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="630" param="le journal" valeur="Front Pharmacol">Front Pharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="376" param="le journal" valeur="Fundam Clin Pharmacol">Fundam Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="885" param="le journal" valeur="Future Cardiol">Future Cardiol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="78" param="le journal" valeur="Gen Hosp Psychiatry">Gen Hosp Psychiatry</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="355" param="le journal" valeur="Geriatr Gerontol Int">Geriatr Gerontol Int</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="760" param="le journal" valeur="Geriatr Nurs">Geriatr Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="21" param="le journal" valeur="Gerontologist">Gerontologist</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="555" param="le journal" valeur="Glob Health Sci Pract">Glob Health Sci Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="570" param="le journal" valeur="Glob J Health Sci">Glob J Health Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="731" param="le journal" valeur="Global Health">Global Health</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="122" param="le journal" valeur="Haemophilia">Haemophilia</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="748" param="le journal" valeur="Harm Reduct J">Harm Reduct J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="522" param="le journal" valeur="Hawaii J Med Public Health">Hawaii J Med Public Health</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="215" param="le journal" valeur="Health Aff (Millwood)">Health Aff (Millwood)</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="508" param="le journal" valeur="Health Educ Behav">Health Educ Behav</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="539" param="le journal" valeur="Health Expect">Health Expect</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="380" param="le journal" valeur="Health Policy">Health Policy</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="472" param="le journal" valeur="Health Policy Plan">Health Policy Plan</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="483" param="le journal" valeur="Health Promot Pract">Health Promot Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="710" param="le journal" valeur="Health Psychol
+Behav Med">Health Psychol
+Behav Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="661" param="le journal" valeur="Health Qual Life Outcomes">Health Qual Life Outcomes</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="582" param="le journal" valeur="Health Serv Res">Health Serv Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="394" param="le journal" valeur="Healthc Inform">Healthc Inform</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="217" param="le journal" valeur="Heart">Heart</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1617" param="le journal" valeur="Heliyon">Heliyon</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="383" param="le journal" valeur="Hell J
+Nucl Med">Hell J
+Nucl Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="120" param="le journal" valeur="Hemodial Int">Hemodial Int</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="62" param="le journal" valeur="HIV Clin">HIV Clin</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="39" param="le journal" valeur="HIV Med">HIV Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="384" param="le journal" valeur="Home Care Provid">Home Care Provid</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="629" param="le journal" valeur="Home Healthc Now">Home Healthc Now</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="583" param="le journal" valeur="Home Healthc Nurse">Home Healthc Nurse</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="11" param="le journal" valeur="Hong Kong Med J">Hong Kong Med J</a></span><br>
+														<span style="font-size:1.2201550387597em"><a style="color:#379eca" class="listeRef" ipfilter="99" param="le journal" valeur="Hosp Pharm">Hosp Pharm</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="703" param="le journal" valeur="Hosp Pract (1995)">Hosp Pract (1995)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="311" param="le journal" valeur="Hospital pharmacist">Hospital pharmacist</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1597" param="le journal" valeur="Hospital pharmacist - London">Hospital pharmacist - London</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="307" param="le journal" valeur="Hum Vaccin Immunother">Hum Vaccin Immunother</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="613" param="le journal" valeur="Hypertension">Hypertension</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="352" param="le journal" valeur="Implement Sci">Implement Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="359" param="le journal" valeur="Indian J">Indian J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="538" param="le journal" valeur="Indian J Pharm Sci">Indian J Pharm Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="788" param="le journal" valeur="Indian J Tuberc">Indian J Tuberc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="192" param="le journal" valeur="Indian Journal of Pharmaceutical Sciences">Indian Journal of Pharmaceutical Sciences</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="562" param="le journal" valeur="Infect Control Hosp Epidemiol">Infect Control Hosp Epidemiol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="657" param="le journal" valeur="Infect Drug Resist">Infect Drug Resist</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="560" param="le journal" valeur="Infez Med">Infez Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="234" param="le journal" valeur="Int Arch Allergy Immunol">Int Arch Allergy Immunol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="398" param="le journal" valeur="Int Arch Med">Int Arch Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1619" param="le journal" valeur="Int Clin Psychopharmacol">Int Clin Psychopharmacol</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="739" param="le journal" valeur="Int Dent J">Int Dent J</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="136" param="le journal" valeur="Int J Antimicrob Agents">Int J Antimicrob Agents</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="202" param="le journal" valeur="Int J Cardiol">Int J Cardiol</a></span><br>
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="61" param="le journal" valeur="Int J Clin Pharm">Int J Clin Pharm</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="298" param="le journal" valeur="Int J Clin Pharmacol Ther">Int J Clin Pharmacol Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="493" param="le journal" valeur="Int J Clin Pract">Int J Clin Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="556" param="le journal" valeur="Int J Drug Policy">Int J Drug Policy</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="547" param="le journal" valeur="Int J Environ Res Public Health">Int J Environ Res Public Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="664" param="le journal" valeur="Int J Evid
+Based Healthc">Int J Evid
+Based Healthc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="540" param="le journal" valeur="Int J Family Med">Int J Family Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="468" param="le journal" valeur="Int J Geriatr Psychiatry">Int J Geriatr Psychiatry</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="559" param="le journal" valeur="Int J Health Care Qual Assur">Int J Health Care Qual Assur</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="336" param="le journal" valeur="Int J Health Plann Manage">Int J Health Plann Manage</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="32" param="le journal" valeur="Int J Infect Dis">Int J Infect Dis</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="402" param="le journal" valeur="Int J Med Inform">Int J Med Inform</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="81" param="le journal" valeur="Int J Nurs Stud">Int J Nurs Stud</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="414" param="le journal" valeur="Int J Pharm Compd">Int J Pharm Compd</a></span><br>
+														<span style="font-size:1.3321705426357em"><a style="color:#3da7d4" class="listeRef" ipfilter="115" param="le journal" valeur="Int J Pharm Pract">Int J Pharm Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1414" param="le journal" valeur="Int J Pharm Sci Rev Res">Int J Pharm Sci Rev Res</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="300" param="le journal" valeur="Int J Qual Health Care">Int J Qual Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="546" param="le journal" valeur="Int J Risk Saf Med">Int J Risk Saf Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="729" param="le journal" valeur="Int J Soc Psychiatry">Int J Soc Psychiatry</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="579" param="le journal" valeur="Int J STD AIDS">Int J STD AIDS</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="140" param="le journal" valeur="Int J Technol Assess Health Care">Int J Technol Assess Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="264" param="le journal" valeur="Int J Tuberc Lung Dis">Int J Tuberc Lung Dis</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="733" param="le journal" valeur="Integr Pharm Res Pract">Integr Pharm Res Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="68" param="le journal" valeur="Intensive Care Med">Intensive Care Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1462" param="le journal" valeur="Interbloc">Interbloc</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="552" param="le journal" valeur="Iran J Pharm Res">Iran J Pharm Res</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="299" param="le journal" valeur="J Acquir Immune Defic Syndr">J Acquir Immune Defic Syndr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="338" param="le journal" valeur="J Adv Nurs">J Adv Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="720" param="le journal" valeur="J Allergy Clin Immunol
+Pract">J Allergy Clin Immunol
+Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="786" param="le journal" valeur="J Alzheimers Dis">J Alzheimers Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1603" param="le journal" valeur="J Am Acad Dermatol">J Am Acad Dermatol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="674" param="le journal" valeur="J Am Assoc Nurse Pract">J Am Assoc Nurse Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="695" param="le journal" valeur="J Am Board Fam Med">J Am Board Fam Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="230" param="le journal" valeur="J Am Coll Cardiol">J Am Coll Cardiol</a></span><br>
+														<span style="font-size:1.0356589147287em"><a style="color:#2c8fb9" class="listeRef" ipfilter="6" param="le journal" valeur="J Am Geriatr Soc">J Am Geriatr Soc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="520" param="le journal" valeur="J Am Heart Assoc">J Am Heart Assoc</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="418" param="le journal" valeur="J Am Med Dir Assoc">J Am Med Dir Assoc</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="648" param="le journal" valeur="J Am Med Inform Assoc">J Am Med Inform Assoc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="870" param="le journal" valeur="J Am Pharm Assoc">J Am Pharm Assoc</a></span><br>
+														<span style="font-size:1.8em"><a style="color:#5acfff" class="listeRef" ipfilter="38" param="le journal" valeur="J Am Pharm Assoc (2003)">J Am Pharm Assoc (2003)</a></span><br>
+														<span style="font-size:1.0817829457364em"><a style="color:#2e93bd" class="listeRef" ipfilter="25" param="le journal" valeur="J Am Pharm Assoc (Wash)">J Am Pharm Assoc (Wash)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="640" param="le journal" valeur="J Am Soc Hypertens">J Am Soc Hypertens</a></span><br>
+														<span style="font-size:0.99612403100775em"><a style="color:#298bb6" class="listeRef" ipfilter="158" param="le journal" valeur="J Antimicrob Chemother">J Antimicrob Chemother</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="489" param="le journal" valeur="J Asthma">J Asthma</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="558" param="le journal" valeur="J Basic Clin Pharm">J Basic Clin Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="411" param="le journal" valeur="J Burn Care Res">J Burn Care Res</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="195" param="le journal" valeur="J Card Fail">J Card Fail</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="329" param="le journal" valeur="J Cardiovasc Pharmacol Ther">J Cardiovasc Pharmacol Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="527" param="le journal" valeur="J Cardiovasc Surg (Torino)">J Cardiovasc Surg (Torino)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="370" param="le journal" valeur="J Chemother">J Chemother</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="851" param="le journal" valeur="J Child Health Care">J Child Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="598" param="le journal" valeur="J Clin Densitom">J Clin Densitom</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="357" param="le journal" valeur="J Clin Hypertens (Greenwich)">J Clin Hypertens (Greenwich)</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="327" param="le journal" valeur="J Clin Lipidol">J Clin Lipidol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="263" param="le journal" valeur="J Clin Med Res">J Clin Med Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="253" param="le journal" valeur="J Clin Oncol">J Clin Oncol</a></span><br>
+														<span style="font-size:1.3255813953488em"><a style="color:#3da7d4" class="listeRef" ipfilter="48" param="le journal" valeur="J Clin Pharm Ther">J Clin Pharm Ther</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="34" param="le journal" valeur="J Clin Pharmacol">J Clin Pharmacol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="525" param="le journal" valeur="J Clin Sleep Med">J Clin Sleep Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="56" param="le journal" valeur="J Community Health">J Community Health</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="109" param="le journal" valeur="J Contin Educ Health Prof">J Contin Educ Health Prof</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="377" param="le journal" valeur="J Correct Health Care">J Correct Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="551" param="le journal" valeur="J Crit Care">J Crit Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="611" param="le journal" valeur="J Diabetes Metab Disord">J Diabetes Metab Disord</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="7" param="le journal" valeur="J Diabetes Sci Technol">J Diabetes Sci Technol</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="242" param="le journal" valeur="J Emerg Med">J Emerg Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="175" param="le journal" valeur="J Emerg Nurs">J Emerg Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="707" param="le journal" valeur="J Epidemiol Glob
+Health">J Epidemiol Glob
+Health</a></span><br>
+														<span style="font-size:1.0554263565891em"><a style="color:#2d90bb" class="listeRef" ipfilter="108" param="le journal" valeur="J Eval Clin Pract">J Eval Clin Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="470" param="le journal" valeur="J Evid Based Med">J Evid Based Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="399" param="le journal" valeur="J Fam Plann Reprod Health Care">J Fam Plann Reprod Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="196" param="le journal" valeur="J Fam Pract">J Fam Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="765" param="le journal" valeur="J Family Med Prim Care">J Family Med Prim Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="524" param="le journal" valeur="J Formos  Med Assoc">J Formos  Med Assoc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="310" param="le journal" valeur="J Fr Ophtalmol">J Fr Ophtalmol</a></span><br>
+														<span style="font-size:0.99612403100775em"><a style="color:#298bb6" class="listeRef" ipfilter="9" param="le journal" valeur="J Gen Intern Med">J Gen Intern Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1470" param="le journal" valeur="J Geriatr Oncol">J Geriatr Oncol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="581" param="le journal" valeur="J Gerontol Nurs">J Gerontol Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1601" param="le journal" valeur="J Glob Antimicrob Resist">J Glob Antimicrob Resist</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="505" param="le journal" valeur="J Health Care Poor Underserved">J Health Care Poor Underserved</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="704" param="le journal" valeur="J Healthc Manag">J Healthc Manag</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="586" param="le journal" valeur="J Hepatol">J Hepatol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="666" param="le journal" valeur="J Hosp Infect">J Hosp Infect</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="83" param="le journal" valeur="J Hosp Med">J Hosp Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="754" param="le journal" valeur="J Immigr Minor Health">J Immigr Minor Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="510" param="le journal" valeur="J Infect Dev Ctries">J Infect Dev Ctries</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="757" param="le journal" valeur="J Infect Public Health">J Infect Public Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="635" param="le journal" valeur="J Int Assoc Provid AIDS Care">J Int Assoc Provid AIDS Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="499" param="le journal" valeur="J Int Med Res">J Int Med Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="764" param="le journal" valeur="J Interprof
+Care">J Interprof
+Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1604" param="le journal" valeur="J Interprof Care">J Interprof Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="787" param="le journal" valeur="J Investig Med">J Investig Med</a></span><br>
+														<span style="font-size:1.134496124031em"><a style="color:#3297c2" class="listeRef" ipfilter="12" param="le journal" valeur="J Manag Care Pharm">J Manag Care Pharm</a></span><br>
+														<span style="font-size:1.134496124031em"><a style="color:#3297c2" class="listeRef" ipfilter="296" param="le journal" valeur="J Manag Care Spec Pharm">J Manag Care Spec Pharm</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="125" param="le journal" valeur="J Med Assoc Thai">J Med Assoc Thai</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="616" param="le journal" valeur="J Med Econ">J Med Econ</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="649" param="le journal" valeur="J Med Syst">J Med Syst</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="677" param="le journal" valeur="J Ment Health">J Ment Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="278" param="le journal" valeur="J Natl Compr Canc Netw">J Natl Compr Canc Netw</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="314" param="le journal" valeur="J Natl Med Assoc">J Natl Med Assoc</a></span><br>
+														<span style="font-size:1.206976744186em"><a style="color:#369dc9" class="listeRef" ipfilter="76" param="le journal" valeur="J Oncol Pharm Pract">J Oncol Pharm Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="178" param="le journal" valeur="J Oncol Pract">J Oncol Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="573" param="le journal" valeur="J Pain Palliat Care Pharmacother">J Pain Palliat Care Pharmacother</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="494" param="le journal" valeur="J Pain Symptom Manage">J Pain Symptom Manage</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="741" param="le journal" valeur="J Palliat Med">J Palliat Med</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="386" param="le journal" valeur="J Patient Saf">J Patient Saf</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="477" param="le journal" valeur="J Pediatr Hematol Oncol">J Pediatr Hematol Oncol</a></span><br>
+														<span style="font-size:1.0093023255814em"><a style="color:#2a8cb7" class="listeRef" ipfilter="138" param="le journal" valeur="J Pediatr Pharmacol Ther">J Pediatr Pharmacol Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="103" param="le journal" valeur="J Pediatr Surg">J Pediatr Surg</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="588" param="le journal" valeur="J Perinatol">J Perinatol</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="269" param="le journal" valeur="J Pharm Belg">J Pharm Belg</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1610" param="le journal" valeur="J Pharm Bioallied Sci">J Pharm Bioallied Sci</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="1539" param="le journal" valeur="J Pharm Clin">J Pharm Clin</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="652" param="le journal" valeur="J Pharm Health Care Sci">J Pharm Health Care Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="379" param="le journal" valeur="J Pharm Pharm Sci">J Pharm Pharm Sci</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="651" param="le journal" valeur="J Pharm Policy Pract">J Pharm Policy Pract</a></span><br>
+														<span style="font-size:1.3387596899225em"><a style="color:#3ea8d5" class="listeRef" ipfilter="14" param="le journal" valeur="J Pharm Pract">J Pharm Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="620" param="le journal" valeur="J Pharm Pract Res">J Pharm Pract Res</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="366" param="le journal" valeur="J Pharm Technol">J Pharm Technol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="137" param="le journal" valeur="J Pharmacol Pharmacother">J Pharmacol Pharmacother</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="410" param="le journal" valeur="J Popul Ther Clin Pharmacol">J Popul Ther Clin Pharmacol</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="154" param="le journal" valeur="J Prim Care Community Health">J Prim Care Community Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="749" param="le journal" valeur="J Prim Health
+Care">J Prim Health
+Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="322" param="le journal" valeur="J Psychopharmacol">J Psychopharmacol</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="507" param="le journal" valeur="J Public Health (Oxf)">J Public Health (Oxf)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="665" param="le journal" valeur="J Public Health Manag Pract">J Public Health Manag Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="345" param="le journal" valeur="J Public Health Med">J Public Health Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="93" param="le journal" valeur="J R Soc Med">J R Soc Med</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="243" param="le journal" valeur="J Res Pharm Pract">J Res Pharm Pract</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1480" param="le journal" valeur="J Rural Health">J Rural Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1600" param="le journal" valeur="J Stroke Cerebrovasc Dis">J Stroke Cerebrovasc Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="156" param="le journal" valeur="J Support Oncol">J Support Oncol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="252" param="le journal" valeur="J Tehran Heart Cent">J Tehran Heart Cent</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="587" param="le journal" valeur="J Telemed Telecare">J Telemed Telecare</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="627" param="le journal" valeur="J Thorac
+Dis">J Thorac
+Dis</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="254" param="le journal" valeur="J Thromb Haemost">J Thromb Haemost</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="203" param="le journal" valeur="J Thromb Thrombolysis">J Thromb Thrombolysis</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="498" param="le journal" valeur="J Trauma Nurs">J Trauma Nurs</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="280" param="le journal" valeur="J Urban Health">J Urban Health</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="318" param="le journal" valeur="J Young Pharm">J Young Pharm</a></span><br>
+														<span style="font-size:1.0027131782946em"><a style="color:#2a8cb6" class="listeRef" ipfilter="22" param="le journal" valeur="JAMA">JAMA</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="500" param="le journal" valeur="JAMA Intern Med">JAMA Intern Med</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="371" param="le journal" valeur="Journal de pharmacie clinique">Journal de pharmacie clinique</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1037" param="le journal" valeur="Journal des Maladies Vasculaires">Journal des Maladies Vasculaires</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="722" param="le journal" valeur="Journal of the American College of Clinical Pharmacy">Journal of the American College of Clinical Pharmacy</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="480" param="le journal" valeur="JPEN J Parenter Enteral Nutr">JPEN J Parenter Enteral Nutr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="261" param="le journal" valeur="Jt Comm J Qual Improv">Jt Comm J Qual Improv</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="151" param="le journal" valeur="Jt Comm J Qual Patient Saf">Jt Comm J Qual Patient Saf</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="277" param="le journal" valeur="Klin Wochenschr">Klin Wochenschr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1541" param="le journal" valeur="La revue canadienne de la maladie d'Alzheimer">La revue canadienne de la maladie d'Alzheimer</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1544" param="le journal" valeur="Lat Am J Pharm">Lat Am J Pharm</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="191" param="le journal" valeur="Manag Care">Manag Care</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="206" param="le journal" valeur="Manag Care Interface">Manag Care Interface</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="724" param="le journal" valeur="Mayo
+Clin Proc Innov Qual Outcomes">Mayo
+Clin Proc Innov Qual Outcomes</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1599" param="le journal" valeur="Med Arch">Med Arch</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="305" param="le journal" valeur="Med Care">Med Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="474" param="le journal" valeur="Med Care Res Rev">Med Care Res Rev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="406" param="le journal" valeur="Med Clin (Barc)">Med Clin (Barc)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="258" param="le journal" valeur="Med J Aust">Med J Aust</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="557" param="le journal" valeur="Med Mal Infect">Med Mal Infect</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="77" param="le journal" valeur="Med Princ Pract">Med Princ Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="956" param="le journal" valeur="Med Trop">Med Trop</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="846" param="le journal" valeur="Médecine et armées">Médecine et armées</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="753" param="le journal" valeur="Medicina (Kaunas)">Medicina (Kaunas)</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="590" param="le journal" valeur="Medicine (Baltimore)">Medicine (Baltimore)</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="726" param="le journal" valeur="Ment Health Clin">Ment Health Clin</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="89" param="le journal" valeur="Ment Health Fam Med">Ment Health Fam Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="288" param="le journal" valeur="Methods Inf Med">Methods Inf Med</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="297" param="le journal" valeur="Mil Med">Mil Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="610" param="le journal" valeur="Minerva
+Pediatr">Minerva
+Pediatr</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="219" param="le journal" valeur="N Engl J Med">N Engl J Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="200" param="le journal" valeur="N Z Dent J">N Z Dent J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="112" param="le journal" valeur="N Z Med J">N Z Med J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="321" param="le journal" valeur="Neonatal Netw">Neonatal Netw</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="713" param="le journal" valeur="Nephrol
+Ther">Nephrol
+Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="113" param="le journal" valeur="Nephrol Dial Transplant">Nephrol Dial Transplant</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="716" param="le journal" valeur="Neurohospitalist">Neurohospitalist</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="501" param="le journal" valeur="Neurol Int">Neurol Int</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="495" param="le journal" valeur="Neurol Sci">Neurol Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="235" param="le journal" valeur="Neurol Ther">Neurol Ther</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="619" param="le journal" valeur="Neurosurgery">Neurosurgery</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="270" param="le journal" valeur="Nicotine Tob Res">Nicotine Tob Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="554" param="le journal" valeur="Nord J Psychiatry">Nord J Psychiatry</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="492" param="le journal" valeur="NPJ Prim Care Respir Med">NPJ Prim Care Respir Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="396" param="le journal" valeur="Nucl Med Commun">Nucl Med Commun</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="135" param="le journal" valeur="Nutr Clin Pract">Nutr Clin Pract</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="128" param="le journal" valeur="Nutrition">Nutrition</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="479" param="le journal" valeur="Obes Rev">Obes Rev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="769" param="le journal" valeur="Obes Surg">Obes Surg</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="403" param="le journal" valeur="Onkologie">Onkologie</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="756" param="le journal" valeur="Open Access Maced J Med Sci">Open Access Maced J Med Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="212" param="le journal" valeur="Open Med">Open Med</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="179" param="le journal" valeur="Osteoporos Int">Osteoporos Int</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1621" param="le journal" valeur="Ottawa (ON): Canadian Agency for Drugs and Technologies in Healt">Ottawa (ON): Canadian Agency for Drugs and Technologies in Healt</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="618" param="le journal" valeur="P R Health Sci J">P R Health Sci J</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="45" param="le journal" valeur="P T">P T</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="368" param="le journal" valeur="Paediatr Nurs">Paediatr Nurs</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="167" param="le journal" valeur="Pain Med">Pain Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="639" param="le journal" valeur="Pak J Pharm Sci">Pak J Pharm Sci</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="265" param="le journal" valeur="Palliat Med">Palliat Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="509" param="le journal" valeur="Patient">Patient</a></span><br>
+														<span style="font-size:1.0356589147287em"><a style="color:#2c8fb9" class="listeRef" ipfilter="28" param="le journal" valeur="Patient Educ Couns">Patient Educ Couns</a></span><br>
+														<span style="font-size:1.0027131782946em"><a style="color:#2a8cb6" class="listeRef" ipfilter="87" param="le journal" valeur="Patient Prefer Adherence">Patient Prefer Adherence</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="548" param="le journal" valeur="Pediatr Crit Care Med">Pediatr Crit Care Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="721" param="le journal" valeur="Pediatr Dermatol">Pediatr Dermatol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="168" param="le journal" valeur="Pediatr Emerg Care">Pediatr Emerg Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="567" param="le journal" valeur="Pediatr Nephrol">Pediatr Nephrol</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="92" param="le journal" valeur="Pediatr Pulmonol">Pediatr Pulmonol</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="106" param="le journal" valeur="Pediatrics">Pediatrics</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="395" param="le journal" valeur="PeerJ">PeerJ</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="746" param="le journal" valeur="Per Med">Per Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="126" param="le journal" valeur="Perm J">Perm J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="223" param="le journal" valeur="Perspect Clin Res">Perspect Clin Res</a></span><br>
+														<span style="font-size:1.2531007751938em"><a style="color:#39a1cd" class="listeRef" ipfilter="808" param="le journal" valeur="Pharm Hosp">Pharm Hosp</a></span><br>
+														<span style="font-size:1.0158914728682em"><a style="color:#2a8db7" class="listeRef" ipfilter="1548" param="le journal" valeur="Pharm Hosp Clin">Pharm Hosp Clin</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1590" param="le journal" valeur="Pharm J">Pharm J</a></span><br>
+														<span style="font-size:1.0751937984496em"><a style="color:#2e92bd" class="listeRef" ipfilter="485" param="le journal" valeur="Pharm Pract (Granada)">Pharm Pract (Granada)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="287" param="le journal" valeur="Pharm Pract Manag Q">Pharm Pract Manag Q</a></span><br>
+														<span style="font-size:1.2860465116279em"><a style="color:#3ba4d0" class="listeRef" ipfilter="24" param="le journal" valeur="Pharm World Sci">Pharm World Sci</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1594" param="le journal" valeur="Pharmaceutical Journal">Pharmaceutical Journal</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="779" param="le journal" valeur="Pharmacoecon Open">Pharmacoecon Open</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="79" param="le journal" valeur="Pharmacoeconomics">Pharmacoeconomics</a></span><br>
+														<span style="font-size:1.0027131782946em"><a style="color:#2a8cb6" class="listeRef" ipfilter="70" param="le journal" valeur="Pharmacoepidemiol Drug Saf">Pharmacoepidemiol Drug Saf</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="147" param="le journal" valeur="Pharmacogenomics">Pharmacogenomics</a></span><br>
+														<span style="font-size:1.5100775193798em"><a style="color:#48b6e4" class="listeRef" ipfilter="5" param="le journal" valeur="Pharmacotherapy">Pharmacotherapy</a></span><br>
+														<span style="font-size:1.0290697674419em"><a style="color:#2b8eb9" class="listeRef" ipfilter="921" param="le journal" valeur="Pharmactuel">Pharmactuel</a></span><br>
+														<span style="font-size:1.0290697674419em"><a style="color:#2b8eb9" class="listeRef" ipfilter="701" param="le journal" valeur="Pharmacy (Basel)">Pharmacy (Basel)</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="131" param="le journal" valeur="Pharmacy Practice (Internet)">Pharmacy Practice (Internet)</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="514" param="le journal" valeur="Pharmazie">Pharmazie</a></span><br>
+														<span style="font-size:1.0883720930233em"><a style="color:#2f93be" class="listeRef" ipfilter="343" param="le journal" valeur="PLoS One">PLoS One</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="755" param="le journal" valeur="PM R">PM R</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="199" param="le journal" valeur="Popul Health Manag">Popul Health Manag</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="750" param="le journal" valeur="Postgrad Med">Postgrad Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="742" param="le journal" valeur="Prehosp Disaster Med">Prehosp Disaster Med</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="273" param="le journal" valeur="Presse Med">Presse Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="523" param="le journal" valeur="Prev Chronic Dis">Prev Chronic Dis</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="775" param="le journal" valeur="Prev Med">Prev Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="490" param="le journal" valeur="Prim Care Companion CNS Disord">Prim Care Companion CNS Disord</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="65" param="le journal" valeur="Prim Care Diabetes">Prim Care Diabetes</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="572" param="le journal" valeur="Prim Health Care Res Dev">Prim Health Care Res Dev</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="781" param="le journal" valeur="Prof Case Manag">Prof Case Manag</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="248" param="le journal" valeur="Prog Transplant">Prog Transplant</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="673" param="le journal" valeur="Psychiatr Danub">Psychiatr Danub</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="74" param="le journal" valeur="Psychiatr Serv">Psychiatr Serv</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="182" param="le journal" valeur="Psychooncology">Psychooncology</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="690" param="le journal" valeur="Psychopharmacol Bull">Psychopharmacol Bull</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="365" param="le journal" valeur="Public Health">Public Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="326" param="le journal" valeur="Public Health Rep">Public Health Rep</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="542" param="le journal" valeur="Qual Prim Care">Qual Prim Care</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="116" param="le journal" valeur="Qual Saf Health Care">Qual Saf Health Care</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="609" param="le journal" valeur="Ren Fail">Ren Fail</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="413" param="le journal" valeur="Reprod Toxicol">Reprod Toxicol</a></span><br>
+														<span style="font-size:1.3255813953488em"><a style="color:#3da7d4" class="listeRef" ipfilter="47" param="le journal" valeur="Res Social Adm Pharm">Res Social Adm Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="72" param="le journal" valeur="Respir Care">Respir Care</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="98" param="le journal" valeur="Respir Med">Respir Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="476" param="le journal" valeur="Respir Res">Respir Res</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="80" param="le journal" valeur="Rev Calid Asist">Rev Calid Asist</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="597" param="le journal" valeur="Rev Med Interne">Rev Med Interne</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="349" param="le journal" valeur="Rev Med Suisse">Rev Med Suisse</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="71" param="le journal" valeur="Rev Saude Publica">Rev Saude Publica</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="42" param="le journal" valeur="S D J Med">S D J Med</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="612" param="le journal" valeur="SAGE Open Med">SAGE Open Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="563" param="le journal" valeur="Sante Publique">Sante Publique</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="711" param="le journal" valeur="Saudi Dent J">Saudi Dent J</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="344" param="le journal" valeur="Saudi Med J">Saudi Med J</a></span><br>
+														<span style="font-size:0.99612403100775em"><a style="color:#298bb6" class="listeRef" ipfilter="511" param="le journal" valeur="Saudi Pharm J">Saudi Pharm J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="513" param="le journal" valeur="Scand J Infect Dis">Scand J Infect Dis</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="306" param="le journal" valeur="Schizophr Bull">Schizophr Bull</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="717" param="le journal" valeur="Schizophr Res Treatment">Schizophr Res Treatment</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="1602" param="le journal" valeur="Sci Rep">Sci Rep</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="568" param="le journal" valeur="Seizure">Seizure</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="599" param="le journal" valeur="Semin Arthritis Rheum">Semin Arthritis Rheum</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="119" param="le journal" valeur="Semin Dial">Semin Dial</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="320" param="le journal" valeur="Semin Nucl Med">Semin Nucl Med</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="512" param="le journal" valeur="Sex Health">Sex Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="727" param="le journal" valeur="Sex Reprod Healthc">Sex Reprod Healthc</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="334" param="le journal" valeur="Sex Transm Dis">Sex Transm Dis</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="319" param="le journal" valeur="Singapore Med J">Singapore Med J</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="482" param="le journal" valeur="Skin Res Technol">Skin Res Technol</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="161" param="le journal" valeur="Soz Praventivmed">Soz Praventivmed</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="104" param="le journal" valeur="Spine (Phila Pa 1976)">Spine (Phila Pa 1976)</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="481" param="le journal" valeur="Springerplus">Springerplus</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="1606" param="le journal" valeur="Sr Care Pharm">Sr Care Pharm</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="735" param="le journal" valeur="Sultan Qaboos Univ Med J">Sultan Qaboos Univ Med J</a></span><br>
+														<span style="font-size:0.97635658914729em"><a style="color:#288ab4" class="listeRef" ipfilter="166" param="le journal" valeur="Support Care Cancer">Support Care Cancer</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="593" param="le journal" valeur="Swiss Med Wkly">Swiss Med Wkly</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="388" param="le journal" valeur="Teach Learn  Med">Teach Learn  Med</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="409" param="le journal" valeur="Telemed J E Health">Telemed J E Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="159" param="le journal" valeur="The Open Drug Safety Journal">The Open Drug Safety Journal</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="23" param="le journal" valeur="The optimal use of medications in acutely ill older patients">The optimal use of medications in acutely ill older patients</a></span><br>
+														<span style="font-size:0.98294573643411em"><a style="color:#288ab4" class="listeRef" ipfilter="231" param="le journal" valeur="Ther Clin Risk Manag">Ther Clin Risk Manag</a></span><br>
+														<span style="font-size:0.96976744186047em"><a style="color:#2889b3" class="listeRef" ipfilter="187" param="le journal" valeur="Ther Drug Monit">Ther Drug Monit</a></span><br>
+														<span style="font-size:1.0290697674419em"><a style="color:#2b8eb9" class="listeRef" ipfilter="157" param="le journal" valeur="Therapie">Therapie</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="33" param="le journal" valeur="Thorax">Thorax</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="541" param="le journal" valeur="Thromb Res">Thromb Res</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="256" param="le journal" valeur="Tob Control">Tob Control</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="341" param="le journal" valeur="Top HIV Med">Top HIV Med</a></span><br>
+														<span style="font-size:1.0158914728682em"><a style="color:#2a8db7" class="listeRef" ipfilter="133" param="le journal" valeur="Top Hosp Pharm Manage">Top Hosp Pharm Manage</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="740" param="le journal" valeur="Transpl Infect Dis">Transpl Infect Dis</a></span><br>
+														<span style="font-size:0.96317829457364em"><a style="color:#2789b3" class="listeRef" ipfilter="96" param="le journal" valeur="Transplant Proc">Transplant Proc</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="595" param="le journal" valeur="Transplantation">Transplantation</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="211" param="le journal" valeur="Trials">Trials</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="152" param="le journal" valeur="Vaccine">Vaccine</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="596" param="le journal" valeur="Value 
+Health">Value 
+Health</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="712" param="le journal" valeur="Vasc Med">Vasc Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="207" param="le journal" valeur="West Indian Med J">West Indian Med J</a></span><br>
+														<span style="font-size:0.95658914728682em"><a style="color:#2788b2" class="listeRef" ipfilter="566" param="le journal" valeur="West J Emerg Med">West J Emerg Med</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="543" param="le journal" valeur="WMJ">WMJ</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="706" param="le journal" valeur="World J Gastroenterol">World J Gastroenterol</a></span><br>
+														<span style="font-size:0.98953488372093em"><a style="color:#298bb5" class="listeRef" ipfilter="82" param="le journal" valeur="Yakugaku Zasshi">Yakugaku Zasshi</a></span><br>
+														<span style="font-size:0.95em"><a style="color:#2788b2" class="listeRef" ipfilter="262" param="le journal" valeur="Z Evid Fortbild Qual Gesundhwes">Z Evid Fortbild Qual Gesundhwes</a></span><br>
+							
+				</div>
+				<br>
+			</section>       
+		</div>
+	</div>
