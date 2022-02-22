@@ -19,8 +19,8 @@ DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
 PREDICTION_SHEET_NAME = 'machine_learning_predictions' # NAME OF PREDICTIONS SHEET IN SPREADSHEET
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2022/01/16' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2022/01/22' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2022/02/13' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2022/02/19' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 TAGS_TO_USE = {'design':{'column':'design_pred', 'version':1}, 'field':{'column':'field_ground_truth', 'version':'0.1'}, 'setting':{'column':'setting_ground_truth','version':'0.1'}} # Dict with model strings as keys, values are dicts with column to use in dataframe as the first key and value and model version as second key and value
@@ -414,12 +414,12 @@ if __name__ == '__main__':
         tag_columns_to_use.append(t_dict['column'])
         predictions = make_predictions(tokenizer, FILEPATH, model_string, model_version, included_df, predictions)
     prediction_df = convert_prediction_dict_to_df(predictions)
-    update_prediction_google_sheet(predictions_sheet, prediction_df)
     prediction_tags_eng, prediction_tags_fr, prediction_tags_all = make_prediction_tags(prediction_df, tag_columns_to_use, TRANSLATION_DICT)
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
     ds = rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all)
     ds = verify_and_filter_dataset(ds)
+    update_prediction_google_sheet(predictions_sheet, prediction_df)
     publications_posts(ds, post_url, header)
     french_update_post(MONTH_NAMES_FR, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
     english_update_post(MONTH_NAMES_ENG, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
