@@ -19,8 +19,8 @@ DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
 PREDICTION_SHEET_NAME = 'machine_learning_predictions' # NAME OF PREDICTIONS SHEET IN SPREADSHEET
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2022/02/13' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2022/02/19' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2021/11/28' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2021/12/04' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 TAGS_TO_USE = {'design':{'column':'design_pred', 'version':1}, 'field':{'column':'field_ground_truth', 'version':'0.1'}, 'setting':{'column':'setting_ground_truth','version':'0.1'}} # Dict with model strings as keys, values are dicts with column to use in dataframe as the first key and value and model version as second key and value
@@ -269,7 +269,7 @@ def publications_posts(ds, post_url, header):
 
 def french_update_post(month_names, start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header):
     categories_update = ['Mise à jour des données']
-    update_post_template = '<!-- wp:paragraph --><p>Cette mise à jour couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été retournées par la recherche. {} publications ont été retenues pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues dans cette mise à jour:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Depuis novembre 2021, {} publications ont été retournées par la recherche dont {} ont été retenues, pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs pour toutes les publications évaluées est de {:.3f}.</p><!-- /wp:paragraph -->'
+    update_post_template = '<!-- wp:paragraph --><p>Cette mise à jour couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été retournées par la recherche. {} publications ont été retenues pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues dans cette mise à jour:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Depuis novembre 2021, {} publications ont été évaluées dont {} ont été retenues, pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs pour toutes les publications évaluées est de {:.3f}.</p><!-- /wp:paragraph -->'
 
     update_post_content = update_post_template.format(
         start_date, 
@@ -294,7 +294,7 @@ def french_update_post(month_names, start_date, end_date, selected_extraction_df
 
 def english_update_post(month_names, start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header):
     categories_update = ['Data update']
-    update_post_template = '<!-- wp:paragraph --><p>This update covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were returned by the search strategy. {} publications were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were included in this update:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Since November 2021, {} publications were returned by the search strategy. Among these, {} were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa for all evaluated publications is {:.3f}.</p><!-- /wp:paragraph -->'
+    update_post_template = '<!-- wp:paragraph --><p>This update covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were evaluated. {} publications were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were included in this update:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Since November 2021, {} publications were returned by the search strategy. Among these, {} were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa for all evaluated publications is {:.3f}.</p><!-- /wp:paragraph -->'
 
     update_post_content = update_post_template.format(
         start_date, 
