@@ -19,7 +19,7 @@ The amount of scientific literature describing the impact of pharmacists on heal
 
 These files are examples (containing no actual credentials) of how to create json files containing the authentication credentials for each API acessed by our scripts.
 
-### Files contained in the data/raw directory
+### Files contained in the data/first_gen directory
 
 These files are the raw HTML scraped from the first generation Impact Pharmacie website and are used by the `create_impact_dataset.ipynb` notebook to generate the machine learning dataset.
 
