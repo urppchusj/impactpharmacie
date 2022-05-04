@@ -1,6 +1,7 @@
 import gspread
 import json
 import math
+import os
 import pandas as pd
 import requests
 import time
@@ -22,6 +23,20 @@ ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that wil
 
 # FUNCTIONS
 
+def get_google_sheet(google_spreadsheet_id):
+    credentials_filepath = FILEPATH + '/credentials/credentials.json'
+    authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
+    gc = gspread.oauth(
+        credentials_filename = credentials_filepath,
+        authorized_user_filename = authorized_user_filepath
+    )
+    try:
+        sht = gc.open_by_key(google_spreadsheet_id)
+    except:
+        if os.path.exists(authorized_user_filepath):
+            os.remove(authorized_user_filepath)
+        sht = gc.open_by_key(google_spreadsheet_id)
+    return sht
 
 def get_n_results(pubmed_credentials, search_query, start_date, end_date):
     params = {'db':'pubmed', 'term':search_query, 'datetype':'edat', 'mindate':start_date, 'maxdate':end_date, 'tool':pubmed_credentials['pubmed_tool_name'], 'email':pubmed_credentials['pubmed_tool_email']}
@@ -31,9 +46,7 @@ def get_n_results(pubmed_credentials, search_query, start_date, end_date):
     print('Results for current extraction: {}'.format(n_results))
     return(n_results)
 
-def get_previous_pmids(spreadsheet_id, log_sheet_name):
-    sht = gc.open_by_key(spreadsheet_id)
-
+def get_previous_pmids(sht, log_sheet_name):
     extraction_log_sheet = sht.worksheet(log_sheet_name)
     extraction_log_df = pd.DataFrame(extraction_log_sheet.get_all_records())
     extraction_log_df['pmids'] = extraction_log_df['pmids'].map(lambda x:x.split(', '))
@@ -176,8 +189,7 @@ def convert_data_dict_to_df(ds):
     rows_to_append = df.reset_index().rename({'index':'PMID'},axis='columns').values.tolist()
     return rows_to_append
 
-def update_google_sheet(id, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids):
-    sht = gc.open_by_key(id)
+def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids):
     worksheet = sht.worksheet(data_sheet_name)
     worksheet.append_rows(rows_to_append)
     worksheet2 = sht.worksheet(log_sheet_name)
@@ -187,28 +199,24 @@ def update_google_sheet(id, data_sheet_name, log_sheet_name, rows_to_append, sta
 
 if __name__ == '__main__':
 
-    gc = gspread.oauth(
-        credentials_filename = FILEPATH + '/credentials/credentials.json',
-        authorized_user_filename = FILEPATH + '/credentials/authorized_user.json'
-    )
-
     with open(FILEPATH + '/credentials/spreadsheet_ids.json', mode='r') as file:
         spreadsheet_ids = json.load(file)
-
-    with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
-        pubmed_credentials = json.load(file)
 
     if GOOGLE_SPREADSHEET_ID == 'REAL':
         google_spreadsheet_id = spreadsheet_ids['real_google_spreadsheet_id']
     else:
         google_spreadsheet_id = spreadsheet_ids['test_google_spreadsheet_id']
     
+    with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
+        pubmed_credentials = json.load(file)
+
+    google_sheet = get_google_sheet(google_spreadsheet_id)
     n_results = get_n_results(pubmed_credentials, SEARCH_QUERY, START_DATE, END_DATE)
-    previous_pmids = get_previous_pmids(google_spreadsheet_id, LOG_SHEET_NAME)
+    previous_pmids = get_previous_pmids(google_sheet, LOG_SHEET_NAME)
     pmids = build_pmid_list(n_results, previous_pmids, pubmed_credentials, SEARCH_QUERY, ORIGINAL_START_DATE, START_DATE, END_DATE)
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
     filtered_ds = build_text_and_filter_dataset(ds, ABSTRACT_SECTIONS_TO_EXCLUDE)
     rows_to_append = convert_data_dict_to_df(filtered_ds)
-    update_google_sheet(google_spreadsheet_id, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids)
+    update_google_sheet(google_sheet, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids)
     print('DONE !')

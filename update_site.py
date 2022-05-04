@@ -1,6 +1,7 @@
 import gspread
 import json
 import pandas as pd
+import os
 import pickle
 import requests
 import time
@@ -32,6 +33,24 @@ MONTH_NAMES_ENG = ['January', 'February', 'March', 'April', 'May', 'June', 'July
 MONTH_NAMES_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 
 # FUNCTIONS
+
+def get_google_sheets(google_spreadsheet_id):
+    credentials_filepath = FILEPATH + '/credentials/credentials.json'
+    authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
+    gc = gspread.oauth(
+        credentials_filename = credentials_filepath,
+        authorized_user_filename = authorized_user_filepath
+    )
+    try:
+        sht = gc.open_by_key(google_spreadsheet_id)
+    except:
+        if os.path.exists(authorized_user_filepath):
+            os.remove(authorized_user_filepath)
+        sht = gc.open_by_key(google_spreadsheet_id)
+    extraction_log_sheet = sht.worksheet(LOG_SHEET_NAME)
+    ratings_sheet = sht.worksheet(DATA_SHEET_NAME)
+    predictions_sheet = sht.worksheet(PREDICTION_SHEET_NAME)
+    return extraction_log_sheet, ratings_sheet, predictions_sheet
 
 def verify_and_validate_data(extraction_log_sheet, ratings_sheet, start_date, end_date):
 
@@ -376,34 +395,26 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
 
 if __name__ == '__main__':
 
-    gc = gspread.oauth(
-        credentials_filename = FILEPATH + '/credentials/credentials.json',
-        authorized_user_filename = FILEPATH + '/credentials/authorized_user.json'
-    )
-
     with open(FILEPATH + '/credentials/spreadsheet_ids.json', mode='r') as file:
         spreadsheet_ids = json.load(file)
-
-    with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
-        pubmed_credentials = json.load(file)
 
     if GOOGLE_SPREADSHEET_ID == 'REAL':
         google_spreadsheet_id = spreadsheet_ids['real_google_spreadsheet_id']
     else:
         google_spreadsheet_id = spreadsheet_ids['test_google_spreadsheet_id']
 
-    sht = gc.open_by_key(google_spreadsheet_id)
-    extraction_log_sheet = sht.worksheet(LOG_SHEET_NAME)
-    ratings_sheet = sht.worksheet(DATA_SHEET_NAME)
-    predictions_sheet = sht.worksheet(PREDICTION_SHEET_NAME)
+    extraction_log_sheet, ratings_sheet, predictions_sheet = get_google_sheets(google_spreadsheet_id)
 
+    with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
+        pubmed_credentials = json.load(file)
+    
     with open(FILEPATH + '/credentials/wordpress_credentials.json', mode='r') as file:
         wordpress_token = json.loads((file.read()))
 
     site = 'impactpharmacie.net'
     post_url = 'https://public-api.wordpress.com/rest/v1.1/sites/{}/posts/new'.format(site)    
     header = {
-    'Authorization': 'Bearer {}'.format(wordpress_token['access_token'])}
+        'Authorization': 'Bearer {}'.format(wordpress_token['access_token'])}
 
     extraction_log_df, selected_extraction_df, ratings_df, included_df, current_extraction_df, pmids = verify_and_validate_data(extraction_log_sheet, ratings_sheet, START_DATE, END_DATE)
     tokenizer = prepare_tokenizer()
