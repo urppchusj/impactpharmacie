@@ -19,6 +19,9 @@ GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
 PREDICTION_SHEET_NAME = 'machine_learning_predictions' # NAME OF PREDICTIONS SHEET IN SPREADSHEET
+LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
+LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
+LOCAL_PREDICTIONS_RELPATH = '/data/second_gen/predictions.csv'
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
 START_DATE = '2022/04/24' # FORMAT 'YYYY/MM/DD'
 END_DATE = '2022/04/30' # FORMAT 'YYYY/MM/DD'
@@ -34,7 +37,7 @@ MONTH_NAMES_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juille
 
 # FUNCTIONS
 
-def get_google_sheets(google_spreadsheet_id):
+def get_google_sheets(google_spreadsheet_id, data_sheet_name, prediction_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
     gc = gspread.oauth(
@@ -47,18 +50,18 @@ def get_google_sheets(google_spreadsheet_id):
         if os.path.exists(authorized_user_filepath):
             os.remove(authorized_user_filepath)
         sht = gc.open_by_key(google_spreadsheet_id)
-    extraction_log_sheet = sht.worksheet(LOG_SHEET_NAME)
-    ratings_sheet = sht.worksheet(DATA_SHEET_NAME)
-    predictions_sheet = sht.worksheet(PREDICTION_SHEET_NAME)
-    return extraction_log_sheet, ratings_sheet, predictions_sheet
+    ratings_sheet = sht.worksheet(data_sheet_name)
+    predictions_sheet = sht.worksheet(prediction_sheet_name)
+    return ratings_sheet, predictions_sheet
 
-def verify_and_validate_data(extraction_log_sheet, ratings_sheet, start_date, end_date):
+def verify_and_validate_data(local_log_relpath, local_data_relpath, ratings_sheet, start_date, end_date):
 
-    extraction_log_df = pd.DataFrame(extraction_log_sheet.get_all_records())
+    extraction_log_df = pd.read_csv(FILEPATH + local_log_relpath, index_col=0).fillna('')
     extraction_log_df['pmids'] = extraction_log_df['pmids'].map(lambda x:x.split(', '))
 
-    ratings_df = pd.DataFrame(ratings_sheet.get_all_records())
-    ratings_df = ratings_df[1:]
+    old_ratings_df = pd.read_csv(FILEPATH + local_data_relpath, index_col=0, dtype=str).fillna('')
+    new_ratings_df = pd.DataFrame(ratings_sheet.get_all_records())
+    ratings_df = pd.concat([old_ratings_df, new_ratings_df[1:]], ignore_index=True)[1:]
     ratings_df['rating_final'] = ratings_df.apply(lambda x: x['rating_consensus'] if x['rating_consensus'] != '' else x['rating1'] if x['rating1'] == x['rating2'] else 'error', axis=1)
     ratings_df['design_final'] = ratings_df['design_ground_truth']
     ratings_df['field_final'] = ratings_df.apply(lambda x: x['field_ground_truth_consensus'] if x['field_ground_truth_consensus'] != '' else x['field_ground_truth_1'] if x['field_ground_truth_1'] == x['field_ground_truth_2'] else 'error', axis=1)
@@ -144,9 +147,21 @@ def convert_prediction_dict_to_df(prediction_dict):
     pred_df = pd.DataFrame.from_dict(prediction_dict, orient='index')
     return (pred_df)
 
+def update_prediction_local_data(local_predictions_relpath, pred_df):
+    pred_df = pred_df.reset_index().rename({'index':'PMID'},axis=1)
+    old_pred_df = pd.read_csv(FILEPATH + local_predictions_relpath, index_col=0).fillna('')
+    updated_pred_df = pd.concat([old_pred_df, pred_df[1:]], ignore_index=True)
+    updated_pred_df.to_csv(FILEPATH + local_predictions_relpath)
+
 def update_prediction_google_sheet(prediction_sheet, pred_df):
     rows_to_append = pred_df.reset_index().rename({'index':'PMID'},axis='columns').values.tolist()
     prediction_sheet.append_rows(rows_to_append)
+
+def update_ratings_local_data(local_data_relpath, ratings_sheet):
+    old_ratings_df = pd.read_csv(FILEPATH + local_data_relpath, index_col=0, dtype=str).fillna('')
+    new_ratings_df = pd.DataFrame(ratings_sheet.get_all_records())
+    ratings_df = pd.concat([old_ratings_df, new_ratings_df[1:]], ignore_index=True)
+    ratings_df.to_csv(FILEPATH + local_data_relpath)
 
 def make_prediction_tags(pred_df, tag_columns_to_use, translation_dict):
     predictions_tags_keys = pred_df.index.values
@@ -403,7 +418,7 @@ if __name__ == '__main__':
     else:
         google_spreadsheet_id = spreadsheet_ids['test_google_spreadsheet_id']
 
-    extraction_log_sheet, ratings_sheet, predictions_sheet = get_google_sheets(google_spreadsheet_id)
+    ratings_sheet, predictions_sheet = get_google_sheets(google_spreadsheet_id, DATA_SHEET_NAME, PREDICTION_SHEET_NAME)
 
     with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
         pubmed_credentials = json.load(file)
@@ -416,7 +431,7 @@ if __name__ == '__main__':
     header = {
         'Authorization': 'Bearer {}'.format(wordpress_token['access_token'])}
 
-    extraction_log_df, selected_extraction_df, ratings_df, included_df, current_extraction_df, pmids = verify_and_validate_data(extraction_log_sheet, ratings_sheet, START_DATE, END_DATE)
+    extraction_log_df, selected_extraction_df, ratings_df, included_df, current_extraction_df, pmids = verify_and_validate_data(LOCAL_LOG_RELPATH, LOCAL_DATA_RELPATH, ratings_sheet, START_DATE, END_DATE)
     tokenizer = prepare_tokenizer()
     predictions = prepare_predictions_dict(included_df)
     tag_columns_to_use = []
@@ -430,7 +445,9 @@ if __name__ == '__main__':
     verify_pubmed_retrieval(ds)
     ds = rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all)
     ds = verify_and_filter_dataset(ds)
+    update_prediction_local_data(LOCAL_PREDICTIONS_RELPATH, prediction_df)
     update_prediction_google_sheet(predictions_sheet, prediction_df)
+    update_ratings_local_data(LOCAL_DATA_RELPATH, ratings_sheet)
     publications_posts(ds, post_url, header)
     french_update_post(MONTH_NAMES_FR, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
     english_update_post(MONTH_NAMES_ENG, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
