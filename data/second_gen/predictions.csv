@@ -1,0 +1,140 @@
+,PMID,design_pred,design_model_version,design_ground_truth,field_pred,field_model_version,field_ground_truth,setting_pred,setting_model_version,setting_ground_truth
+0,,choices = 'Study' or 'Systematic review or meta-analysis',,,"choices = 'Anticoagulation', 'Cardiology', 'Critical care', 'Emergency medicine', 'Geriatric', 'Infectious diseases', 'Oncology', 'Palliative care', 'Maternal / pediatric / neonatal', 'Psychiatric', 'Solid organ transplantation', 'Other'",,,"choices = 'Ambulatory', 'Community', 'Inpatient', 'Nursing home', 'Other'",,
+1,34752518,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+2,34752524,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+3,34752543,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+4,34752562,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+5,34752582,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+6,34752615,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+7,34754004,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Community,0.1,Community
+8,34759821,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Critical care,Inpatient,0.1,Inpatient
+9,34764034,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+10,34775527,Study,1,Study,Anticoagulation,0.1,Other,Community,0.1,Community
+11,34796093,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Other
+12,34798826,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+13,34798895,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+14,34807914,Study,1,Study,Other,0.1,Oncology,Inpatient,0.1,Other
+15,34817667,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+16,34822165,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Other,Inpatient,0.1,Inpatient
+17,34823191,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+18,34827227,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+19,34828622,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Community
+20,34838475,Study,1,Study,Other,0.1,"Cardiology, Psychiatric",Community,0.1,Community
+21,34840503,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+22,34846197,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+23,34847951,Study,1,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
+24,34848159,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+25,34848531,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+26,34861224,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Geriatric,Inpatient,0.1,Other
+27,34863634,Study,1,Study,Other,0.1,Maternal / pediatric / neonatal,Ambulatory,0.1,Ambulatory
+28,34872859,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+29,34896014,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+30,34901761,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+31,34912403,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+32,34913143,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,"Community, Ambulatory"
+33,34913184,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+34,34930487,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+35,34930790,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+36,34930793,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+37,34933984,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+38,34938396,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,"Ambulatory, Community"
+39,34941623,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+40,34941634,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+41,34943721,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+42,34953510,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+43,34956405,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+44,34959611,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+45,34962844,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Ambulatory"
+46,34967386,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+47,34975006,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+48,34977994,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+49,34980596,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+50,35010791,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+51,35016210,Study,1,Study,Other,0.1,Other,Community,0.1,Ambulatory
+52,35020077,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+53,35024035,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+54,35027281,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+55,35037789,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Inpatient
+56,35038341,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+57,35039180,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+58,35042765,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+59,35046815,Study,1,Study,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+60,35049214,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+61,35056322,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+62,35065264,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+63,35073999,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+64,35076810,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+65,35081939,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+66,35082011,Study,1,Study,Cardiology,0.1,"Cardiology, Geriatric",Ambulatory,0.1,Nursing home
+67,35082012,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
+68,35084448,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+69,35091845,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+70,35092599,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+71,35112381,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+72,35120864,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+73,35121041,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+74,35131378,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+75,35139838,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+76,35141725,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+77,35145044,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+78,35150183,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+79,35151583,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+80,35151871,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
+81,35160018,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+82,35160166,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Other
+83,35174525,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
+84,35180569,Study,1,Study,Other,0.1,Psychiatric,Inpatient,0.1,Ambulatory
+85,35184003,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+86,35190512,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+87,35197153,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
+88,35202083,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+89,35222018,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+90,35235950,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+91,35236407,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+92,35241170,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+93,35241436,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+94,35253776,Study,1,Study,Other,0.1,Geriatric,Community,0.1,Community
+95,35264048,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+96,35270472,Study,1,Study,Cardiology,0.1,"Cardiology, Geriatric",Ambulatory,0.1,Ambulatory
+97,35285970,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+98,35295325,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+99,35296307,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+100,35300357,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+101,35307311,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,"Oncology, Palliative care",Inpatient,0.1,Other
+102,35326844,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+103,35328842,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,"Community, Ambulatory"
+104,35332557,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+105,35333208,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+106,35337757,Systematic review or meta-analysis,1,Systematic review of meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+107,35349045,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+108,35349576,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+109,35358319,Study,1,Study,Cardiology,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+110,35361619,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+111,35365405,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
+112,35370698,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+113,35382725,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+114,35382881,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+115,35382984,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+116,35387676,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+117,35389359,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+118,35390112,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+119,35392695,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+120,35393248,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+121,35396281,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Other",Inpatient,0.1,Inpatient
+122,35397527,Study,1,Study,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
+123,35409914,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+124,35416984,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
+125,35420749,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+126,35421057,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+127,35434000,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+128,35442799,Study,1,Study,Palliative care,0.1,Palliative care,Inpatient,0.1,Inpatient
+129,35449351,Study,1,Study,Geriatric,0.1,Other,Inpatient,0.1,Inpatient
+130,35460410,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+131,35465767,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+132,35472247,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+133,35475978,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+134,35479847,Study,1,Study,Other,0.1,Other,Community,0.1,Other
+135,35480075,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
+136,35480597,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,"Ambulatory, Community"
+137,35484711,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+138,35484871,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Other

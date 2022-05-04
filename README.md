@@ -6,11 +6,12 @@ We identify high-quality publications demonstrating the impact of pharmacists on
 
 ## Context
 
-The amount of scientific literature describing the impact of pharmacists on health outcomes is increasing. Pharmacists have limited time to keep up with current evidence. We offer a curation service for these publications by identifying high-quality publications through [a rigorous, transparent and reproducible methodology](https://impactpharmacie.net/methodology/). We broadcast these publications weekly in [our mailing list](https://impactpharmacy.net). Through this methodology, we are building a dataset of publications related to pharmacy practice. The features of this dataset are the title and abstracts of all publications retrieved by our search strategy. The labels indicate whether or not this publication met our inclusion criteria (as determined indepentently by two reviewers and through consensus when there is disagreement), the study design, the pharmacy practice field for which this publication is applicable as well as the practice setting (see details in methodology). This dataset grows every week and can be found [here](https://docs.google.com/spreadsheets/d/1Zm_Wx19BhAf-d3MM18hbxyc8us_Irrsloy_YP_5g-Ao/edit?usp=sharing). We trained three machine learning models to help determine the design, field and setting labels for included publications, based on the data included in [our first generation platform](http://impactpharmacie.org). We plan to improve upon these models as our new dataset grows. This repository includes 
+The amount of scientific literature describing the impact of pharmacists on health outcomes is increasing. Pharmacists have limited time to keep up with current evidence. We offer a curation service for these publications by identifying high-quality publications through [a rigorous, transparent and reproducible methodology](https://impactpharmacie.net/methodology/). We broadcast these publications weekly in [our mailing list](https://impactpharmacy.net). Through this methodology, we are building a dataset of publications related to pharmacy practice. The features of this dataset are the title and abstracts of all publications retrieved by our search strategy. The labels indicate whether or not this publication met our inclusion criteria (as determined indepentently by two reviewers and through consensus when there is disagreement), the study design, the pharmacy practice field for which this publication is applicable as well as the practice setting (see details in methodology). This dataset grows every week. The complete dataset is available as csv files updated weekly within the present repository under the `data/second_gen` directory. Alternatively, the complete extraction logs and machine learning predictions and ground truths, as well as ratings for the current week, can be found in a Google Spreadsheet [here](https://docs.google.com/spreadsheets/d/1Zm_Wx19BhAf-d3MM18hbxyc8us_Irrsloy_YP_5g-Ao/edit?usp=sharing). We trained three machine learning models to help determine the design, field and setting labels for included publications, based on the data included in [our first generation platform](http://impactpharmacie.org). We plan to improve upon these models as our new dataset grows. This repository includes 
 
 - The raw data extracted from the first generation platform
+- The new dataset from our current generation platform
 - The code used to transform the original data into a machine learning compatible dataset
-- The code to train and evaluate machine learning models
+- The code to train and evaluate our machine learning models
 - The code to build our current dataset as well as to update our website and to generate our mailing list.
 
 ## Files
@@ -22,6 +23,10 @@ These files are examples (containing no actual credentials) of how to create jso
 ### Files contained in the data/first_gen directory
 
 These files are the raw HTML scraped from the first generation Impact Pharmacie website and are used by the `create_impact_dataset.ipynb` notebook to generate the machine learning dataset.
+
+### Files contained in the data/second_gen directory
+
+These CSV files contain a log of the data extractions made from PubMed (`extraction_log.csv`), the titles, abstract texts and ratings of all papers evaluated with our methodology (`ratings.csv`) and the machine learning label predictions and ground truths for papers which met our inclusion criteria (`predictions.csv`).
 
 ### create_impact_dataset.ipynb
 
