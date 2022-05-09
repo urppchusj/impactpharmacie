@@ -15,7 +15,7 @@ FILEPATH = '.'
 GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
-LOCAL_LOG_RELPATH = 'data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOCAL EXTRACTION LOG
+LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOCAL EXTRACTION LOG
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
 START_DATE = '2022/04/24' # FORMAT 'YYYY/MM/DD'
 END_DATE = '2022/04/30' # FORMAT 'YYYY/MM/DD'
@@ -197,7 +197,7 @@ def update_local_data(pmids, start_date, end_date, local_log_relpath):
 
 def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids):
     data_sheet = sht.worksheet(data_sheet_name)
-    data_sheet.batch_clear('data_contents')
+    data_sheet.batch_clear(['data_contents'])
     data_sheet.append_rows(rows_to_append)
     log_sheet = sht.worksheet(log_sheet_name)
     log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids)])
