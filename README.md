@@ -69,7 +69,8 @@ Requires:
 
 # Contributors
 
-Maxime Thibault.
+Maxime Thibault
+Cynthia Tanguay
 
 # References
 
@@ -80,7 +81,7 @@ Maxime Thibault.
 
 GNU GPL v3
 
-Copyright (C) 2022 Maxime Thibault
+Copyright (C) 2022 Maxime Thibault, Cynthia Tanguay.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
