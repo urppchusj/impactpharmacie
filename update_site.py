@@ -231,7 +231,11 @@ def rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags
                 texts = [e.get_text() for e in element_pmdata.find('Abstract').find_all('AbstractText')]
             authors = [' '.join([f.get_text(), l.get_text()]) for f, l in zip(element_pmdata.find_all('ForeName'), element_pmdata.find_all('LastName'))]
             journal = element_pmdata.find('MedlineTA').get_text()
-            doi = [e.get_text() for e in element_pmdata.find_all('ArticleId') if 'doi' in e.attrs.values()][0]
+            doi_list = [e.get_text() for e in element_pmdata.find_all('ArticleId') if 'doi' in e.attrs.values()]
+            if len(doi_list) > 0:
+                doi = doi_list[0]
+            else:
+                doi = ''
             pubdate = ' '.join([e.get_text() for e in element_pmdata.find('PubDate').children if e.name in ['Year', 'Month', 'Day']])
             ds[pmid]['title'] = title
             ds[pmid]['labels'] = labels
@@ -318,8 +322,8 @@ def french_update_post(month_names, start_date, end_date, selected_extraction_df
             ' - '.join([tag for tag in data['machine_learning_tags_fr']]))
             for pmid, data in ds.items()]),
         len(ratings_df),
-        ratings_df['rating_final'].sum(), 
-        (ratings_df['rating_final'].sum() / len(ratings_df)) *100, 
+        ratings_df['rating_final'].astype(int).sum(), 
+        (ratings_df['rating_final'].astype(int).sum() / len(ratings_df)) *100, 
         cohen_kappa_score(ratings_df['rating1'].astype(int), ratings_df['rating2'].astype(int))
         )
     update_post_title='Mise à jour du {} {} {}'.format(time.localtime()[2], month_names[time.localtime()[1]-1], time.localtime()[0])
@@ -343,8 +347,8 @@ def english_update_post(month_names, start_date, end_date, selected_extraction_d
             ' - '.join([tag for tag in data['machine_learning_tags_eng']]) 
             ) for pmid, data in ds.items()]),
         len(ratings_df),
-        ratings_df['rating_final'].sum(), 
-        (ratings_df['rating_final'].sum() / len(ratings_df)) *100, 
+        ratings_df['rating_final'].astype(int).sum(), 
+        (ratings_df['rating_final'].astype(int).sum() / len(ratings_df)) *100, 
         cohen_kappa_score(ratings_df['rating1'].astype(int), ratings_df['rating2'].astype(int))
         )
     update_post_title='Data update for {} {}, {}'.format(month_names[time.localtime()[1]-1], time.localtime()[2], time.localtime()[0])
