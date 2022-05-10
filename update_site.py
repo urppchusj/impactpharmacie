@@ -150,7 +150,7 @@ def convert_prediction_dict_to_df(prediction_dict):
 def update_prediction_local_data(local_predictions_relpath, pred_df):
     pred_df = pred_df.reset_index().rename({'index':'PMID'},axis=1)
     old_pred_df = pd.read_csv(FILEPATH + local_predictions_relpath, index_col=0).fillna('')
-    updated_pred_df = pd.concat([old_pred_df, pred_df[1:]], ignore_index=True)
+    updated_pred_df = pd.concat([old_pred_df, pred_df], ignore_index=True)
     updated_pred_df.to_csv(FILEPATH + local_predictions_relpath)
 
 def update_prediction_google_sheet(prediction_sheet, pred_df):
