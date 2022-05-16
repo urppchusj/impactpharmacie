@@ -46,11 +46,12 @@ def get_google_sheets(google_spreadsheet_id, data_sheet_name, prediction_sheet_n
     )
     try:
         sht = gc.open_by_key(google_spreadsheet_id)
+        ratings_sheet = sht.worksheet(data_sheet_name)
     except:
         if os.path.exists(authorized_user_filepath):
             os.remove(authorized_user_filepath)
         sht = gc.open_by_key(google_spreadsheet_id)
-    ratings_sheet = sht.worksheet(data_sheet_name)
+        ratings_sheet = sht.worksheet(data_sheet_name)
     predictions_sheet = sht.worksheet(prediction_sheet_name)
     return ratings_sheet, predictions_sheet
 
