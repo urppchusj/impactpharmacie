@@ -24,7 +24,7 @@ ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that wil
 
 # FUNCTIONS
 
-def get_google_sheet(google_spreadsheet_id):
+def get_google_sheet(google_spreadsheet_id, data_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
     gc = gspread.oauth(
@@ -33,10 +33,12 @@ def get_google_sheet(google_spreadsheet_id):
     )
     try:
         sht = gc.open_by_key(google_spreadsheet_id)
+        data_sheet = sht.worksheet(data_sheet_name)
     except:
         if os.path.exists(authorized_user_filepath):
             os.remove(authorized_user_filepath)
         sht = gc.open_by_key(google_spreadsheet_id)
+        data_sheet = sht.worksheet(data_sheet_name)
     return sht
 
 def get_n_results(pubmed_credentials, search_query, start_date, end_date):
@@ -217,7 +219,7 @@ if __name__ == '__main__':
     with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
         pubmed_credentials = json.load(file)
 
-    google_sheet = get_google_sheet(google_spreadsheet_id)
+    google_sheet = get_google_sheet(google_spreadsheet_id, DATA_SHEET_NAME)
     n_results = get_n_results(pubmed_credentials, SEARCH_QUERY, START_DATE, END_DATE)
     previous_pmids = get_previous_pmids(LOCAL_LOG_RELPATH)
     pmids = build_pmid_list(n_results, previous_pmids, pubmed_credentials, SEARCH_QUERY, ORIGINAL_START_DATE, START_DATE, END_DATE)
