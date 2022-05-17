@@ -139,11 +139,21 @@
 137,35484711.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 138,35484871.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Other
 139,35501544.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-140,35503938,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
-141,35506711,Study,1,Study,Geriatric,0.1,Other,Inpatient,0.1,Nursing home
-142,35521002,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
-143,35521003,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
-144,35521013,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-145,35521019,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-146,35521024,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-147,35522029,Study,1,Study,Cardiology,0.1,"Other, Cardiology",Community,0.1,Ambulatory
+140,35503938.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
+141,35506711.0,Study,1.0,Study,Geriatric,0.1,Other,Inpatient,0.1,Nursing home
+142,35521002.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
+143,35521003.0,Study,1.0,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+144,35521013.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+145,35521019.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+146,35521024.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+147,35522029.0,Study,1.0,Study,Cardiology,0.1,"Other, Cardiology",Community,0.1,Ambulatory
+148,35532336,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,"Inpatient, Ambulatory"
+149,35532337,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Community
+150,35532708,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+151,35536577,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+152,35538500,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+153,35546411,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
+154,35548351,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+155,35550730,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+156,35558342,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+157,35558350,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Inpatient,0.1,Inpatient
