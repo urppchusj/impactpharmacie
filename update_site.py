@@ -26,6 +26,7 @@ ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
 START_DATE = '2022/05/08' # FORMAT 'YYYY/MM/DD'
 END_DATE = '2022/05/14' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
+MAX_PUBMED_TRIES = 10 # NUMBER OF MAXIMUM PUBMED QUERY TRIES BEFORE GIVING UP
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 TAGS_TO_USE = {'design':{'column':'design_pred', 'version':1}, 'field':{'column':'field_ground_truth', 'version':'0.1'}, 'setting':{'column':'setting_ground_truth','version':'0.1'}} # Dict with model strings as keys, values are dicts with column to use in dataframe as the first key and value and model version as second key and value
 DESIGN_LABEL_TRANSLATIONS = {'Study':'Étude', 'Systematic review or meta-analysis':'Revue systématique ou méta-analyse'}
@@ -183,16 +184,27 @@ def retrieve_pubmed_data(pmids, pubmed_credentials):
     dataset = defaultdict()
     for pmid in tqdm(pmids):
         dataset[pmid] = defaultdict()
-        params = {'db':'pubmed', 'id':pmid, 'retmode':'xml', 'tool':pubmed_credentials['pubmed_tool_name'], 'email':pubmed_credentials['pubmed_tool_email']}
-        r = requests.get(url='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi', params=params)
-        try:
-            dataset[pmid]['pmdata'] = str(BeautifulSoup(r.content, 'xml'))
-        except:
-            dataset[pmid]['pmdata'] = None
-            print('ERROR on call for pmid {}'.format(pmid))
+        pmdata = get_pubmed_single_pmid(pmid, pubmed_credentials)
+        dataset[pmid]['pmdata'] = pmdata
     time.sleep(0.35)
     return(dataset)
 
+def get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=0):
+    params = {'db':'pubmed', 'id':pmid, 'retmode':'xml', 'tool':pubmed_credentials['pubmed_tool_name'], 'email':pubmed_credentials['pubmed_tool_email']}
+    r = requests.get(url='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi', params=params)
+    ntries += 1
+    try:
+        pmdata = str(BeautifulSoup(r.content, 'xml'))
+    except:
+        print('ERROR on call for pmid {}, tried {} times, will retry for max {} times'.format(pmid, ntries, MAX_PUBMED_TRIES))
+        if ntries <= MAX_PUBMED_TRIES:
+            time.sleep(0.35)
+            pmdata = get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=ntries)
+        else:
+            print('ERROR, PubMed query error after {} tries, verify settings'.format(MAX_PUBMED_TRIES))
+            quit()
+    return pmdata
+    
 def verify_pubmed_retrieval(ds):
     print('Length of dataset: {}'.format(len(ds)))
     n_pubmed = 0
@@ -209,14 +221,30 @@ def verify_pubmed_retrieval(ds):
         print('ERROR in PubMed retrieval for following PMIDs, verify data: {}'.format(error_pmids))
         quit()
 
-def rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all):
+def rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all, pubmed_credentials):
     for pmid, data in ds.items():
-        title = ''
-        labels = []
-        texts = []
-        if data['pmdata'] == None:
-            ds[pmid]['texts'] = []
-        else:
+        title, labels, texts, authors, journal, doi, pubdate = process_single_pmid_data(pmid, data, pubmed_credentials)
+        ds[pmid]['title'] = title
+        ds[pmid]['labels'] = labels
+        ds[pmid]['texts'] = texts
+        ds[pmid]['authors'] = authors
+        ds[pmid]['journal'] = journal
+        ds[pmid]['doi'] = doi
+        ds[pmid]['pubdate'] = pubdate
+        ds[pmid]['machine_learning_tags_fr'] = prediction_tags_fr[pmid]
+        ds[pmid]['machine_learning_tags_eng'] = prediction_tags_eng[pmid]
+        ds[pmid]['machine_learning_tags_all'] = prediction_tags_all[pmid]
+    return(ds)
+
+def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
+    title = ''
+    labels = []
+    texts = []
+    if data['pmdata'] == None:
+        ds[pmid]['texts'] = []
+    else:
+        ntries += 1
+        try:
             element_pmdata = BeautifulSoup(data['pmdata'], 'xml')
             try:
                 t = element_pmdata.find_all('ArticleTitle')
@@ -238,17 +266,16 @@ def rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags
             else:
                 doi = ''
             pubdate = ' '.join([e.get_text() for e in element_pmdata.find('PubDate').children if e.name in ['Year', 'Month', 'Day']])
-            ds[pmid]['title'] = title
-            ds[pmid]['labels'] = labels
-            ds[pmid]['texts'] = texts
-            ds[pmid]['authors'] = authors
-            ds[pmid]['journal'] = journal
-            ds[pmid]['doi'] = doi
-            ds[pmid]['pubdate'] = pubdate
-            ds[pmid]['machine_learning_tags_fr'] = prediction_tags_fr[pmid]
-            ds[pmid]['machine_learning_tags_eng'] = prediction_tags_eng[pmid]
-            ds[pmid]['machine_learning_tags_all'] = prediction_tags_all[pmid]
-    return(ds)
+        except Exception as e:
+            print('ERROR processing data for pmid {}, error: {} . Tried {} times, will retry for max {} times'.format(pmid, e.message, ntries, MAX_PUBMED_TRIES))
+            if ntries <= MAX_PUBMED_TRIES:
+                time.sleep(0.35)
+                data['pmdata'] = get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=ntries)
+                title, labels, texts, authors, journal, doi, pubdate = process_single_pmid_data(pmid, data, pubmed_credentials)
+            else:
+                print('ERROR, PubMed query error after {} tries, verify settings'.format(MAX_PUBMED_TRIES))
+                quit()
+    return title, labels, texts, authors, journal, doi, pubdate
 
 def verify_and_filter_dataset(ds):
     print('Number of elements in dataset: {}'.format(len(ds)))
@@ -448,7 +475,7 @@ if __name__ == '__main__':
     prediction_tags_eng, prediction_tags_fr, prediction_tags_all = make_prediction_tags(prediction_df, tag_columns_to_use, TRANSLATION_DICT)
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
-    ds = rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all)
+    ds = rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all, pubmed_credentials)
     ds = verify_and_filter_dataset(ds)
     update_prediction_local_data(LOCAL_PREDICTIONS_RELPATH, prediction_df)
     update_prediction_google_sheet(predictions_sheet, prediction_df)
