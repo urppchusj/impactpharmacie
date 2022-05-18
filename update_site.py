@@ -63,10 +63,10 @@ def verify_and_validate_data(local_log_relpath, local_data_relpath, ratings_shee
     old_ratings_df = pd.read_csv(FILEPATH + local_data_relpath, index_col=0, dtype=str).fillna('')
     new_ratings_df = pd.DataFrame(ratings_sheet.get_all_records())
     ratings_df = pd.concat([old_ratings_df, new_ratings_df[1:]], ignore_index=True)[1:]
-    ratings_df['rating_final'] = ratings_df.apply(lambda x: x['rating_consensus'] if x['rating_consensus'] != '' else x['rating1'] if x['rating1'] == x['rating2'] else 'error', axis=1)
+    ratings_df['rating_final'] = ratings_df.apply(lambda x: x['rating_consensus'] if x['rating_consensus'] != '' else x['rating1'] if ((x['rating1'] == x['rating2']) and (x['consensus_reason'] == '') and (x['rating1'] != '')) else 'error', axis=1)
     ratings_df['design_final'] = ratings_df['design_ground_truth']
-    ratings_df['field_final'] = ratings_df.apply(lambda x: x['field_ground_truth_consensus'] if x['field_ground_truth_consensus'] != '' else x['field_ground_truth_1'] if x['field_ground_truth_1'] == x['field_ground_truth_2'] else 'error', axis=1)
-    ratings_df['setting_final'] = ratings_df.apply(lambda x: x['setting_ground_truth_consensus'] if x['setting_ground_truth_consensus'] != '' else x['setting_ground_truth_1'] if x['setting_ground_truth_1'] == x['setting_ground_truth_2'] else 'error', axis=1)
+    ratings_df['field_final'] = ratings_df.apply(lambda x: x['field_ground_truth_consensus'] if x['field_ground_truth_consensus'] != '' else x['field_ground_truth_1'] if ((x['field_ground_truth_1'] == x['field_ground_truth_2']) and (x['field_ground_truth_consensus_reason'] == '') and (x['field_ground_truth_1'] != '')) else 'error', axis=1)
+    ratings_df['setting_final'] = ratings_df.apply(lambda x: x['setting_ground_truth_consensus'] if x['setting_ground_truth_consensus'] != '' else x['setting_ground_truth_1'] if ((x['setting_ground_truth_1'] == x['setting_ground_truth_2']) and (x['setting_ground_truth_consensus_reason'] == '') and (x['setting_ground_truth_1'] != '')) else 'error', axis=1)
 
     if 'error' in ratings_df['rating_final'].unique().tolist():
         print('ERROR in ratings, please verify data')
