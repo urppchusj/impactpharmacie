@@ -15,15 +15,16 @@ FILEPATH = '.'
 GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
+LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOCAL EXTRACTION LOG
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2022/04/24' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2022/04/30' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2022/05/08' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2022/05/14' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 
 # FUNCTIONS
 
-def get_google_sheet(google_spreadsheet_id):
+def get_google_sheet(google_spreadsheet_id, data_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
     gc = gspread.oauth(
@@ -32,10 +33,12 @@ def get_google_sheet(google_spreadsheet_id):
     )
     try:
         sht = gc.open_by_key(google_spreadsheet_id)
+        data_sheet = sht.worksheet(data_sheet_name)
     except:
         if os.path.exists(authorized_user_filepath):
             os.remove(authorized_user_filepath)
         sht = gc.open_by_key(google_spreadsheet_id)
+        data_sheet = sht.worksheet(data_sheet_name)
     return sht
 
 def get_n_results(pubmed_credentials, search_query, start_date, end_date):
@@ -46,9 +49,8 @@ def get_n_results(pubmed_credentials, search_query, start_date, end_date):
     print('Results for current extraction: {}'.format(n_results))
     return(n_results)
 
-def get_previous_pmids(sht, log_sheet_name):
-    extraction_log_sheet = sht.worksheet(log_sheet_name)
-    extraction_log_df = pd.DataFrame(extraction_log_sheet.get_all_records())
+def get_previous_pmids(local_log_relpath):
+    extraction_log_df = pd.read_csv(FILEPATH + local_log_relpath, index_col=0).fillna('')
     extraction_log_df['pmids'] = extraction_log_df['pmids'].map(lambda x:x.split(', '))
     previous_pmids = []
     for l in extraction_log_df['pmids']:
@@ -189,11 +191,18 @@ def convert_data_dict_to_df(ds):
     rows_to_append = df.reset_index().rename({'index':'PMID'},axis='columns').values.tolist()
     return rows_to_append
 
+def update_local_data(pmids, start_date, end_date, local_log_relpath):
+    df_to_append = pd.DataFrame.from_dict([{'date_begin':start_date,'date_end':end_date,'n_results':len(pmids),'pmids':', '.join(pmids)}])
+    extraction_log_df = pd.read_csv(FILEPATH + local_log_relpath, index_col=0).fillna('')
+    updated_extraction_log = pd.concat([extraction_log_df, df_to_append], ignore_index=True)
+    updated_extraction_log.to_csv(FILEPATH + local_log_relpath)
+
 def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids):
-    worksheet = sht.worksheet(data_sheet_name)
-    worksheet.append_rows(rows_to_append)
-    worksheet2 = sht.worksheet(log_sheet_name)
-    worksheet2.append_row([start_date, end_date, len(pmids), ', '.join(pmids)])
+    data_sheet = sht.worksheet(data_sheet_name)
+    data_sheet.batch_clear(['data_contents'])
+    data_sheet.append_rows(rows_to_append)
+    log_sheet = sht.worksheet(log_sheet_name)
+    log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids)])
 
 # MAIN
 
@@ -210,13 +219,14 @@ if __name__ == '__main__':
     with open(FILEPATH + '/credentials/pubmed_credentials.json', mode='r') as file:
         pubmed_credentials = json.load(file)
 
-    google_sheet = get_google_sheet(google_spreadsheet_id)
+    google_sheet = get_google_sheet(google_spreadsheet_id, DATA_SHEET_NAME)
     n_results = get_n_results(pubmed_credentials, SEARCH_QUERY, START_DATE, END_DATE)
-    previous_pmids = get_previous_pmids(google_sheet, LOG_SHEET_NAME)
+    previous_pmids = get_previous_pmids(LOCAL_LOG_RELPATH)
     pmids = build_pmid_list(n_results, previous_pmids, pubmed_credentials, SEARCH_QUERY, ORIGINAL_START_DATE, START_DATE, END_DATE)
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
     filtered_ds = build_text_and_filter_dataset(ds, ABSTRACT_SECTIONS_TO_EXCLUDE)
     rows_to_append = convert_data_dict_to_df(filtered_ds)
+    update_local_data(pmids, START_DATE, END_DATE, LOCAL_LOG_RELPATH)
     update_google_sheet(google_sheet, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids)
     print('DONE !')
