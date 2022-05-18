@@ -201,7 +201,7 @@ def get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=0):
             time.sleep(0.35)
             pmdata = get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=ntries)
         else:
-            print('ERROR, PubMed query error after {} tries, verify settings'.format(ntries))
+            print('ERROR, PubMed query error for pmid {} after {} tries, verify settings'.format(pmid, ntries))
             quit()
     return pmdata
     
@@ -273,7 +273,7 @@ def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
                 data['pmdata'] = get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=ntries)
                 title, labels, texts, authors, journal, doi, pubdate = process_single_pmid_data(pmid, data, pubmed_credentials)
             else:
-                print('ERROR processing data for pmid {} after {} tries, verify settings'.format(ntries))
+                print('ERROR processing data for pmid {} after {} tries, verify settings'.format(pmid, ntries))
                 quit()
     return title, labels, texts, authors, journal, doi, pubdate
 
