@@ -27,14 +27,18 @@ ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that wil
 def get_google_sheet(google_spreadsheet_id, data_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
-    gc = gspread.oauth(
-        credentials_filename = credentials_filepath,
-        authorized_user_filename = authorized_user_filepath
-    )
     try:
+        gc = gspread.oauth(
+            credentials_filename = credentials_filepath,
+            authorized_user_filename = authorized_user_filepath
+        )
         sht = gc.open_by_key(google_spreadsheet_id)
         data_sheet = sht.worksheet(data_sheet_name)
     except:
+        gc = gspread.oauth(
+            credentials_filename = credentials_filepath,
+            authorized_user_filename = authorized_user_filepath
+        )
         if os.path.exists(authorized_user_filepath):
             os.remove(authorized_user_filepath)
         sht = gc.open_by_key(google_spreadsheet_id)
