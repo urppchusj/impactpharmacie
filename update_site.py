@@ -66,8 +66,8 @@ def verify_and_validate_data(local_log_relpath, local_data_relpath, ratings_shee
     ratings_df = pd.concat([old_ratings_df, new_ratings_df[1:]], ignore_index=True)[1:]
     ratings_df['rating_final'] = ratings_df.apply(lambda x: x['rating_consensus'] if x['rating_consensus'] != '' else x['rating1'] if ((x['rating1'] == x['rating2']) and (x['consensus_reason'] == '') and (x['rating1'] != '')) else 'error', axis=1)
     ratings_df['design_final'] = ratings_df['design_ground_truth']
-    ratings_df['field_final'] = ratings_df.apply(lambda x: x['field_ground_truth_consensus'] if x['field_ground_truth_consensus'] != '' else x['field_ground_truth_1'] if ((x['field_ground_truth_1'] == x['field_ground_truth_2']) and (x['field_ground_truth_consensus_reason'] == '') and (x['field_ground_truth_1'] != '')) else '' if x['rating_final'] == 0 else 'error', axis=1)
-    ratings_df['setting_final'] = ratings_df.apply(lambda x: x['setting_ground_truth_consensus'] if x['setting_ground_truth_consensus'] != '' else x['setting_ground_truth_1'] if ((x['setting_ground_truth_1'] == x['setting_ground_truth_2']) and (x['setting_ground_truth_consensus_reason'] == '') and (x['setting_ground_truth_1'] != '')) else '' if x['rating_final'] == 0 else 'error', axis=1)
+    ratings_df['field_final'] = ratings_df.apply(lambda x: x['field_ground_truth_consensus'] if x['field_ground_truth_consensus'] != '' else x['field_ground_truth_1'] if ((x['field_ground_truth_1'] == x['field_ground_truth_2']) and (x['field_ground_truth_consensus_reason'] == '') and (x['field_ground_truth_1'] != '')) else '' if (x['rating_final'] == 0 or x['rating_final'] == '0') else 'error', axis=1)
+    ratings_df['setting_final'] = ratings_df.apply(lambda x: x['setting_ground_truth_consensus'] if x['setting_ground_truth_consensus'] != '' else x['setting_ground_truth_1'] if ((x['setting_ground_truth_1'] == x['setting_ground_truth_2']) and (x['setting_ground_truth_consensus_reason'] == '') and (x['setting_ground_truth_1'] != '')) else '' if (x['rating_final'] == 0 or x['rating_final'] == '0') else 'error', axis=1)
 
     if 'error' in ratings_df['rating_final'].unique().tolist():
         print('ERROR in ratings, please verify data')
@@ -267,7 +267,7 @@ def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
                 doi = ''
             pubdate = ' '.join([e.get_text() for e in element_pmdata.find('PubDate').children if e.name in ['Year', 'Month', 'Day']])
         except Exception as e:
-            print('ERROR processing data for pmid {}, error: {} . Tried {} times, will retry for max {} times'.format(pmid, e.message, ntries, MAX_PUBMED_TRIES))
+            print('ERROR processing data for pmid {}, error: {} . Tried {} times, will retry for max {} times'.format(pmid, e, ntries, MAX_PUBMED_TRIES))
             if ntries <= MAX_PUBMED_TRIES:
                 time.sleep(0.35)
                 data['pmdata'] = get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=ntries)
