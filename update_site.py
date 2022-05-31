@@ -41,16 +41,20 @@ MONTH_NAMES_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juille
 def get_google_sheets(google_spreadsheet_id, data_sheet_name, prediction_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
-    gc = gspread.oauth(
-        credentials_filename = credentials_filepath,
-        authorized_user_filename = authorized_user_filepath
-    )
     try:
+        gc = gspread.oauth(
+            credentials_filename = credentials_filepath,
+            authorized_user_filename = authorized_user_filepath
+        )
         sht = gc.open_by_key(google_spreadsheet_id)
         ratings_sheet = sht.worksheet(data_sheet_name)
     except:
         if os.path.exists(authorized_user_filepath):
             os.remove(authorized_user_filepath)
+        gc = gspread.oauth(
+            credentials_filename = credentials_filepath,
+            authorized_user_filename = authorized_user_filepath
+        )
         sht = gc.open_by_key(google_spreadsheet_id)
         ratings_sheet = sht.worksheet(data_sheet_name)
     predictions_sheet = sht.worksheet(prediction_sheet_name)
