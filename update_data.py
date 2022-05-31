@@ -17,8 +17,8 @@ DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOCAL EXTRACTION LOG
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2022/05/15' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2022/05/21' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2022/05/22' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2022/05/28' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 
@@ -35,12 +35,12 @@ def get_google_sheet(google_spreadsheet_id, data_sheet_name):
         sht = gc.open_by_key(google_spreadsheet_id)
         data_sheet = sht.worksheet(data_sheet_name)
     except:
+        if os.path.exists(authorized_user_filepath):
+            os.remove(authorized_user_filepath)
         gc = gspread.oauth(
             credentials_filename = credentials_filepath,
             authorized_user_filename = authorized_user_filepath
         )
-        if os.path.exists(authorized_user_filepath):
-            os.remove(authorized_user_filepath)
         sht = gc.open_by_key(google_spreadsheet_id)
         data_sheet = sht.worksheet(data_sheet_name)
     return sht
