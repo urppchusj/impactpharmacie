@@ -162,11 +162,15 @@
 160,35581126.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
 161,35592795.0,Study,1.0,Study,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
 162,35595639.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-163,35596269,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-164,35601578,Study,1,Study,Other,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
-165,35601726,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
-166,35603759,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-167,35615482,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-168,35615485,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-169,35615487,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-170,35623753,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+163,35596269.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+164,35601578.0,Study,1.0,Study,Other,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
+165,35601726.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+166,35603759.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+167,35615482.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+168,35615485.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+169,35615487.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+170,35623753.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+171,35624509,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+172,35626136,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+173,35627724,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+174,35637720,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Ambulatory
