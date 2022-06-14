@@ -170,7 +170,15 @@
 168,35615485.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 169,35615487.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 170,35623753.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-171,35624509,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-172,35626136,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
-173,35627724,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
-174,35637720,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Ambulatory
+171,35624509.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+172,35626136.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+173,35627724.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+174,35637720.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Ambulatory
+175,35655244,Study,1,Study,Other,0.1,Geriatric,Community,0.1,Community
+176,35655381,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Nursing home
+177,35656287,Study,1,Study,Cardiology,0.1,"Cardiology, Other",Community,0.1,Community
+178,35662711,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+179,35675066,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+180,35675120,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+181,35685555,Study,1,Study,Cardiology,0.1,Other,Ambulatory,0.1,Ambulatory
+182,35685594,Study,1,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Inpatient,0.1,Inpatient
