@@ -184,10 +184,14 @@
 182,35685594.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Inpatient,0.1,Inpatient
 183,35701314.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
 184,35705337.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-185,35715742,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-186,35718715,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
-187,35719834,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-188,35725537,Study,1,Study,Geriatric,0.1,Other,Inpatient,0.1,Inpatient
-189,35725728,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
-190,35736778,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-191,35740166,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+185,35715742.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+186,35718715.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+187,35719834.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+188,35725537.0,Study,1.0,Study,Geriatric,0.1,Other,Inpatient,0.1,Inpatient
+189,35725728.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+190,35736778.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+191,35740166.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+192,35752920,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+193,35773118,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+194,35773167,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+195,35773225,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
