@@ -195,7 +195,10 @@
 193,35773118.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 194,35773167.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 195,35773225.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-196,35791477,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
-197,35801158,Study,1,Study,Psychiatric,0.1,"Psychiatric, Emergency medicine",Inpatient,0.1,Inpatient
-198,35801163,Study,1,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
-199,35802809,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+196,35791477.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
+197,35801158.0,Study,1.0,Study,Psychiatric,0.1,"Psychiatric, Emergency medicine",Inpatient,0.1,Inpatient
+198,35801163.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
+199,35802809.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+200,35813573,Study,1,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+201,35821552,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+202,35835724,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
