@@ -199,6 +199,11 @@
 197,35801158.0,Study,1.0,Study,Psychiatric,0.1,"Psychiatric, Emergency medicine",Inpatient,0.1,Inpatient
 198,35801163.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
 199,35802809.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-200,35813573,Study,1,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
-201,35821552,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-202,35835724,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+200,35813573.0,Study,1.0,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+201,35821552.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+202,35835724.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+203,35841846,Study,1,Study,Other,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+204,35843802,Study,1,Study,Other,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
+205,35850551,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+206,35858479,Study,1,Study,Anticoagulation,0.1,Other,Inpatient,0.1,Inpatient
+207,35868151,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
