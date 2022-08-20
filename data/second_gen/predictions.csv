@@ -212,7 +212,13 @@
 210,35883189.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 211,35885734.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,"Cardiology, Other",Ambulatory,0.1,"Ambulatory, Community"
 212,35898254.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-213,35908897,Study,1,Study,Other,0.1,Geriatric,Inpatient,0.1,Inpatient
-214,35911528,Study,1,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
-215,35914923,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-216,35927161,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+213,35908897.0,Study,1.0,Study,Other,0.1,Geriatric,Inpatient,0.1,Inpatient
+214,35911528.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
+215,35914923.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+216,35927161.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+217,35933598,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+218,35938485,Study,1,Study,Other,0.1,"Other, Cardiology",Ambulatory,0.1,Ambulatory
+219,35942810,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+220,35943099,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+221,35958890,Study,1,Study,Other,0.1,"Other, Cardiology",Ambulatory,0.1,Ambulatory
+222,35961937,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
