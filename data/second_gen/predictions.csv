@@ -231,9 +231,12 @@
 229,35995695.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
 230,35996393.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 231,36011692.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Ambulatory
-232,35132556,Study,1,Study,Other,0.1,Other,Community,0.1,Community
-233,36031952,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
-234,36033111,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
-235,36039495,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
-236,36046350,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-237,36052841,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+232,35132556.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
+233,36031952.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+234,36033111.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+235,36039495.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+236,36046350.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+237,36052841.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+238,36071740,Study,1,Study,Psychiatric,0.1,Other,Inpatient,0.1,Inpatient
+239,36072918,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Other
+240,36083990,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
