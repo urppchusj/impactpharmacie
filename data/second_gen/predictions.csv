@@ -237,6 +237,10 @@
 235,36039495.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
 236,36046350.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
 237,36052841.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-238,36071740,Study,1,Study,Psychiatric,0.1,Other,Inpatient,0.1,Inpatient
-239,36072918,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Other
-240,36083990,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+238,36071740.0,Study,1.0,Study,Psychiatric,0.1,Other,Inpatient,0.1,Inpatient
+239,36072918.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Other
+240,36083990.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+241,36089458,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+242,36096865,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+243,36102210,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+244,36110542,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
