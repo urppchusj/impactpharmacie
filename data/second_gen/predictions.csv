@@ -240,7 +240,14 @@
 238,36071740.0,Study,1.0,Study,Psychiatric,0.1,Other,Inpatient,0.1,Inpatient
 239,36072918.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Other
 240,36083990.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-241,36089458,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-242,36096865,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
-243,36102210,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-244,36110542,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+241,36089458.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+242,36096865.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+243,36102210.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+244,36110542.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+245,36115757,Study,1,Study,Other,0.1,"Infectious diseases, Other",Community,0.1,Community
+246,36115759,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+247,36121830,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+248,36136835,Study,1,Study,Cardiology,0.1,Other,Ambulatory,0.1,Other
+249,36139925,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+250,36141242,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+251,36141441,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
