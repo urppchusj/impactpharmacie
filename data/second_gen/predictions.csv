@@ -244,10 +244,15 @@
 242,36096865.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
 243,36102210.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
 244,36110542.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-245,36115757,Study,1,Study,Other,0.1,"Infectious diseases, Other",Community,0.1,Community
-246,36115759,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
-247,36121830,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-248,36136835,Study,1,Study,Cardiology,0.1,Other,Ambulatory,0.1,Other
-249,36139925,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-250,36141242,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
-251,36141441,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+245,36115757.0,Study,1.0,Study,Other,0.1,"Infectious diseases, Other",Community,0.1,Community
+246,36115759.0,Study,1.0,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+247,36121830.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+248,36136835.0,Study,1.0,Study,Cardiology,0.1,Other,Ambulatory,0.1,Other
+249,36139925.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+250,36141242.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+251,36141441.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+252,36156267,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+253,36163125,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+254,36167762,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Other
+255,36170895,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+256,36176570,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
