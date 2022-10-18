@@ -256,8 +256,12 @@
 254,36167762.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Other
 255,36170895.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
 256,36176570.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-257,36184385,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-258,36193689,Study,1,Study,Maternal / pediatric / neonatal,0.1,Other,Inpatient,0.1,Inpatient
-259,36194370,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
-260,36197787,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-261,36200484,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+257,36184385.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+258,36193689.0,Study,1.0,Study,Maternal / pediatric / neonatal,0.1,Other,Inpatient,0.1,Inpatient
+259,36194370.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+260,36197787.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+261,36200484.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+262,36231307,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+263,36239755,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+264,36240214,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+265,36240532,Study,1,Study,Anticoagulation,0.1,Critical care,Inpatient,0.1,Inpatient
