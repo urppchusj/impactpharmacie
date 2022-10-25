@@ -261,7 +261,17 @@
 259,36194370.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
 260,36197787.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 261,36200484.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-262,36231307,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-263,36239755,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-264,36240214,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-265,36240532,Study,1,Study,Anticoagulation,0.1,Critical care,Inpatient,0.1,Inpatient
+262,36231307.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+263,36239755.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+264,36240214.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+265,36240532.0,Study,1.0,Study,Anticoagulation,0.1,Critical care,Inpatient,0.1,Inpatient
+266,36244853,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
+267,36253283,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+268,36253284,Study,1,Study,Other,0.1,"Other, Geriatric",Ambulatory,0.1,Ambulatory
+269,36254046,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Other
+270,36254058,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+271,36262221,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+272,36262226,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+273,36263511,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+274,36266174,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+275,36267757,Study,1,Study,Oncology,0.1,Other,Ambulatory,0.1,Ambulatory
