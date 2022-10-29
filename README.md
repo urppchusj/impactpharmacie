@@ -28,13 +28,13 @@ These files are the raw HTML scraped from the first generation Impact Pharmacie 
 
 These CSV files contain a log of the data extractions made from PubMed (`extraction_log.csv`), the titles, abstract texts and ratings of all papers evaluated with our methodology (`ratings.csv`) and the machine learning label predictions and ground truths for papers which met our inclusion criteria (`predictions.csv`).
 
-### inclusion_basic_models.ipynb
-
-Coming soon.
-
 ### create_impact_dataset.ipynb
 
 This notebook creates a dataset containing as features the titles and abstracts from publications included in the original Impact Pharmacie website, as well as titles and abstracts from publications that were not included.
+
+### inclusion_basic_models.ipynb
+
+Coming soon.
 
 ### inclusion_transformers.ipynb
 
