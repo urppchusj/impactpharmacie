@@ -28,17 +28,25 @@ These files are the raw HTML scraped from the first generation Impact Pharmacie 
 
 These CSV files contain a log of the data extractions made from PubMed (`extraction_log.csv`), the titles, abstract texts and ratings of all papers evaluated with our methodology (`ratings.csv`) and the machine learning label predictions and ground truths for papers which met our inclusion criteria (`predictions.csv`).
 
+### inclusion_basic_models.ipynb
+
+Coming soon.
+
 ### create_impact_dataset.ipynb
 
 This notebook creates a dataset containing as features the titles and abstracts from publications included in the original Impact Pharmacie website, as well as titles and abstracts from publications that were not included.
 
-### basic_models_experiments.ipynb
+### inclusion_transformers.ipynb
 
-This notebook leverages scikit-learn to train and evaluate a large number of "classic" machine learning models on the original dataset.
+This notebook uses Hugging Face Transformers to train and evaluate transformer models on the second generation dataset to determine if the paper should be included in Impact Pharmacie. The notebook also includes the training of production models.
 
-### transformers.ipynb
+### labels_basic_models.ipynb
 
-This notebook uses Hugging Face Transformers to train and evaluate transformer models on the original dataset. These models performed better than the basic models, therefore the notebook also includes the training, evaluation and explainability testing of models on the test set as well as the training of production models.
+This notebook uses scikit-learn to train and evaluate a large number of "classic" machine learning models on the original dataset for label predictions (design, field and setting of included papers).
+
+### labels_transformers.ipynb
+
+This notebook uses Hugging Face Transformers to train and evaluate transformer models on the original dataset for label predictions (design, field and setting of included papers). These models performed better than the basic models, therefore the notebook also includes the training, evaluation and explainability testing of models on the test set as well as the training of production models.
 
 ### update_data.py
 
