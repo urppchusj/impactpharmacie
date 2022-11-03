@@ -6,9 +6,11 @@ import pandas as pd
 import requests
 import time
 
+from bs4 import BeautifulSoup 
 from collections import defaultdict
-from bs4 import BeautifulSoup
+from datasets import Dataset
 from tqdm import tqdm
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, TextClassificationPipeline
 
 # GLOBAL VARS
 FILEPATH = '.'
@@ -16,9 +18,11 @@ GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOCAL EXTRACTION LOG
+LOCAL_THRESHOLD_RELPATH = '/data/second_gen/thresholds.csv' # RELATIVE PATH TO LOCAL THRESHOLD LOG
+INCLUSION_MODEL_RELPATH = '/models/production_models/inclusion_biobert' # RELATIVE PATH TO PRODUCTION INCLUSION MODELS (NOT A SPECIFIC VERSION)
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2022/10/16' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2022/10/22' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2022/10/23' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2022/10/29' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 
@@ -44,6 +48,15 @@ def get_google_sheet(google_spreadsheet_id, data_sheet_name):
         sht = gc.open_by_key(google_spreadsheet_id)
         data_sheet = sht.worksheet(data_sheet_name)
     return sht
+
+def get_model_version(inclusion_model_relpath):
+    version = max([x[1:] for x in os.listdir(FILEPATH + inclusion_model_relpath)])
+    return(version)
+
+def get_exclusion_threshold(local_threshold_relpath):
+    threshold_df = pd.read_csv(FILEPATH + local_threshold_relpath).fillna('')
+    threshold = threshold_df.iloc[-1]['computed_threshold'].astype(float)
+    return(threshold)
 
 def get_n_results(pubmed_credentials, search_query, start_date, end_date):
     params = {'db':'pubmed', 'term':search_query, 'datetype':'edat', 'mindate':start_date, 'maxdate':end_date, 'tool':pubmed_credentials['pubmed_tool_name'], 'email':pubmed_credentials['pubmed_tool_email']}
@@ -190,23 +203,41 @@ def build_text_and_filter_dataset(ds, abstract_sections_to_exclude):
     
     return filtered_dataset
 
-def convert_data_dict_to_df(ds):
-    df = pd.DataFrame.from_dict(ds, orient='index', columns=['text'])
+def make_inclusion_predictions(data, exclusion_threshold, model_version, inclusion_model_relpath):
+    df = pd.DataFrame.from_dict(data, orient='index', columns=['text'])
+    ds = Dataset.from_pandas(df)
+    ds.cleanup_cache_files()
+    tokenizer = AutoTokenizer.from_pretrained('dmis-lab/biobert-base-cased-v1.2')
+    tokenizer_kwargs = {'padding':True,'truncation':True,'max_length':512}
+    model = AutoModelForSequenceClassification.from_pretrained(FILEPATH + inclusion_model_relpath + '/v{}'.format(model_version), local_files_only=True)
+    pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, return_all_scores=True, device=0)
+    scores = []
+    for i in range(len(ds)):
+        scores.append(pipe(ds[i]['text'], **tokenizer_kwargs)[0][1]['score'])
+    df['inclusion_score'] = scores
+    df['inclusion_suggestion'] = df['inclusion_score'].apply(lambda x: 'Exclude' if x < exclusion_threshold else 'Review')
+    df['inclusion_model_version'] = model_version
+    return(df)
+
+def convert_df_to_rows (df):
     rows_to_append = df.reset_index().rename({'index':'PMID'},axis='columns').values.tolist()
     return rows_to_append
 
-def update_local_data(pmids, start_date, end_date, local_log_relpath):
-    df_to_append = pd.DataFrame.from_dict([{'date_begin':start_date,'date_end':end_date,'n_results':len(pmids),'pmids':', '.join(pmids)}])
+def update_local_data(pmids, start_date, end_date, exclusion_threshold, local_log_relpath):
+    df_to_append = pd.DataFrame.from_dict([{'date_begin':start_date,'date_end':end_date,'n_results':len(pmids),'pmids':', '.join(pmids), 'exclusion_threshold':exclusion_threshold}])
     extraction_log_df = pd.read_csv(FILEPATH + local_log_relpath, index_col=0).fillna('')
     updated_extraction_log = pd.concat([extraction_log_df, df_to_append], ignore_index=True)
     updated_extraction_log.to_csv(FILEPATH + local_log_relpath)
 
-def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids):
+def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids, exclusion_threshold):
     data_sheet = sht.worksheet(data_sheet_name)
     data_sheet.batch_clear(['data_contents'])
     data_sheet.append_rows(rows_to_append)
+    data_sheet.hide_columns(2,5)
+    data_sheet.hide_columns(6,7)
+    data_sheet.hide_columns(8,9)
     log_sheet = sht.worksheet(log_sheet_name)
-    log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids)])
+    log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids), exclusion_threshold])
 
 # MAIN
 
@@ -224,13 +255,16 @@ if __name__ == '__main__':
         pubmed_credentials = json.load(file)
 
     google_sheet = get_google_sheet(google_spreadsheet_id, DATA_SHEET_NAME)
+    model_version = get_model_version(INCLUSION_MODEL_RELPATH)
+    exclusion_threshold = get_exclusion_threshold(LOCAL_THRESHOLD_RELPATH)
     n_results = get_n_results(pubmed_credentials, SEARCH_QUERY, START_DATE, END_DATE)
     previous_pmids = get_previous_pmids(LOCAL_LOG_RELPATH)
     pmids = build_pmid_list(n_results, previous_pmids, pubmed_credentials, SEARCH_QUERY, ORIGINAL_START_DATE, START_DATE, END_DATE)
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
     filtered_ds = build_text_and_filter_dataset(ds, ABSTRACT_SECTIONS_TO_EXCLUDE)
-    rows_to_append = convert_data_dict_to_df(filtered_ds)
-    update_local_data(pmids, START_DATE, END_DATE, LOCAL_LOG_RELPATH)
-    update_google_sheet(google_sheet, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids)
+    df = make_inclusion_predictions(filtered_ds, exclusion_threshold, model_version, INCLUSION_MODEL_RELPATH)
+    rows_to_append = convert_df_to_rows(df)
+    update_local_data(pmids, START_DATE, END_DATE, exclusion_threshold, LOCAL_LOG_RELPATH)
+    update_google_sheet(google_sheet, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids, exclusion_threshold)
     print('DONE !')
