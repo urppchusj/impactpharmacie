@@ -51,11 +51,13 @@ def get_google_sheet(google_spreadsheet_id, data_sheet_name):
 
 def get_model_version(inclusion_model_relpath):
     version = max([x[1:] for x in os.listdir(FILEPATH + inclusion_model_relpath)])
+    print('Will use inclusion model version: {}'.format(version))
     return(version)
 
 def get_exclusion_threshold(local_threshold_relpath):
     threshold_df = pd.read_csv(FILEPATH + local_threshold_relpath).fillna('')
     threshold = threshold_df.iloc[-1]['computed_threshold'].astype(float)
+    print('Will use an exclusion threshold of: {:.5f}'.format(threshold))
     return(threshold)
 
 def get_n_results(pubmed_credentials, search_query, start_date, end_date):
