@@ -317,7 +317,7 @@ def verify_and_filter_dataset(ds):
     print('Number of elements in filtered dataset: {}'.format(len(filtered_dataset)))
     return (filtered_dataset)
 
-def publications_posts(ds, post_url, header):
+def publications_posts(ds, post_url, header, abstract_sections_to_exclude):
     categories = ['Publications']
 
     post_template = '<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph -->'
@@ -329,7 +329,7 @@ def publications_posts(ds, post_url, header):
             '     doi: <a rel="noreferrer noopener" href="https://dx.doi.org/{}" target="_blank">{}</a>'.format(data['doi'], data['doi']) if data['doi'] != '' else '',
             data['journal'],
             data['pubdate'],
-            ' '.join([' '.join(['<!-- wp:paragraph --><p><strong>'+l+'</strong>',t+'</p><!-- /wp:paragraph -->']) for l,t in zip(data['labels'], data['texts']) if l != 'DISCLAIMER']),
+            ' '.join([' '.join(['<!-- wp:paragraph --><p><strong>'+l+'</strong>',t+'</p><!-- /wp:paragraph -->']) for l,t in zip(data['labels'], data['texts']) if l not in abstract_sections_to_exclude]),
             ', '.join(data['authors'])+'.'
             )
         title=data['title']
@@ -387,7 +387,7 @@ def english_update_post(month_names, start_date, end_date, selected_extraction_d
     response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update})
     print('English update post response: {}'.format(response))
 
-def make_newsletter_post(start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header):
+def make_newsletter_post(start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, abstract_sections_to_exclude):
 
     categories_briefing = ['Impact Briefing']
 
@@ -432,7 +432,7 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
             '     doi: <a rel="noreferrer noopener" href="https://dx.doi.org/{}" target="_blank">{}</a>'.format(data['doi'], data['doi']) if data['doi'] != '' else '',
             data['journal'],
             data['pubdate'],
-            ' '.join([' '.join(['<!-- wp:paragraph --><p><strong>'+l+'</strong>',t+'</p><!-- /wp:paragraph -->']) for l,t in zip(data['labels'], data['texts']) if l != 'DISCLAIMER']),
+            ' '.join([' '.join(['<!-- wp:paragraph --><p><strong>'+l+'</strong>',t+'</p><!-- /wp:paragraph -->']) for l,t in zip(data['labels'], data['texts']) if l not in abstract_sections_to_exclude]),
             ', '.join(data['authors'])+'.',
             datetime.today().strftime('%Y%m%d'),
             datetime.today().strftime('%Y%m%d'),
@@ -484,10 +484,10 @@ if __name__ == '__main__':
     update_prediction_local_data(LOCAL_PREDICTIONS_RELPATH, prediction_df)
     update_prediction_google_sheet(predictions_sheet, prediction_df)
     update_ratings_local_data(LOCAL_DATA_RELPATH, ratings_sheet)
-    publications_posts(ds, post_url, header)
+    publications_posts(ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE)
     french_update_post(MONTH_NAMES_FR, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
     english_update_post(MONTH_NAMES_ENG, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
-    make_newsletter_post(START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header)
+    make_newsletter_post(START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE)
     print('DONE !')
 
 
