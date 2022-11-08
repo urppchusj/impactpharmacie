@@ -275,9 +275,17 @@
 273,36263511.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 274,36266174.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 275,36267757.0,Study,1.0,Study,Oncology,0.1,Other,Ambulatory,0.1,Ambulatory
-276,36272941,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-277,36281090,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-278,36289541,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-279,36289961,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-280,36289964,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
-281,36300296,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+276,36272941.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+277,36281090.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+278,36289541.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+279,36289961.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+280,36289964.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
+281,36300296.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+282,36309764,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Geriatric",Ambulatory,0.1,Nursing home
+283,36311485,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+284,36314582,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Inpatient
+285,36315507,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+286,36317184,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+287,36318295,Study,1,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
+288,36325719,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+289,36330095,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
