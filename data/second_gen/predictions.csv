@@ -281,11 +281,15 @@
 279,36289961.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 280,36289964.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
 281,36300296.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-282,36309764,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Geriatric",Ambulatory,0.1,Nursing home
-283,36311485,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-284,36314582,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Inpatient
-285,36315507,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-286,36317184,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
-287,36318295,Study,1,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
-288,36325719,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-289,36330095,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+282,36309764.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Geriatric",Ambulatory,0.1,Nursing home
+283,36311485.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+284,36314582.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Inpatient
+285,36315507.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+286,36317184.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+287,36318295.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
+288,36325719.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+289,36330095.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+290,36337596,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+291,36337761,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+292,36341037,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+293,36346543,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
