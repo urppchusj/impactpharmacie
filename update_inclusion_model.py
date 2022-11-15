@@ -147,7 +147,7 @@ def update_inclusion_model(local_data_relpath, inclusion_model_relpath, current_
     tokenized_ds = ds.map(tokenizer_function, batched=True)
 
     model = AutoModelForSequenceClassification.from_pretrained('dmis-lab/biobert-base-cased-v1.2', num_labels=2)
-    training_args = TrainingArguments(FILEPATH + inclusion_model_relpath + '/v{}'.format(new_model_version), evaluation_strategy='no', logging_strategy='no', learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
+    training_args = TrainingArguments(FILEPATH + inclusion_model_relpath + '/v{}'.format(new_model_version), save_strategy='no', evaluation_strategy='no', logging_strategy='no', learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
     trainer = Trainer(model=model, args=training_args, train_dataset=tokenized_ds)
     trainer.train()
     trainer.save_model(FILEPATH + '/models/production_models/inclusion_biobert/v{}'.format(new_model_version))
