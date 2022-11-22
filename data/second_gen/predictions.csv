@@ -289,7 +289,15 @@
 287,36318295.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
 288,36325719.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 289,36330095.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
-290,36337596,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-291,36337761,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
-292,36341037,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-293,36346543,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+290,36337596.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+291,36337761.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+292,36341037.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+293,36346543.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+294,36361432,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+295,36366968,Study,1,Study,Anticoagulation,0.1,Critical care,Inpatient,0.1,Inpatient
+296,36374428,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Nursing home
+297,36379866,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+298,36381624,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+299,36386606,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+300,36394173,Study,1,Study,Other,0.1,Critical care,Inpatient,0.1,Inpatient
+301,36400319,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Community,0.1,Other
