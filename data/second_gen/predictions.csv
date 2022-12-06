@@ -301,9 +301,14 @@
 299,36386606.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
 300,36394173.0,Study,1.0,Study,Other,0.1,Critical care,Inpatient,0.1,Inpatient
 301,36400319.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Community,0.1,Other
-302,36401764,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
-303,36402220,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
-304,36406165,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-305,36415769,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
-306,36421639,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Other,Inpatient,0.1,Other
-307,36425350,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Other
+302,36401764.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
+303,36402220.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+304,36406165.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+305,36415769.0,Study,1.0,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+306,36421639.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Other,Inpatient,0.1,Other
+307,36425350.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Other
+308,36434785,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+309,36446349,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+310,36448339,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
+311,36448580,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+312,36453508,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
