@@ -312,8 +312,9 @@
 310,36448339.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
 311,36448580.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 312,36453508.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-313,36464555,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-314,36472932,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-315,36480345,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-316,36480784,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-317,36483427,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+313,36464555.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+314,36472932.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+315,36480345.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+316,36480784.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+317,36483427.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+318,36510110,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
