@@ -25,22 +25,14 @@ INCLUSION_MODEL_EPOCHS = 4 # Epochs to use for inclusion model
 def get_google_sheets(google_spreadsheet_id, data_sheet_name, threshold_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
-    try:
-        gc = gspread.oauth(
-            credentials_filename = credentials_filepath,
-            authorized_user_filename = authorized_user_filepath
-        )
-        sht = gc.open_by_key(google_spreadsheet_id)
-        ratings_sheet = sht.worksheet(data_sheet_name)
-    except:
-        if os.path.exists(authorized_user_filepath):
-            os.remove(authorized_user_filepath)
-        gc = gspread.oauth(
-            credentials_filename = credentials_filepath,
-            authorized_user_filename = authorized_user_filepath
-        )
-        sht = gc.open_by_key(google_spreadsheet_id)
-        ratings_sheet = sht.worksheet(data_sheet_name)
+    if os.path.exists(authorized_user_filepath):
+        os.remove(authorized_user_filepath)
+    gc = gspread.oauth(
+        credentials_filename = credentials_filepath,
+        authorized_user_filename = authorized_user_filepath
+    )
+    sht = gc.open_by_key(google_spreadsheet_id)
+    ratings_sheet = sht.worksheet(data_sheet_name)
     threshold_sheet = sht.worksheet(threshold_sheet_name)
     return ratings_sheet, threshold_sheet
 
