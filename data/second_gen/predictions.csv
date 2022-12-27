@@ -317,4 +317,9 @@
 315,36480345.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
 316,36480784.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
 317,36483427.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-318,36510110,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
+318,36510110.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
+319,36543253,Study,1,Study,Other,0.1,Geriatric,Inpatient,0.1,Ambulatory
+320,36543256,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+321,36549929,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+322,36549933,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Ambulatory
+323,36562830,Study,1,Study,Other,0.1,Other,Community,0.1,Community
