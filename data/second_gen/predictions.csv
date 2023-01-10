@@ -323,5 +323,12 @@
 321,36549929.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 322,36549933.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Ambulatory
 323,36562830.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
-324,36566496,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-325,36582998,Study,1,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
+324,36566496.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+325,36582998.0,Study,1.0,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
+326,36589937,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+327,36593140,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+328,36593152,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+329,36594245,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+330,36599814,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+331,36600452,Study,1,Study,Other,0.1,Maternal / pediatric / neonatal,Ambulatory,0.1,Ambulatory
+332,36604226,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
