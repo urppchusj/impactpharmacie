@@ -42,7 +42,7 @@ def get_end_date(local_log_relpath):
     return(end_date)
 
 def get_inclusion_model_version(inclusion_model_relpath):
-    version = max([x[1:] for x in os.listdir(FILEPATH + inclusion_model_relpath)])
+    version = max([int(x[1:]) for x in os.listdir(FILEPATH + inclusion_model_relpath)])
     return(version)
 
 def update_threshold_local_data(local_threshold_relpath, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl):
