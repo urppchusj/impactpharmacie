@@ -50,7 +50,7 @@ def get_google_sheet(google_spreadsheet_id, data_sheet_name):
     return sht
 
 def get_model_version(inclusion_model_relpath):
-    version = max([x[1:] for x in os.listdir(FILEPATH + inclusion_model_relpath)])
+    version = max([int(x[1:]) for x in os.listdir(FILEPATH + inclusion_model_relpath)])
     print('Will use inclusion model version: {}'.format(version))
     return(version)
 
