@@ -21,12 +21,12 @@ LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOC
 LOCAL_THRESHOLD_RELPATH = '/data/second_gen/thresholds.csv' # RELATIVE PATH TO LOCAL THRESHOLD LOG
 INCLUSION_MODEL_RELPATH = '/models/production_models/inclusion_biobert' # RELATIVE PATH TO PRODUCTION INCLUSION MODELS (NOT A SPECIFIC VERSION)
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2022/12/25' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2022/12/31' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2023/01/08' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2023/01/14' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 
-# FUNCTIONS
+# FUNCTIONSReveie
 
 def get_google_sheet(google_spreadsheet_id, data_sheet_name):
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
@@ -50,7 +50,7 @@ def get_google_sheet(google_spreadsheet_id, data_sheet_name):
     return sht
 
 def get_model_version(inclusion_model_relpath):
-    version = max([x[1:] for x in os.listdir(FILEPATH + inclusion_model_relpath)])
+    version = max([int(x[1:]) for x in os.listdir(FILEPATH + inclusion_model_relpath)])
     print('Will use inclusion model version: {}'.format(version))
     return(version)
 
