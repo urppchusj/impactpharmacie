@@ -332,13 +332,18 @@
 330,36599814.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 331,36600452.0,Study,1.0,Study,Other,0.1,Maternal / pediatric / neonatal,Ambulatory,0.1,Ambulatory
 332,36604226.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
-333,36609079,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-334,36609228,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-335,36620097,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
-336,36621403,Study,1,Study,Other,0.1,Other,Community,0.1,Ambulatory
-337,36622674,Study,1,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Ambulatory
-338,36626156,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
-339,36627769,Study,1,Study,Other,0.1,Other,Community,0.1,Community
-340,36627908,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-341,36631954,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
-342,36634917,Study,1,Study,Infectious diseases,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+333,36609079.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+334,36609228.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+335,36620097.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+336,36621403.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Ambulatory
+337,36622674.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Ambulatory
+338,36626156.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
+339,36627769.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
+340,36627908.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+341,36631954.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
+342,36634917.0,Study,1.0,Study,Infectious diseases,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+343,36649021,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+344,36654698,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+345,36654715,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+346,36660042,Study,1,Study,Other,0.1,Other,Community,0.1,Ambulatory
+347,36662741,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
