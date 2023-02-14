@@ -352,7 +352,15 @@
 350,36680797.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 351,36692224.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
 352,36703759.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-353,36714293,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-354,36714295,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-355,36735853,Study,1,Study,Cardiology,0.1,"Cardiology, Geriatric",Ambulatory,0.1,Ambulatory
-356,36737230,Study,1,Study,Other,0.1,Solid organ transplantation,Inpatient,0.1,Inpatient
+353,36714293.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+354,36714295.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+355,36735853.0,Study,1.0,Study,Cardiology,0.1,"Cardiology, Geriatric",Ambulatory,0.1,Ambulatory
+356,36737230.0,Study,1.0,Study,Other,0.1,Solid organ transplantation,Inpatient,0.1,Inpatient
+357,36738825,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+358,36738834,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+359,36740525,Study,1,Study,Other,0.1,"Other, Geriatric",Community,0.1,Community
+360,36740528,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Community,0.1,Community
+361,36745390,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+362,36746551,Study,1,Study,Other,0.1,Other,Community,0.1,Ambulatory
+363,36747132,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+364,36754620,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
