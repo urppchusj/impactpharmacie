@@ -364,10 +364,19 @@
 362,36746551.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Ambulatory
 363,36747132.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 364,36754620.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-365,36780778,Study,1,Study,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
-366,36787910,Study,1,Study,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
-367,36793909,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-368,36793920,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
-369,36794277,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Nursing home
-370,36794336,Study,1,Study,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
-371,36795303,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+365,36780778.0,Study,1.0,Study,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+366,36787910.0,Study,1.0,Study,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
+367,36793909.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+368,36793920.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+369,36794277.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Nursing home
+370,36794336.0,Study,1.0,Study,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
+371,36795303.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+372,36803698,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+373,36805293,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Nursing home
+374,36807543,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+375,36809868,Study,1,Study,Infectious diseases,0.1,"Critical care, Infectious diseases",Inpatient,0.1,Inpatient
+376,36813686,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,"Oncology, Geriatric",Inpatient,0.1,Other
+377,36818412,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+378,36821553,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Community
+379,36829184,Study,1,Study,Psychiatric,0.1,Psychiatric,Community,0.1,Community
+380,36829242,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
