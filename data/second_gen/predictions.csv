@@ -371,12 +371,21 @@
 369,36794277.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Nursing home
 370,36794336.0,Study,1.0,Study,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
 371,36795303.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-372,36803698,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
-373,36805293,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Nursing home
-374,36807543,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-375,36809868,Study,1,Study,Infectious diseases,0.1,"Critical care, Infectious diseases",Inpatient,0.1,Inpatient
-376,36813686,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,"Oncology, Geriatric",Inpatient,0.1,Other
-377,36818412,Study,1,Study,Other,0.1,Other,Community,0.1,Community
-378,36821553,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Community
-379,36829184,Study,1,Study,Psychiatric,0.1,Psychiatric,Community,0.1,Community
-380,36829242,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+372,36803698.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+373,36805293.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Nursing home
+374,36807543.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+375,36809868.0,Study,1.0,Study,Infectious diseases,0.1,"Critical care, Infectious diseases",Inpatient,0.1,Inpatient
+376,36813686.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,"Oncology, Geriatric",Inpatient,0.1,Other
+377,36818412.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
+378,36821553.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Community
+379,36829184.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Community,0.1,Community
+380,36829242.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+381,36830284,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+382,36840580,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+383,36840950,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Other,Community,0.1,Other
+384,36840959,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+385,36846722,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,"Cardiology, Other",Ambulatory,0.1,"Ambulatory, Community"
+386,36847597,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+387,36847995,Study,1,Study,Cardiology,0.1,"Cardiology, Geriatric, Other",Community,0.1,Ambulatory
+388,36853384,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
+389,36856870,Study,1,Study,Infectious diseases,0.1,"Oncology, Infectious diseases",Ambulatory,0.1,Ambulatory
