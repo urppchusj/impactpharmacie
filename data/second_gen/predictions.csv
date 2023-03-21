@@ -389,8 +389,9 @@
 387,36847995.0,Study,1.0,Study,Cardiology,0.1,"Cardiology, Geriatric, Other",Community,0.1,Ambulatory
 388,36853384.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
 389,36856870.0,Study,1.0,Study,Infectious diseases,0.1,"Oncology, Infectious diseases",Ambulatory,0.1,Ambulatory
-390,36880677,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
-391,36889612,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-392,36890947,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-393,36890948,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-394,36891480,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+390,36880677.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+391,36889612.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+392,36890947.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+393,36890948.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+394,36891480.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+395,36900980,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
