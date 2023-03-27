@@ -219,6 +219,10 @@ def make_inclusion_predictions(data, exclusion_threshold, model_version, inclusi
     df['inclusion_score'] = scores
     df['inclusion_suggestion'] = df['inclusion_score'].apply(lambda x: 'Exclude' if x < exclusion_threshold else 'Review')
     df['inclusion_model_version'] = model_version
+    df = df.drop('inclusion_score', axis=1)
+    df['rating1'] = ''
+    df['rating2'] = ''
+    df['rating_consensus'] = df.apply(lambda x: 0 if x['inclusion_suggestion'] == 'Exclude' else '', axis=1)
     return(df)
 
 def convert_df_to_rows (df):
