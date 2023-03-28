@@ -23,8 +23,8 @@ LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
 LOCAL_PREDICTIONS_RELPATH = '/data/second_gen/predictions.csv'
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2023/03/12' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2023/03/18' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2023/03/19' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2023/03/25' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 MAX_PUBMED_TRIES = 10 # NUMBER OF MAXIMUM PUBMED QUERY TRIES BEFORE GIVING UP
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
@@ -167,6 +167,7 @@ def update_ratings_local_data(local_data_relpath, ratings_sheet):
     old_ratings_df = pd.read_csv(FILEPATH + local_data_relpath, index_col=0, dtype=str).fillna('')
     new_ratings_df = pd.DataFrame(ratings_sheet.get_all_records())
     ratings_df = pd.concat([old_ratings_df, new_ratings_df[1:]], ignore_index=True)
+    print('')
     ratings_df.to_csv(FILEPATH + local_data_relpath)
 
 def make_prediction_tags(pred_df, tag_columns_to_use, translation_dict):
@@ -339,15 +340,22 @@ def publications_posts(ds, post_url, header, abstract_sections_to_exclude):
 
 def french_update_post(month_names, start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header):
     categories_update = ['Mise à jour des données']
-    update_post_template = '<!-- wp:paragraph --><p>Cette mise à jour couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été identifiées. {} publications ont été retenues pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues dans cette mise à jour:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Depuis novembre 2021, {} publications ont été évaluées dont {} ont été retenues, pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs pour toutes les publications évaluées est de {:.3f}.</p><!-- /wp:paragraph -->'
+    update_post_template = '<!-- wp:paragraph --><p>Cette mise à jour couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été identifiées. {} ({:.1f}%) publications ont été filtrées par intelligence artificielle. {} ({:.1f}%) publications ont été révisées manuellement dont {} ({:.1f}%) ont été retenues. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues dans cette mise à jour:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Depuis novembre 2021, {} publications ont été évaluées dont {} ({:.1f}%) ont été retenues. Le kappa entre les réviseurs pour toutes les publications évaluées est de {:.3f}.</p><!-- /wp:paragraph -->'
+
+    kappa_df_current = current_extraction_df.loc[(current_extraction_df['rating1'] != '') & (current_extraction_df['rating2'] != '')]
+    kappa_df_all = ratings_df.loc[(ratings_df['rating1'] != '') & (ratings_df['rating2'] != '')]
 
     update_post_content = update_post_template.format(
         start_date, 
         end_date, 
         selected_extraction_df.at[0, 'n_results'], 
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']) / selected_extraction_df.at[0, 'n_results']) *100,
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']) / selected_extraction_df.at[0, 'n_results']) *100,
         len(ds), 
         (len(ds) / selected_extraction_df.at[0, 'n_results']) *100, 
-        cohen_kappa_score(current_extraction_df['rating1'].astype(int), current_extraction_df['rating2'].astype(int)), 
+        cohen_kappa_score(kappa_df_current['rating1'].astype(int), kappa_df_current['rating2'].astype(int)), 
         ''.join(['<li><a href="https://impactpharmacie.net/{}">{}</a> - {}</li>'.format(
             pmid, 
             data['title'],
@@ -356,7 +364,7 @@ def french_update_post(month_names, start_date, end_date, selected_extraction_df
         len(ratings_df),
         ratings_df['rating_final'].astype(int).sum(), 
         (ratings_df['rating_final'].astype(int).sum() / len(ratings_df)) *100, 
-        cohen_kappa_score(ratings_df['rating1'].astype(int), ratings_df['rating2'].astype(int))
+        cohen_kappa_score(kappa_df_all['rating1'].astype(int), kappa_df_all['rating2'].astype(int))
         )
     update_post_title='Mise à jour du {} {} {}'.format(time.localtime()[2], month_names[time.localtime()[1]-1], time.localtime()[0])
     response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update})
@@ -364,15 +372,22 @@ def french_update_post(month_names, start_date, end_date, selected_extraction_df
 
 def english_update_post(month_names, start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header):
     categories_update = ['Data update']
-    update_post_template = '<!-- wp:paragraph --><p>This update covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were identified. {} publications were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were included in this update:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Since November 2021, {} publications were evaluated. Among these, {} were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa for all evaluated publications is {:.3f}.</p><!-- /wp:paragraph -->'
+    update_post_template = '<!-- wp:paragraph --><p>This update covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were identified. {} ({:.1f}%) publications were filtered by machine learning. {} ({:.1f}%) publications were manually reviewed, of which {} ({:.1f}%) were selected. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were included in this update:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:paragraph --><p>Since November 2021, {} publications were evaluated. Among these, {} ({:.1f}%) were selected. Inter-rater kappa for all evaluated publications is {:.3f}.</p><!-- /wp:paragraph -->'
+
+    kappa_df_current = current_extraction_df.loc[(current_extraction_df['rating1'] != '') & (current_extraction_df['rating2'] != '')]
+    kappa_df_all = ratings_df.loc[(ratings_df['rating1'] != '') & (ratings_df['rating2'] != '')]
 
     update_post_content = update_post_template.format(
         start_date, 
         end_date, 
         selected_extraction_df.at[0, 'n_results'], 
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']) / selected_extraction_df.at[0, 'n_results']) *100,
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']) / selected_extraction_df.at[0, 'n_results']) *100,
         len(ds), 
         (len(ds) / selected_extraction_df.at[0, 'n_results']) *100, 
-        cohen_kappa_score(current_extraction_df['rating1'].astype(int), current_extraction_df['rating2'].astype(int)), 
+        cohen_kappa_score(kappa_df_current['rating1'].astype(int), kappa_df_current['rating2'].astype(int)),  
         ''.join(['<li><a href="https://impactpharmacie.net/{}">{}</a> - {}</li>'.format(
             pmid, 
             data['title'],
@@ -381,7 +396,7 @@ def english_update_post(month_names, start_date, end_date, selected_extraction_d
         len(ratings_df),
         ratings_df['rating_final'].astype(int).sum(), 
         (ratings_df['rating_final'].astype(int).sum() / len(ratings_df)) *100, 
-        cohen_kappa_score(ratings_df['rating1'].astype(int), ratings_df['rating2'].astype(int))
+        cohen_kappa_score(kappa_df_all['rating1'].astype(int), kappa_df_all['rating2'].astype(int))
         )
     update_post_title='Data update for {} {}, {}'.format(month_names[time.localtime()[1]-1], time.localtime()[2], time.localtime()[0])
     response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update})
@@ -391,9 +406,11 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
 
     categories_briefing = ['Impact Briefing']
 
-    briefing_update_text_template = '<!-- wp:paragraph --><p><a href="#{}summary">English</a></p><!-- /wp:paragraph --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}resume"></a></p><!-- wp:heading --><h2 id="{}resume">Résumé</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Ce Impact Briefing couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été identifiées. {} publications ont été retenues pour un taux d\'inclusion de {:.1f}%. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}summary"></a></p><!-- wp:heading --><h2 id="{}summary">Summary</h2><!-- /wp:heading --><!-- wp:paragraph --><p>This Impact Briefing covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were identified. {} publications were selected, for an inclusion rate of {:.1f}%. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were selected:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><!-- wp:heading --><h2>Publications</h2><!-- /wp:heading -->{}'
+    briefing_update_text_template = '<!-- wp:paragraph --><p><a href="#{}summary">English</a></p><!-- /wp:paragraph --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}resume"></a></p><!-- wp:heading --><h2 id="{}resume">Résumé</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Ce Impact Briefing couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été identifiées. {} ({:.1f}%) publications ont été filtrées par intelligence artificielle. {} ({:.1f}%) publications ont été révisées manuellement dont {} ({:.1f}%) ont été retenues. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}summary"></a></p><!-- wp:heading --><h2 id="{}summary">Summary</h2><!-- /wp:heading --><!-- wp:paragraph --><p>This Impact Briefing covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were identified. {} ({:.1f}%) publications were filtered by machine learning. {} ({:.1f}%) publications were manually reviewed, of which {} ({:.1f}%) were selected. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were selected:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><!-- wp:heading --><h2>Publications</h2><!-- /wp:heading -->{}'
 
     briefing_update_pub_template = '<!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}"></a></p><!-- wp:heading {{"level":3}} --><h3 id="{}">{}</h3><!-- /wp:heading --><!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph --><!-- wp:paragraph --><p><a href="#{}resume">Retour au résumé</a> - <a href="#{}summary">Return to summary</a></p><!-- /wp:paragraph -->'
+
+    kappa_df_current = current_extraction_df.loc[(current_extraction_df['rating1'] != '') & (current_extraction_df['rating2'] != '')]
 
     briefing_post_content = briefing_update_text_template.format(
         datetime.today().strftime('%Y%m%d'),
@@ -402,9 +419,13 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
         start_date, 
         end_date, 
         selected_extraction_df.at[0, 'n_results'], 
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']) / selected_extraction_df.at[0, 'n_results']) *100,
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']) / selected_extraction_df.at[0, 'n_results']) *100,
         len(ds), 
         (len(ds) / selected_extraction_df.at[0, 'n_results']) *100, 
-        cohen_kappa_score(current_extraction_df['rating1'].astype(int), current_extraction_df['rating2'].astype(int)), 
+        cohen_kappa_score(kappa_df_current['rating1'].astype(int), kappa_df_current['rating2'].astype(int)), 
         ''.join(['<li><a href="#{}">{}</a> - {}</li>'.format(
             pmid, 
             data['title'],
@@ -415,9 +436,13 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
         start_date, 
         end_date, 
         selected_extraction_df.at[0, 'n_results'], 
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']) / selected_extraction_df.at[0, 'n_results']) *100,
+        len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']),
+        (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']) / selected_extraction_df.at[0, 'n_results']) *100,
         len(ds), 
         (len(ds) / selected_extraction_df.at[0, 'n_results']) *100, 
-        cohen_kappa_score(current_extraction_df['rating1'].astype(int), current_extraction_df['rating2'].astype(int)), 
+        cohen_kappa_score(kappa_df_current['rating1'].astype(int), kappa_df_current['rating2'].astype(int)), 
         ''.join(['<li><a href="#{}">{}</a> - {}</li>'.format(
             pmid, 
             data['title'],
