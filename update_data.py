@@ -244,9 +244,9 @@ def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, st
     data_sheet = sht.worksheet(data_sheet_name)
     data_sheet.batch_clear(['data_contents'])
     data_sheet.append_rows(rows_to_append)
-    data_sheet.hide_columns(2,5)
-    data_sheet.hide_columns(6,7)
-    data_sheet.hide_columns(8,9)
+    data_sheet.hide_columns(9,11)
+    data_sheet.hide_columns(12,15)
+    data_sheet.hide_columns(16,17)
     log_sheet = sht.worksheet(log_sheet_name)
     log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids), exclusion_threshold])
 
