@@ -394,4 +394,9 @@
 392,36890947.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 393,36890948.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 394,36891480.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-395,36900980,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+395,36900980.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+396,36933697,Study,1,Study,Other,0.1,"Cardiology, Other",Community,0.1,Community
+397,36937879,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+398,36940081,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+399,36949877,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+400,36960183,Study,1,Study,Other,0.1,"Critical care, Infectious diseases",Inpatient,0.1,Inpatient
