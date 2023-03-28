@@ -223,6 +223,11 @@ def make_inclusion_predictions(data, exclusion_threshold, model_version, inclusi
     df['rating1'] = ''
     df['rating2'] = ''
     df['rating_consensus'] = df.apply(lambda x: 0 if x['inclusion_suggestion'] == 'Exclude' else '', axis=1)
+    df['consensus_reason'] = df.apply(lambda x: 'Excluded by ML model' if x['inclusion_suggestion'] == 'Exclude' else '', axis=1)
+    n_filtered = len(df[df['inclusion_suggestion']=='Exclude'])
+    n_included = len(df[df['inclusion_suggestion']=='Review'])
+    print('Number of elements excluded by inclusion model: {}'.format(n_filtered))
+    print('Number of elements to review: {}'.format(n_included))
     return(df)
 
 def convert_df_to_rows (df):
