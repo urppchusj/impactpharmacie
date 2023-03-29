@@ -39,7 +39,7 @@ This notebook creates a dataset containing as features the titles and abstracts 
 
 ### inclusion_basic_models.ipynb
 
-Coming soon.
+This notebook uses scikit-learn to train and evaluate various classifier models on the second generation dataset to determine if the paper should be included in Impact Pharmacie.
 
 ### inclusion_transformers.ipynb
 
