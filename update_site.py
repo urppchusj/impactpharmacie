@@ -28,6 +28,7 @@ END_DATE = '2023/04/08' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 MAX_PUBMED_TRIES = 10 # NUMBER OF MAXIMUM PUBMED QUERY TRIES BEFORE GIVING UP
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER', 'DISCLOSURE', 'DISCLOSURES'] # List of abstract labels that will be excluded from data 
+WHERE_TO_PUBLICIZE = ['linkedin'] # List of services to publicize newsletter posts. So far: 'linkedin'
 TAGS_TO_USE = {'design':{'column':'design_pred', 'version':1}, 'field':{'column':'field_ground_truth', 'version':'0.1'}, 'setting':{'column':'setting_ground_truth','version':'0.1'}} # Dict with model strings as keys, values are dicts with column to use in dataframe as the first key and value and model version as second key and value
 DESIGN_LABEL_TRANSLATIONS = {'Study':'Étude', 'Systematic review or meta-analysis':'Revue systématique ou méta-analyse'}
 FIELDS_LABELS_TRANSLATIONS = {'Anticoagulation':'Anticoagulation', 'Cardiology':'Cardiologie', 'Critical care':'Soins critiques', 'Emergency medicine':'Urgence', 'Geriatric':'Gériatrie', 'Infectious diseases':'Infectiologie', 'Oncology':'Oncologie', 'Palliative care':'Soins palliatifs', 'Maternal / pediatric / neonatal':'Soins mère-enfant / pédiatrie / néonatologie', 'Psychiatric':'Psychiatrie', 'Solid organ transplantation':'Transplantation', 'Other':'Autre'}
@@ -335,7 +336,7 @@ def publications_posts(ds, post_url, header, abstract_sections_to_exclude):
             )
         title=data['title']
         post_tags_list = data['machine_learning_tags_all']
-        response = requests.post(post_url, headers=header, data={'slug': pmid, 'title':title, 'content':post_content, 'categories':categories, 'tags':','.join(post_tags_list)})
+        response = requests.post(post_url, headers=header, data={'slug': pmid, 'title':title, 'content':post_content, 'categories':categories, 'tags':','.join(post_tags_list), 'publicize':False})
         print('Publication update post response for PMID {}: {}'.format(pmid, response))
 
 def french_update_post(month_names, start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header):
@@ -367,7 +368,7 @@ def french_update_post(month_names, start_date, end_date, selected_extraction_df
         cohen_kappa_score(kappa_df_all['rating1'].astype(int), kappa_df_all['rating2'].astype(int))
         )
     update_post_title='Mise à jour du {} {} {}'.format(time.localtime()[2], month_names[time.localtime()[1]-1], time.localtime()[0])
-    response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update})
+    response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update, 'publicize':False})
     print('French update post response: {}'.format(response))
 
 def english_update_post(month_names, start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header):
@@ -399,16 +400,18 @@ def english_update_post(month_names, start_date, end_date, selected_extraction_d
         cohen_kappa_score(kappa_df_all['rating1'].astype(int), kappa_df_all['rating2'].astype(int))
         )
     update_post_title='Data update for {} {}, {}'.format(month_names[time.localtime()[1]-1], time.localtime()[2], time.localtime()[0])
-    response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update})
+    response = requests.post(post_url, headers=header, data={'title':update_post_title, 'content':update_post_content, 'categories':categories_update, 'publicize':False})
     print('English update post response: {}'.format(response))
 
-def make_newsletter_post(start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, abstract_sections_to_exclude):
+def make_newsletter_post(start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, abstract_sections_to_exclude, where_to_publicize):
 
     categories_briefing = ['Impact Briefing']
 
     briefing_update_text_template = '<!-- wp:paragraph --><p><a href="#{}summary">English</a></p><!-- /wp:paragraph --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}resume"></a></p><!-- wp:heading --><h2 id="{}resume">Résumé</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Ce Impact Briefing couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été identifiées. {} ({:.1f}%) publications ont été filtrées par intelligence artificielle. {} ({:.1f}%) publications ont été révisées manuellement dont {} ({:.1f}%) ont été retenues. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}summary"></a></p><!-- wp:heading --><h2 id="{}summary">Summary</h2><!-- /wp:heading --><!-- wp:paragraph --><p>This Impact Briefing covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were identified. {} ({:.1f}%) publications were filtered by machine learning. {} ({:.1f}%) publications were manually reviewed, of which {} ({:.1f}%) were selected. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were selected:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><!-- wp:heading --><h2>Publications</h2><!-- /wp:heading -->{}'
 
     briefing_update_pub_template = '<!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}"></a></p><!-- wp:heading {{"level":3}} --><h3 id="{}">{}</h3><!-- /wp:heading --><!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph --><!-- wp:paragraph --><p><a href="#{}resume">Retour au résumé</a> - <a href="#{}summary">Return to summary</a></p><!-- /wp:paragraph -->'
+
+    brefing_update_publicize_template = 'Cette semaine, {} nouvelles publications ont été ajoutées à Impact Pharmacie. Abonnez-vous à notre liste de diffusion pour recevoir les résumés des publications choisies à chaque semaine !'
 
     kappa_df_current = current_extraction_df.loc[(current_extraction_df['rating1'] != '') & (current_extraction_df['rating2'] != '')]
 
@@ -463,8 +466,13 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
             datetime.today().strftime('%Y%m%d'),
             ) for pmid, data in ds.items()]),
         )
+
+    brefing_update_publicize_content = brefing_update_publicize_template.format(
+        len(ds)
+    )
+
     briefing_post_title='Impact Briefing: {}'.format(datetime.today().strftime('%Y/%m/%d'))
-    response = requests.post(post_url, headers=header, data={'title':briefing_post_title, 'content':briefing_post_content, 'categories':categories_briefing})
+    response = requests.post(post_url, headers=header, data={'title':briefing_post_title, 'content':briefing_post_content, 'categories':categories_briefing, 'publicize':where_to_publicize, 'publicize_message':brefing_update_publicize_content})
     print('Newsletter post response: {}'.format(response))
 
 # MAIN
@@ -512,7 +520,7 @@ if __name__ == '__main__':
     publications_posts(ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE)
     french_update_post(MONTH_NAMES_FR, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
     english_update_post(MONTH_NAMES_ENG, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
-    make_newsletter_post(START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE)
+    make_newsletter_post(START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE, WHERE_TO_PUBLICIZE)
     print('DONE !')
 
 
