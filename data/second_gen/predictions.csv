@@ -402,6 +402,9 @@
 400,36960183.0,Study,1.0,Study,Other,0.1,"Critical care, Infectious diseases",Inpatient,0.1,Inpatient
 401,36966089.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
 402,36996030.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-403,37004867,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
-404,37024012,Study,1,Study,Other,0.1,Other,Community,0.1,Community
-405,37029343,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
+403,37004867.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
+404,37024012.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
+405,37029343.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
+406,37033638,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+407,37039811,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+408,37051472,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
