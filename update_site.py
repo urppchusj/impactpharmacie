@@ -12,6 +12,7 @@ from datetime import datetime
 from sklearn.metrics import cohen_kappa_score
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from tqdm import tqdm
+from urllib.parse import urlparse
 
 # GLOBAL VARS
 FILEPATH = '.'
@@ -36,6 +37,8 @@ SETTING_LABELS_TRANSLATIONS = {'Ambulatory':'Ambulatoire', 'Community':'Communau
 TRANSLATION_DICT = {**DESIGN_LABEL_TRANSLATIONS, **FIELDS_LABELS_TRANSLATIONS, **SETTING_LABELS_TRANSLATIONS}
 MONTH_NAMES_ENG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 MONTH_NAMES_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+PUBLISHER_LIST_URL = 'https://beallslist.net/'
+JOURNALS_LIST_URL = 'https://beallslist.net/standalone-journals/'
 
 # FUNCTIONS
 
@@ -60,6 +63,102 @@ def get_google_sheets(google_spreadsheet_id, data_sheet_name, prediction_sheet_n
         ratings_sheet = sht.worksheet(data_sheet_name)
     predictions_sheet = sht.worksheet(prediction_sheet_name)
     return ratings_sheet, predictions_sheet
+
+def simplify_domain(domain):
+    if len(urlparse(domain).hostname.split('.')) > 2:
+        host = '.'.join(urlparse(domain).hostname.split('.')[1:])
+    else:
+        host = urlparse(domain).hostname
+    return host
+
+def take_and_validate_response():
+    response = input('Accept ? (y/n)')
+    if response not in ['y', 'n']:
+        print('Please answer "y" or "n".')
+        response = take_and_validate_response()
+    return(response)
+
+def validate_list_changes(old_list, new_list):
+
+    validated_list = []
+
+    print('Checking if new elements...')
+    for el in new_list:
+        if el in old_list:
+            validated_list.append(el)
+        else:
+            print('Element {} was added to the list.'.format(el))
+            response = take_and_validate_response()
+            if response == 'y':
+                validated_list.append(el)
+            else:
+                pass
+    
+    print('Checking if elements were removed...')
+    for el in old_list:
+        if el in new_list:
+            pass
+        else:
+            print('Element {} was removed from the list.'.format(el))
+            response = take_and_validate_response()
+            if response == 'y':
+                pass
+            else:
+                validated_list.append(el)
+
+    return(validated_list)
+
+def get_and_update_predatory_lists(publisher_list_url, journals_list_url):
+
+    print('Updating potentially predatory journals and publishers...')
+    
+    def get_soup(list_url):
+        page = requests.get(list_url)
+        soup = BeautifulSoup(page.content, 'html.parser')
+        return soup
+
+    def get_domain_list(soup):
+        the_list = []
+        for li in soup.find(id='main').findAll('li'):
+            link = li.find('a')
+            try: 
+                domain = link['href']
+                the_list.append(domain)
+            except:
+                pass
+        return the_list
+
+    publisher_soup = get_soup(publisher_list_url)
+    journals_soup = get_soup(journals_list_url)
+    publisher_list = get_domain_list(publisher_soup)
+    journals_list = get_domain_list(journals_soup)
+
+    publisher_list_cleaned = [simplify_domain(href) for href in publisher_list]
+    journals_list_cleaned = [simplify_domain(href) for href in journals_list]
+
+    if os.path.exists(FILEPATH + '/data/second_gen/potentially_predatory_publishers.pkl'):
+        with open(FILEPATH + '/data/second_gen/potentially_predatory_publishers.pkl', mode='rb') as file:
+            old_publishers_list = pickle.load(file)
+        print('Checking if predatory publishers list changed.')
+        validated_publishers_list = validate_list_changes(old_publishers_list, publisher_list_cleaned)
+    else:
+        print('Previous predatory publishers list does not exist, no comparison done.')
+        validated_publishers_list = publisher_list_cleaned
+    with open(FILEPATH + '/data/second_gen/potentially_predatory_publishers.pkl', mode='wb') as file:
+            pickle.dump(validated_publishers_list, file)
+
+    if os.path.exists(FILEPATH + '/data/second_gen/potentially_predatory_journals.pkl'):
+        with open(FILEPATH + '/data/second_gen/potentially_predatory_journals.pkl', mode='rb') as file:
+            old_journals_list = pickle.load(file)
+        print('Checking if predatory journals list changed.')
+        validated_journals_list = validate_list_changes(old_journals_list, journals_list_cleaned)
+    else:
+        print('Previous predatory journals list does not exist, no comparison done.')
+        validated_journals_list = journals_list_cleaned
+    with open(FILEPATH + '/data/second_gen/potentially_predatory_journals.pkl', mode='wb') as file:
+            pickle.dump(validated_journals_list, file)
+
+    return(validated_publishers_list, validated_journals_list)
 
 def verify_and_validate_data(local_log_relpath, local_data_relpath, ratings_sheet, start_date, end_date):
 
@@ -500,6 +599,7 @@ if __name__ == '__main__':
     header = {
         'Authorization': 'Bearer {}'.format(wordpress_token['access_token'])}
 
+    predatory_publishers_list, predatory_journals_list = get_and_update_predatory_lists(PUBLISHER_LIST_URL, JOURNALS_LIST_URL)
     extraction_log_df, selected_extraction_df, ratings_df, included_df, current_extraction_df, pmids = verify_and_validate_data(LOCAL_LOG_RELPATH, LOCAL_DATA_RELPATH, ratings_sheet, START_DATE, END_DATE)
     tokenizer = prepare_tokenizer()
     predictions = prepare_predictions_dict(included_df)
