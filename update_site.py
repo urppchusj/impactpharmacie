@@ -34,6 +34,9 @@ TAGS_TO_USE = {'design':{'column':'design_pred', 'version':1}, 'field':{'column'
 DESIGN_LABEL_TRANSLATIONS = {'Study':'Étude', 'Systematic review or meta-analysis':'Revue systématique ou méta-analyse'}
 FIELDS_LABELS_TRANSLATIONS = {'Anticoagulation':'Anticoagulation', 'Cardiology':'Cardiologie', 'Critical care':'Soins critiques', 'Diabetes':'Diabète', 'Emergency medicine':'Urgence', 'Geriatric':'Gériatrie', 'Infectious diseases':'Infectiologie', 'Oncology':'Oncologie', 'Palliative care':'Soins palliatifs', 'Pneumology':'Pneumologie', 'Maternal / pediatric / neonatal':'Soins mère-enfant / pédiatrie / néonatologie', 'Psychiatric':'Psychiatrie', 'Solid organ transplantation':'Transplantation', 'Other':'Autre'}
 SETTING_LABELS_TRANSLATIONS = {'Ambulatory':'Ambulatoire', 'Community':'Communautaire', 'Inpatient':'Établissement', 'Nursing home':'Soins de longue durée', 'Other':'Autre'}
+POTENTIALLY_PREDATORY_ENG_LABEL = 'Potentially predatory journal or publisher'
+OTHER_LABELS_TRANSLATIONS = {POTENTIALLY_PREDATORY_ENG_LABEL:'Journal ou éditeur potentiellement prédateur'}
+POTENTIALLY_PREDATORY_TEMPLATE = '<!-- wp:paragraph {"fontSize":"small"} --><p class="has-small-font-size"><a href="https://impactpharmacie.net/journaux-et-editeurs-potentiellement-predateurs/" target="_blank" rel="noreferrer noopener">Article publié dans un journal ou par un éditeur potentiellement prédateur</a> - <a href="https://impactpharmacie.net/potentially-predatory-journals-and-editors/" target="_blank" rel="noreferrer noopener">Paper published in a potentially predatory journal or by a potentially predatory editor.</a></p><!-- /wp:paragraph -->'
 TRANSLATION_DICT = {**DESIGN_LABEL_TRANSLATIONS, **FIELDS_LABELS_TRANSLATIONS, **SETTING_LABELS_TRANSLATIONS}
 MONTH_NAMES_ENG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 MONTH_NAMES_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
@@ -328,7 +331,7 @@ def verify_pubmed_retrieval(ds):
 
 def rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all, pubmed_credentials):
     for pmid, data in ds.items():
-        title, labels, texts, authors, journal, doi, pubdate = process_single_pmid_data(pmid, data, pubmed_credentials)
+        title, labels, texts, authors, journal, doi, pubdate, domain = process_single_pmid_data(pmid, data, pubmed_credentials)
         ds[pmid]['title'] = title
         ds[pmid]['labels'] = labels
         ds[pmid]['texts'] = texts
@@ -339,6 +342,11 @@ def rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags
         ds[pmid]['machine_learning_tags_fr'] = prediction_tags_fr[pmid]
         ds[pmid]['machine_learning_tags_eng'] = prediction_tags_eng[pmid]
         ds[pmid]['machine_learning_tags_all'] = prediction_tags_all[pmid]
+        ds[pmid]['other_tags_fr'] = []
+        ds[pmid]['other_tags_eng'] = []
+        ds[pmid]['other_tags_all'] = []
+        ds[pmid]['domain'] = domain
+
     return(ds)
 
 def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
@@ -368,8 +376,15 @@ def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
             doi_list = [e.get_text() for e in element_pmdata.find_all('ArticleId') if 'doi' in e.attrs.values()]
             if len(doi_list) > 0:
                 doi = doi_list[0]
+                try:
+                    paper_page = requests.get('https://doi.org/{}'.format(doi))
+                    host = simplify_domain(paper_page.url)
+                    domain = host
+                except: 
+                    domain = 'unknown'
             else:
                 doi = ''
+                domain = 'unknown'
             pubdate = ' '.join([e.get_text() for e in element_pmdata.find('PubDate').children if e.name in ['Year', 'Month', 'Day']])
         except Exception as e:
             print('ERROR processing data for pmid {}, error: {} . Tried {} times, will retry for max {} times'.format(pmid, e, ntries, MAX_PUBMED_TRIES))
@@ -380,9 +395,9 @@ def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
             else:
                 print('ERROR processing data for pmid {} after {} tries, verify settings'.format(pmid, ntries))
                 quit()
-    return title, labels, texts, authors, journal, doi, pubdate
+    return title, labels, texts, authors, journal, doi, pubdate, domain
 
-def verify_and_filter_dataset(ds):
+def verify_and_filter_dataset(ds, potentially_predatory_publishers, potentially_predatory_journals):
     print('Number of elements in dataset: {}'.format(len(ds)))
 
     title_available = 0
@@ -416,12 +431,39 @@ def verify_and_filter_dataset(ds):
         else:
             filtered_dataset[key] = data
     print('Number of elements in filtered dataset: {}'.format(len(filtered_dataset)))
+
+    n_unknown_domains = 0
+    for key,data in filtered_dataset.items():
+        if data['domain'] == 'unkown':
+            n_unknown_domains = n_unknown_domains + 1
+    print('Number of papers with unkown domains: {}'.format(n_unknown_domains))
+
+    def verify_if_predatory(dataset, comparison_list):
+        for key, data in dataset.items():
+            if data['domain'] in comparison_list:
+                print('POTENTIALLY PREDATORY ELEMENT: PMID: {}  doi: {}   domain: {} . This paper will be tagged as potentially predatory.'.format(key, data['doi'], data['domain']))
+                response = take_and_validate_response()
+                if response == 'y':
+                    if POTENTIALLY_PREDATORY_ENG_LABEL in ds[key]['other_tags_eng']:
+                        pass
+                    else:
+                        ds[key]['other_tags_eng'].append(POTENTIALLY_PREDATORY_ENG_LABEL)
+                        ds[key]['other_tags_fr'].append(OTHER_LABELS_TRANSLATIONS[POTENTIALLY_PREDATORY_ENG_LABEL])
+                        ds[key]['other_tags_all'].append(POTENTIALLY_PREDATORY_ENG_LABEL)
+                        ds[keyy]['other_tags_all'].append(OTHER_LABELS_TRANSLATIONS[POTENTIALLY_PREDATORY_ENG_LABEL])
+            else: 
+                pass
+        return dataset
+
+    filtered_dataset = verify_if_predatory(filtered_dataset,potentially_predatory_publishers)
+    filtered_dataset = verify_if_predatory(filtered_dataset,potentially_predatory_journals)
+
     return (filtered_dataset)
 
-def publications_posts(ds, post_url, header, abstract_sections_to_exclude):
+def publications_posts(ds, post_url, header, abstract_sections_to_exclude, potentially_predatory_template, potentially_predatory_eng_label):
     categories = ['Publications']
 
-    post_template = '<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph -->'
+    post_template = '<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph -->'
 
     for pmid, data in ds.items():
         post_content = post_template.format(
@@ -430,6 +472,7 @@ def publications_posts(ds, post_url, header, abstract_sections_to_exclude):
             '     doi: <a rel="noreferrer noopener" href="https://dx.doi.org/{}" target="_blank">{}</a>'.format(data['doi'], data['doi']) if data['doi'] != '' else '',
             data['journal'],
             data['pubdate'],
+            '{}'.format(potentially_predatory_template if potentially_predatory_eng_label in data['other_tags_all'] else ''),
             ' '.join([' '.join(['<!-- wp:paragraph --><p><strong>'+l+'</strong>',t+'</p><!-- /wp:paragraph -->']) for l,t in zip(data['labels'], data['texts']) if l not in abstract_sections_to_exclude]),
             ', '.join(data['authors'])+'.'
             )
@@ -505,13 +548,13 @@ def english_update_post(month_names, start_date, end_date, selected_extraction_d
     response = requests.post(post_url, headers=header, data=json.dumps(post_data))
     print('English update post response: {}'.format(response))
 
-def make_newsletter_post(start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, abstract_sections_to_exclude, where_to_publicize):
+def make_newsletter_post(start_date, end_date, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, abstract_sections_to_exclude, where_to_publicize, potentially_predatory_template, potentially_predatory_eng_label):
 
     categories_briefing = ['Impact Briefing']
 
     briefing_update_text_template = '<!-- wp:paragraph --><p><a href="#{}summary">English</a></p><!-- /wp:paragraph --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}resume"></a></p><!-- wp:heading --><h2 id="{}resume">Résumé</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Ce Impact Briefing couvre la période du {} au {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications ont été identifiées. {} ({:.1f}%) publications ont été filtrées par intelligence artificielle. {} ({:.1f}%) publications ont été révisées manuellement dont {} ({:.1f}%) ont été retenues. Le kappa entre les réviseurs était de {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Les publications suivantes ont été retenues:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}summary"></a></p><!-- wp:heading --><h2 id="{}summary">Summary</h2><!-- /wp:heading --><!-- wp:paragraph --><p>This Impact Briefing covers publications from {} to {}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>{} publications were identified. {} ({:.1f}%) publications were filtered by machine learning. {} ({:.1f}%) publications were manually reviewed, of which {} ({:.1f}%) were selected. Inter-rater kappa was {:.3f}.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>The following publications were selected:</p><!-- /wp:paragraph --><!-- wp:list --><ul>{}</ul><!-- /wp:list --><!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><!-- wp:heading --><h2>Publications</h2><!-- /wp:heading -->{}'
 
-    briefing_update_pub_template = '<!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}"></a></p><!-- wp:heading {{"level":3}} --><h3 id="{}">{}</h3><!-- /wp:heading --><!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph --><!-- wp:paragraph --><p><a href="#{}resume">Retour au résumé</a> - <a href="#{}summary">Return to summary</a></p><!-- /wp:paragraph -->'
+    briefing_update_pub_template = '<!-- wp:spacer {{"height":40}} --><div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer --><p><a name="{}"></a></p><!-- wp:heading {{"level":3}} --><h3 id="{}">{}</h3><!-- /wp:heading --><!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">PMID: <a rel="noreferrer noopener" href="https://pubmed.ncbi.nlm.nih.gov/{}/" target="_blank">{}</a>{}<br><em>{}</em>, <em>{}</em></p><!-- /wp:paragraph -->{}{}<!-- wp:paragraph {{"fontSize":"small"}} --><p class="has-small-font-size">{}</p><!-- /wp:paragraph --><!-- wp:paragraph --><p><a href="#{}resume">Retour au résumé</a> - <a href="#{}summary">Return to summary</a></p><!-- /wp:paragraph -->'
 
     #brefing_update_publicize_template = 'Cette semaine, {} nouvelles publications ont été ajoutées à Impact Pharmacie. Abonnez-vous à notre liste de diffusion pour recevoir les résumés des publications sélectionnées à chaque semaine!'
 
@@ -562,6 +605,7 @@ def make_newsletter_post(start_date, end_date, selected_extraction_df, extractio
             '     doi: <a rel="noreferrer noopener" href="https://dx.doi.org/{}" target="_blank">{}</a>'.format(data['doi'], data['doi']) if data['doi'] != '' else '',
             data['journal'],
             data['pubdate'],
+            '{}'.format(potentially_predatory_template if potentially_predatory_eng_label in data['other_tags_all'] else ''),
             ' '.join([' '.join(['<!-- wp:paragraph --><p><strong>'+l+'</strong>',t+'</p><!-- /wp:paragraph -->']) for l,t in zip(data['labels'], data['texts']) if l not in abstract_sections_to_exclude]),
             ', '.join(data['authors'])+'.',
             datetime.today().strftime('%Y%m%d'),
@@ -617,14 +661,14 @@ if __name__ == '__main__':
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
     ds = rebuild_dataset(ds, prediction_tags_fr, prediction_tags_eng, prediction_tags_all, pubmed_credentials)
-    ds = verify_and_filter_dataset(ds)
+    ds = verify_and_filter_dataset(ds, predatory_publishers_list, predatory_journals_list)
     update_prediction_local_data(LOCAL_PREDICTIONS_RELPATH, prediction_df)
     update_prediction_google_sheet(predictions_sheet, prediction_df)
     update_ratings_local_data(LOCAL_DATA_RELPATH, ratings_sheet)
-    publications_posts(ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE)
+    publications_posts(ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE, POTENTIALLY_PREDATORY_TEMPLATE, POTENTIALLY_PREDATORY_ENG_LABEL)
     french_update_post(MONTH_NAMES_FR, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
     english_update_post(MONTH_NAMES_ENG, START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ratings_df, ds, post_url, header)
-    make_newsletter_post(START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE, WHERE_TO_PUBLICIZE)
+    make_newsletter_post(START_DATE, END_DATE, selected_extraction_df, extraction_log_df, current_extraction_df, ds, post_url, header, ABSTRACT_SECTIONS_TO_EXCLUDE, WHERE_TO_PUBLICIZE, POTENTIALLY_PREDATORY_TEMPLATE, POTENTIALLY_PREDATORY_ENG_LABEL)
     print('DONE !')
 
 
