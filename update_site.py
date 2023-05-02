@@ -24,8 +24,8 @@ LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
 LOCAL_PREDICTIONS_RELPATH = '/data/second_gen/predictions.csv'
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2023/04/16' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2023/04/22' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2023/04/23' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2023/04/29' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 MAX_PUBMED_TRIES = 10 # NUMBER OF MAXIMUM PUBMED QUERY TRIES BEFORE GIVING UP
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER', 'DISCLOSURE', 'DISCLOSURES'] # List of abstract labels that will be excluded from data 
@@ -391,7 +391,7 @@ def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
             if ntries <= MAX_PUBMED_TRIES:
                 time.sleep(0.35)
                 data['pmdata'] = get_pubmed_single_pmid(pmid, pubmed_credentials, ntries=ntries)
-                title, labels, texts, authors, journal, doi, pubdate = process_single_pmid_data(pmid, data, pubmed_credentials)
+                title, labels, texts, authors, journal, doi, pubdate, domain = process_single_pmid_data(pmid, data, pubmed_credentials)
             else:
                 print('ERROR processing data for pmid {} after {} tries, verify settings'.format(pmid, ntries))
                 quit()
