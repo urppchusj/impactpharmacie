@@ -411,8 +411,12 @@
 409,37061822.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
 410,37070272.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
 411,37075901.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
-412,37104076,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-413,37109373,Systematic review or meta-analysis,1,Systematic review or Meta-Analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Community"
-414,37113201,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Oncology",Inpatient,0.1,Inpatient
-415,37114637,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-416,37116796,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+412,37104076.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+413,37109373.0,Systematic review or meta-analysis,1.0,Systematic review or Meta-Analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Community"
+414,37113201.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Oncology",Inpatient,0.1,Inpatient
+415,37114637.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+416,37116796.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+417,37133630,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+418,37139249,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+419,37140880,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+420,37142053,Systematic review or meta-analysis,1,Systematic review or Meta-Analysis,Other,0.1,Other,Community,0.1,Other
