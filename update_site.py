@@ -450,7 +450,7 @@ def verify_and_filter_dataset(ds, potentially_predatory_publishers, potentially_
                         ds[key]['other_tags_eng'].append(POTENTIALLY_PREDATORY_ENG_LABEL)
                         ds[key]['other_tags_fr'].append(OTHER_LABELS_TRANSLATIONS[POTENTIALLY_PREDATORY_ENG_LABEL])
                         ds[key]['other_tags_all'].append(POTENTIALLY_PREDATORY_ENG_LABEL)
-                        ds[keyy]['other_tags_all'].append(OTHER_LABELS_TRANSLATIONS[POTENTIALLY_PREDATORY_ENG_LABEL])
+                        ds[key]['other_tags_all'].append(OTHER_LABELS_TRANSLATIONS[POTENTIALLY_PREDATORY_ENG_LABEL])
             else: 
                 pass
         return dataset
