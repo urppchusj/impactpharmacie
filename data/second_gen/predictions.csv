@@ -426,6 +426,8 @@
 424,37169256.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 425,37170909.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 426,37173924.0,Systematic review or meta-analysis,1.0,Systematic review or Meta-Analysis,Oncology,0.1,Oncology,Community,0.1,Other
-427,37194783,Study,1,Study,Infectious diseases,0.1,"Other, Infectious diseases",Inpatient,0.1,Other
-428,37198058,Study,1,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Ambulatory
-429,37198738,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Other
+427,37194783.0,Study,1.0,Study,Infectious diseases,0.1,"Other, Infectious diseases",Inpatient,0.1,Other
+428,37198058.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Ambulatory
+429,37198738.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Other
+430,37216074,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+431,37233864,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
