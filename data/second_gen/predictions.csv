@@ -431,5 +431,11 @@
 429,37198738.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Other
 430,37216074.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 431,37233864.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
-432,37247044,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-433,37253820,Study,1,Study,Other,0.1,"Psychiatric, Diabetes",Community,0.1,Community
+432,37247044.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+433,37253820.0,Study,1.0,Study,Other,0.1,"Psychiatric, Diabetes",Community,0.1,Community
+434,37276041,Study,1,Study,Other,0.1,Pneumology,Community,0.1,Community
+435,37278781,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+436,37283852,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
+437,37286385,Study,1,Study,Other,0.1,"Cardiology, Diabetes, Other",Community,0.1,Community
+438,37292150,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+439,37294586,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
