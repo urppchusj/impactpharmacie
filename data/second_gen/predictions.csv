@@ -439,8 +439,11 @@
 437,37286385.0,Study,1.0,Study,Other,0.1,"Cardiology, Diabetes, Other",Community,0.1,Community
 438,37292150.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
 439,37294586.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-440,37301508,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Nursing home
-441,37303761,Study,1,Study,Cardiology,0.1,"Maternal / pediatric / neonatal, Cardiology",Ambulatory,0.1,Ambulatory
-442,37305590,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-443,37312222,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Inpatient
-444,37312262,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,"Inpatient, Nursing home"
+440,37301508.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Nursing home
+441,37303761.0,Study,1.0,Study,Cardiology,0.1,"Maternal / pediatric / neonatal, Cardiology",Ambulatory,0.1,Ambulatory
+442,37305590.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+443,37312222.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Inpatient
+444,37312262.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,"Inpatient, Nursing home"
+445,37339754,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
+446,37350157,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+447,37350675,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Inpatient
