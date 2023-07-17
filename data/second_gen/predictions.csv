@@ -453,10 +453,15 @@
 451,37368751.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
 452,37381135.0,Study,1.0,Study,Geriatric,0.1,Other,Ambulatory,0.1,Nursing home
 453,37387477.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-454,37396191,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-455,37397765,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-456,37400758,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-457,37409359,Study,1,Study,Other,0.1,Critical care,Inpatient,0.1,Inpatient
-458,37410461,Study,1,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
-459,37410963,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
-460,37427394,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+454,37396191.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+455,37397765.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+456,37400758.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+457,37409359.0,Study,1.0,Study,Other,0.1,Critical care,Inpatient,0.1,Inpatient
+458,37410461.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
+459,37410963.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+460,37427394.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+461,37428504,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
+462,37432148,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
+463,37435420,Study,1,Study,Other,0.1,Pneumology,Community,0.1,Community
+464,37440312,Study,1,Study,Emergency medicine,0.1,"Maternal / pediatric / neonatal, Emergency medicine, Infectious diseases, Oncology",Inpatient,0.1,Inpatient
+465,37442709,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
