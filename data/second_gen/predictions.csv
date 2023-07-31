@@ -460,8 +460,14 @@
 458,37410461.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
 459,37410963.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
 460,37427394.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-461,37428504,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
-462,37432148,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
-463,37435420,Study,1,Study,Other,0.1,Pneumology,Community,0.1,Community
-464,37440312,Study,1,Study,Emergency medicine,0.1,"Maternal / pediatric / neonatal, Emergency medicine, Infectious diseases, Oncology",Inpatient,0.1,Inpatient
-465,37442709,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+461,37428504.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
+462,37432148.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
+463,37435420.0,Study,1.0,Study,Other,0.1,Pneumology,Community,0.1,Community
+464,37440312.0,Study,1.0,Study,Emergency medicine,0.1,"Maternal / pediatric / neonatal, Emergency medicine, Infectious diseases, Oncology",Inpatient,0.1,Inpatient
+465,37442709.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+466,37484021,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
+467,37492331,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
+468,37496166,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+469,37499595,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+470,37499757,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+471,37508288,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
