@@ -471,6 +471,9 @@
 469,37499595.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
 470,37499757.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 471,37508288.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-472,37515915,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
-473,37523315,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Geriatric",Community,0.1,Ambulatory
-474,37532558,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+472,37515915.0,Study,1.0,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+473,37523315.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Geriatric",Community,0.1,Ambulatory
+474,37532558.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+475,37543960,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Anticoagulation,0.1,Other,Community,0.1,Other
+476,37562577,Study,1,Study,Solid organ transplantation,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
+477,37567242,Study,1,Study,Psychiatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
