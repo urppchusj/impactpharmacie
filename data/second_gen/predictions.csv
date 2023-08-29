@@ -477,5 +477,10 @@
 475,37543960.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Anticoagulation,0.1,Other,Community,0.1,Other
 476,37562577.0,Study,1.0,Study,Solid organ transplantation,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
 477,37567242.0,Study,1.0,Study,Psychiatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
-478,37594401,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-479,37597081,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+478,37594401.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+479,37597081.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+480,37601047,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+481,37604404,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Ambulatory,0.1,Ambulatory
+482,37608990,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+483,37611896,Study,1,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
+484,37615989,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
