@@ -479,8 +479,11 @@
 477,37567242.0,Study,1.0,Study,Psychiatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
 478,37594401.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 479,37597081.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-480,37601047,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
-481,37604404,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Ambulatory,0.1,Ambulatory
-482,37608990,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-483,37611896,Study,1,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
-484,37615989,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+480,37601047.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+481,37604404.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Ambulatory,0.1,Ambulatory
+482,37608990.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+483,37611896.0,Study,1.0,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
+484,37615989.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+485,37641020,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+486,37645440,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+487,37655116,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Ambulatory
