@@ -484,6 +484,9 @@
 482,37608990.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 483,37611896.0,Study,1.0,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
 484,37615989.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-485,37641020,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
-486,37645440,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
-487,37655116,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Ambulatory
+485,37641020.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+486,37645440.0,Study,1.0,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+487,37655116.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Ambulatory
+488,37667376,Study,1,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
+489,37669277,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+490,37679253,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,"Pneumology, Maternal / pediatric / neonatal",Inpatient,0.1,Other
