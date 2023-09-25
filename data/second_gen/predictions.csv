@@ -490,12 +490,14 @@
 488,37667376.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
 489,37669277.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
 490,37679253.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,"Pneumology, Maternal / pediatric / neonatal",Inpatient,0.1,Other
-491,37693909,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Ambulatory"
-492,37696492,Study,1,Study,Anticoagulation,0.1,Diabetes,Inpatient,0.1,Inpatient
-493,37696709,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-494,37702044,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-495,37702981,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Inpatient,0.1,"Inpatient, Ambulatory, Community, Nursing home"
-496,37704533,Study,1,Study,Other,0.1,Other,Community,0.1,Community
-497,37704534,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Community,0.1,Ambulatory
-498,37706215,Study,1,Study,Cardiology,0.1,"Diabetes, Cardiology",Inpatient,0.1,Inpatient
-499,37713028,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
+491,37693909.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Ambulatory"
+492,37696492.0,Study,1.0,Study,Anticoagulation,0.1,Diabetes,Inpatient,0.1,Inpatient
+493,37696709.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+494,37702044.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+495,37702981.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Inpatient,0.1,"Inpatient, Ambulatory, Community, Nursing home"
+496,37704533.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
+497,37704534.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Community,0.1,Ambulatory
+498,37706215.0,Study,1.0,Study,Cardiology,0.1,"Diabetes, Cardiology",Inpatient,0.1,Inpatient
+499,37713028.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
+500,37728160,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+501,37736909,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
