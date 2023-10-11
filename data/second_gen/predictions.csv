@@ -501,13 +501,15 @@
 499,37713028.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
 500,37728160.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
 501,37736909.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-502,37745082,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-503,37745417,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-504,37745726,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-505,37745731,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-506,37749102,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
-507,37758967,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
-508,37761794,Study,1,Study,Other,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
-509,37767382,Study,1,Study,Infectious diseases,0.1,"Pneumology, Infectious diseases",Inpatient,0.1,Inpatient
-510,37768663,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-511,37773498,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+502,37745082.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+503,37745417.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+504,37745726.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+505,37745731.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+506,37749102.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+507,37758967.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
+508,37761794.0,Study,1.0,Study,Other,0.1,Solid organ transplantation,Ambulatory,0.1,Ambulatory
+509,37767382.0,Study,1.0,Study,Infectious diseases,0.1,"Pneumology, Infectious diseases",Inpatient,0.1,Inpatient
+510,37768663.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+511,37773498.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+512,37781181,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+513,37801081,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
