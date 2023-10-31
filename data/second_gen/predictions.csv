@@ -513,8 +513,13 @@
 511,37773498.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
 512,37781181.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
 513,37801081.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-514,37808195,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-515,37812158,Study,1,Study,Palliative care,0.1,Palliative care,Ambulatory,0.1,Ambulatory
-516,37816569,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Other
-517,37818791,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Other
-518,37824500,Study,1,Study,Other,0.1,Cardiology,Inpatient,0.1,Inpatient
+514,37808195.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+515,37812158.0,Study,1.0,Study,Palliative care,0.1,Palliative care,Ambulatory,0.1,Ambulatory
+516,37816569.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Other
+517,37818791.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Other
+518,37824500.0,Study,1.0,Study,Other,0.1,Cardiology,Inpatient,0.1,Inpatient
+519,37864345,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+520,37876544,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+521,37878503,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+522,37888095,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+523,37893845,Study,1,Study,Psychiatric,0.1,Geriatric,Inpatient,0.1,Inpatient
