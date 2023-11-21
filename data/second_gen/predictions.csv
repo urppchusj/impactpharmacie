@@ -523,9 +523,14 @@
 521,37878503.0,Study,1.0,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
 522,37888095.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
 523,37893845.0,Study,1.0,Study,Psychiatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-524,37924307,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-525,37931404,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
-526,37931904,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
-527,37939522,Systematic review or meta-analysis,1,Systematic reivew or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-528,37941339,Study,1,Study,Infectious diseases,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
-529,37945419,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+524,37924307.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+525,37931404.0,Study,1.0,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
+526,37931904.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+527,37939522.0,Systematic review or meta-analysis,1.0,Systematic reivew or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+528,37941339.0,Study,1.0,Study,Infectious diseases,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+529,37945419.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
+530,37953114,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Infectious diseases,Inpatient,0.1,Other
+531,37957464,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Other
+532,37974376,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+533,37976134,Study,1,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Ambulatory
+534,37978410,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
