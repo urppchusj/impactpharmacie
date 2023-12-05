@@ -534,8 +534,13 @@
 532,37974376.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 533,37976134.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Ambulatory
 534,37978410.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
-535,37979228,Study,1,Study,Infectious diseases,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
-536,37995812,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-537,37996073,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Ambulatory,0.1,Ambulatory
-538,38000711,Study,1,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
-539,38002644,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Solid organ transplantation,Inpatient,0.1,Inpatient
+535,37979228.0,Study,1.0,Study,Infectious diseases,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+536,37995812.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+537,37996073.0,Study,1.0,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Ambulatory,0.1,Ambulatory
+538,38000711.0,Study,1.0,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
+539,38002644.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Solid organ transplantation,Inpatient,0.1,Inpatient
+540,38020524,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+541,38025170,Study,1,Study,Other,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+542,38026998,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
+543,38035312,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+544,38035315,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
