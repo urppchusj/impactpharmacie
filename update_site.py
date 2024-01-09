@@ -24,8 +24,8 @@ LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
 LOCAL_PREDICTIONS_RELPATH = '/data/second_gen/predictions.csv'
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2023/12/17' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2023/12/30' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2023/12/31' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2024/01/06' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 MAX_PUBMED_TRIES = 10 # NUMBER OF MAXIMUM PUBMED QUERY TRIES BEFORE GIVING UP
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER', 'DISCLOSURE', 'DISCLOSURES'] # List of abstract labels that will be excluded from data 
@@ -365,14 +365,26 @@ def process_single_pmid_data(pmid, data, pubmed_credentials, ntries=0):
                 if title == None:
                     title = ''
             except:
-                title = ''
+                try:
+                    t = element_pmdata.find_all('BookTitle')
+                    title = [e.get_text() for e in t][0]
+                    if title == None:
+                        title = ''         
+                except:
+                    title = ''
             if element_pmdata.find('Abstract') == None:
                 pass
             else:
                 labels = [e['Label'] if 'Label' in e.attrs.keys() else '' for e in element_pmdata.find('Abstract').find_all('AbstractText')]
                 texts = [e.get_text() for e in element_pmdata.find('Abstract').find_all('AbstractText')]
             authors = [' '.join([f.get_text(), l.get_text()]) for f, l in zip(element_pmdata.find_all('ForeName'), element_pmdata.find_all('LastName'))]
-            journal = element_pmdata.find('MedlineTA').get_text()
+            try:
+                journal = element_pmdata.find('MedlineTA').get_text()
+            except:
+                try:
+                    journal = element_pmdata.find('PublisherName').get_text()
+                except:
+                    journal = ''
             doi_list = [e.get_text() for e in element_pmdata.find_all('ArticleId') if 'doi' in e.attrs.values()]
             if len(doi_list) > 0:
                 doi = doi_list[0]
