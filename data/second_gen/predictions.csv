@@ -557,9 +557,12 @@
 555,38165024.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
 556,38169950.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
 557,38170487.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-558,38185857,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
-559,38186441,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-560,38189139,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-561,38194009,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
-562,38205195,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,"Community, Other"
-563,38212699,Study,1,Study,Other,0.1,Geriatric,Inpatient,0.1,Inpatient
+558,38185857.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+559,38186441.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+560,38189139.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+561,38194009.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+562,38205195.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,"Community, Other"
+563,38212699.0,Study,1.0,Study,Other,0.1,Geriatric,Inpatient,0.1,Inpatient
+564,38223860,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+565,38223862,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+566,38243762,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
