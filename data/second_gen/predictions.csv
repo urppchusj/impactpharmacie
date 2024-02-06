@@ -566,7 +566,10 @@
 564,38223860.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 565,38223862.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 566,38243762.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-567,38248775,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-568,38256443,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-569,38263566,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-570,38264514,Study,1,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
+567,38248775.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+568,38256443.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+569,38263566.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+570,38264514.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
+571,38291114,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
+572,38293819,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+573,38301189,Study,1,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
