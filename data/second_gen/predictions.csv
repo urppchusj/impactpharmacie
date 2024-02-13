@@ -570,6 +570,13 @@
 568,38256443.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 569,38263566.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 570,38264514.0,Study,1.0,Study,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
-571,38291114,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
-572,38293819,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-573,38301189,Study,1,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
+571,38291114.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
+572,38293819.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+573,38301189.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
+574,38309415,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Ambulatory"
+575,38312443,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Other
+576,38318740,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+577,38326207,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+578,38327981,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
+579,38333578,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Other
+580,38334280,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Other
