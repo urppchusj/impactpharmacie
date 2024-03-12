@@ -585,7 +585,9 @@
 583,38374208.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 584,38379810.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 585,38381449.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
-586,38417740,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,"Community, Other"
-587,38422752,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-588,38423928,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
-589,38429063,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
+586,38417740.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,"Community, Other"
+587,38422752.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+588,38423928.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
+589,38429063.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
+590,38446643,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+591,38451551,Study,1,Study,Palliative care,0.1,Palliative care,Inpatient,0.1,Inpatient
