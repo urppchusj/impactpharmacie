@@ -589,5 +589,11 @@
 587,38422752.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
 588,38423928.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
 589,38429063.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
-590,38446643,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-591,38451551,Study,1,Study,Palliative care,0.1,Palliative care,Inpatient,0.1,Inpatient
+590,38446643.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+591,38451551.0,Study,1.0,Study,Palliative care,0.1,Palliative care,Inpatient,0.1,Inpatient
+592,38462441,Study,1,Study,Palliative care,0.1,"Palliative care, Oncology",Inpatient,0.1,Inpatient
+593,38476498,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+594,38476501,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+595,38488695,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+596,38488757,Study,1,Study,Psychiatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+597,38490859,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
