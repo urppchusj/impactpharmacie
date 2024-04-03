@@ -597,7 +597,10 @@
 595,38488695.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 596,38488757.0,Study,1.0,Study,Psychiatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
 597,38490859.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-598,38503475,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Inpatient
-599,38507608,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-600,38513978,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
-601,38514293,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
+598,38503475.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Inpatient
+599,38507608.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+600,38513978.0,Study,1.0,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+601,38514293.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
+602,38521288,Study,1,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Inpatient,0.1,Inpatient
+603,38525094,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+604,38547626,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Anticoagulation",Inpatient,0.1,Inpatient
