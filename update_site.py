@@ -504,7 +504,7 @@ def french_update_post(month_names, start_date, end_date, selected_extraction_df
     update_post_content = update_post_template.format(
         start_date, 
         end_date, 
-        selected_extraction_df.at[0, 'n_results'], 
+        '{:,}'.format(selected_extraction_df.at[0, 'n_results']).replace(',',' '), 
         len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']),
         (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']) / selected_extraction_df.at[0, 'n_results']) *100,
         len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']),
@@ -537,7 +537,7 @@ def english_update_post(month_names, start_date, end_date, selected_extraction_d
     update_post_content = update_post_template.format(
         start_date, 
         end_date, 
-        selected_extraction_df.at[0, 'n_results'], 
+        '{:,}'.format(selected_extraction_df.at[0, 'n_results']).replace(',',' '),
         len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']),
         (len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Exclude']) / selected_extraction_df.at[0, 'n_results']) *100,
         len(current_extraction_df[current_extraction_df['inclusion_suggestion'] == 'Review']),
