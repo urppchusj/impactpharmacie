@@ -606,7 +606,9 @@
 604,38547626.0,Study,1.0,Study,Emergency medicine,0.1,"Emergency medicine, Anticoagulation",Inpatient,0.1,Inpatient
 605,38555630.0,Study,1.0,Study,Cardiology,0.1,"Cardiology, Diabetes",Community,0.1,Community
 606,38561676.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
-607,38583146,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
-608,38602274,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-609,38604475,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-610,38606174,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+607,38583146.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+608,38602274.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+609,38604475.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+610,38606174.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+611,38638590,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+612,38619824,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
