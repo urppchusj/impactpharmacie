@@ -610,5 +610,10 @@
 608,38602274.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 609,38604475.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 610,38606174.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-611,38638590,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
-612,38619824,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+611,38638590.0,Study,1.0,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+612,38619824.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+613,38671535,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+614,38669733,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+615,38668097,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+616,38656264,Study,1,Study,Geriatric,0.1,"Geriatric, Emergency medicine",Inpatient,0.1,Inpatient
+617,38644566,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Pneumology,Inpatient,0.1,Other
