@@ -617,8 +617,13 @@
 615,38668097.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
 616,38656264.0,Study,1.0,Study,Geriatric,0.1,"Geriatric, Emergency medicine",Inpatient,0.1,Inpatient
 617,38644566.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Pneumology,Inpatient,0.1,Other
-618,38696494,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
-619,38692414,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,"Ambulatory, Community"
-620,38686457,Study,1,Study,Other,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-621,38685617,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-622,38681323,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Inpatient,0.1,Inpatient
+618,38696494.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+619,38692414.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,"Ambulatory, Community"
+620,38686457.0,Study,1.0,Study,Other,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+621,38685617.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+622,38681323.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Inpatient,0.1,Inpatient
+623,38749667,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+624,38744554,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Ambulatory
+625,38737433,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+626,38735391,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+627,38715170,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
