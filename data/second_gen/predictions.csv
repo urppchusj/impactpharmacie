@@ -622,8 +622,16 @@
 620,38686457.0,Study,1.0,Study,Other,0.1,Emergency medicine,Inpatient,0.1,Inpatient
 621,38685617.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 622,38681323.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Inpatient,0.1,Inpatient
-623,38749667,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-624,38744554,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Ambulatory
-625,38737433,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
-626,38735391,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-627,38715170,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+623,38749667.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+624,38744554.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Ambulatory
+625,38737433.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+626,38735391.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+627,38715170.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+628,38789106,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
+629,38780938,Study,1,Study,Oncology,0.1,Oncology,Community,0.1,Ambulatory
+630,38779104,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Community,0.1,Community
+631,38772839,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+632,38766359,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+633,38765000,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+634,38764999,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+635,38763161,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Other
