@@ -641,6 +641,9 @@
 639,38803026.0,Study,1.0,Study,Cardiology,0.1,"Geriatric, Cardiology",Ambulatory,0.1,Ambulatory
 640,38796162.0,Study,1.0,Study,Other,0.1,"Diabetes, Cardiology",Ambulatory,0.1,Ambulatory
 641,38795904.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-642,38848380,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-643,38847489,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
-644,38828495,Study,1,Study,Critical care,0.1,"Critical care, Diabetes",Inpatient,0.1,Inpatient
+642,38848380.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+643,38847489.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Inpatient
+644,38828495.0,Study,1.0,Study,Critical care,0.1,"Critical care, Diabetes",Inpatient,0.1,Inpatient
+645,38872270,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+646,38867148,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Inpatient,0.1,Other
+647,38866605,Systematic review or meta-analysis,1,Systematic reivew or meta-analysis,Psychiatric,0.1,Psychiatric,Community,0.1,Other
