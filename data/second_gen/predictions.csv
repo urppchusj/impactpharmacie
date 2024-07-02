@@ -647,7 +647,11 @@
 645,38872270.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
 646,38867148.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Inpatient,0.1,Other
 647,38866605.0,Systematic review or meta-analysis,1.0,Systematic reivew or meta-analysis,Psychiatric,0.1,Psychiatric,Community,0.1,Other
-648,38907254,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
-649,38897676,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
-650,38897188,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-651,38888949,Study,1,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
+648,38907254.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Community
+649,38897676.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
+650,38897188.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+651,38888949.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
+652,38934846,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+653,38933175,Study,1,Study,Other,0.1,Oncology,Inpatient,0.1,Inpatient
+654,38926767,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
+655,38917202,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
