@@ -651,7 +651,9 @@
 649,38897676.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
 650,38897188.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
 651,38888949.0,Study,1.0,Study,Anticoagulation,0.1,"Anticoagulation, Cardiology",Ambulatory,0.1,Ambulatory
-652,38934846,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
-653,38933175,Study,1,Study,Other,0.1,Oncology,Inpatient,0.1,Inpatient
-654,38926767,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
-655,38917202,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+652,38934846.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+653,38933175.0,Study,1.0,Study,Other,0.1,Oncology,Inpatient,0.1,Inpatient
+654,38926767.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
+655,38917202.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+656,38973415,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+657,38961098,Study,1,Study,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
