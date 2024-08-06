@@ -661,8 +661,13 @@
 659,39030731.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
 660,39027934.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Other
 661,39003246.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Other
-662,39046741,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
-663,39045788,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-664,39042924,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-665,39041750,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-666,39038105,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+662,39046741.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+663,39045788.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+664,39042924.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+665,39041750.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+666,39038105.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+667,39092087,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+668,39091467,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
+669,39090152,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
+670,39088333,Study,1,Study,Infectious diseases,0.1,Other,Community,0.1,Community
+671,39083657,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
