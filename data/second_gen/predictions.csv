@@ -690,6 +690,9 @@
 688,39318717.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
 689,39317390.0,Study,1.0,Study,Infectious diseases,0.1,Other,Ambulatory,0.1,Ambulatory
 690,39313149.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-691,39358501,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
-692,39355201,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
-693,39343728,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+691,39358501.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
+692,39355201.0,Study,1.0,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+693,39343728.0,Study,1.0,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+694,39395139,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
+695,39379970,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
+696,39371437,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
