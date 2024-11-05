@@ -696,10 +696,13 @@
 694,39395139.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
 695,39379970.0,Study,1.0,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
 696,39371437.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-697,39454050,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-698,39452804,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Other
-699,39452240,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-700,39449858,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-701,39439259,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Community,0.1,Other
-702,39434827,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
-703,39396102,Study,1,Study,Other,0.1,Other,Inpatient,0.1,"Inpatient, Ambulatory"
+697,39454050.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+698,39452804.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Other
+699,39452240.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+700,39449858.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+701,39439259.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Community,0.1,Other
+702,39434827.0,Study,1.0,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+703,39396102.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,"Inpatient, Ambulatory"
+704,39485493,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+705,39477467,Study,1,Study,Oncology,0.1,"Palliative care, Oncology",Inpatient,0.1,Ambulatory
+706,39471268,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
