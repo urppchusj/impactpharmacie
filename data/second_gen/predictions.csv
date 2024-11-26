@@ -709,8 +709,13 @@
 707,39503798.0,Study,1.0,Study,Cardiology,0.1,"Cardiology, Geriatric",Ambulatory,0.1,Ambulatory
 708,39503006.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
 709,39483514.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-710,39544827,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-711,39544820,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
-712,39529043,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-713,39523475,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
-714,39507879,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+710,39544827.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+711,39544820.0,Study,1.0,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+712,39529043.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+713,39523475.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+714,39507879.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Ambulatory
+715,39570898,Study,1,Study,Other,0.1,"Diabetes, Cardiology",Ambulatory,0.1,Ambulatory
+716,39563932,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+717,39556701,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+718,39555108,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+719,39551088,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
