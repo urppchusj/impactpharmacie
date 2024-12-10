@@ -719,9 +719,11 @@
 717,39556701.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
 718,39555108.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
 719,39551088.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
-720,39611911,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,"Ambulatory, Community"
-721,39611178,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-722,39609916,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-723,39603805,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-724,39601933,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-725,39591802,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+720,39611911.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,"Ambulatory, Community"
+721,39611178.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+722,39609916.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+723,39603805.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+724,39601933.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+725,39591802.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+726,39640898,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Other
+727,39636047,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Inpatient
