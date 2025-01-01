@@ -45,6 +45,10 @@ This notebook uses scikit-learn to train and evaluate various classifier models 
 
 This notebook uses Hugging Face Transformers to train and evaluate transformer models on the second generation dataset to determine if the paper should be included in Impact Pharmacie. The notebook also includes the training of production models.
 
+### inclusion_transformers.ipynb
+
+This notebook is similar to `inclusion_transformers.ipynb`, but is based on the second generation dataset at the end of 2024 (about 12 000 abstracts) to compare different type of transformer models. The goal is to determine if the newer model versions and the increase in dataset size can lead to improved performance as compared to the original model.
+
 ### labels_basic_models.ipynb
 
 This notebook uses scikit-learn to train and evaluate a large number of "classic" machine learning models on the original dataset for label predictions (design, field and setting of included papers).
@@ -99,7 +103,7 @@ Cynthia Tanguay
 
 GNU GPL v3
 
-Copyright (C) 2022 Maxime Thibault, Cynthia Tanguay.
+Copyright (C) 2025 Maxime Thibault, Cynthia Tanguay.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
