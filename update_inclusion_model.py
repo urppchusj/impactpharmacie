@@ -12,17 +12,17 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, Text
 FILEPATH = '.'
 GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
-THRESHOLD_SHEET_NAME = 'thresholds' # NAME OF THRESHOLDS SHEET IN SPREADSHEET
 LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
 LOCAL_THRESHOLD_RELPATH = '/data/second_gen/thresholds.csv' # RELATIVE PATH TO LOCAL THRESHOLD LOG
-INCLUSION_MODEL_RELPATH = '/models/production_models/inclusion_biobert' # RELATIVE PATH TO PRODUCTION INCLUSION MODELS (NOT A SPECIFIC VERSION)
-INCLUSION_MODEL_LR = 1e-5 # Learning rate to use for inclusion model
-INCLUSION_MODEL_EPOCHS = 4 # Epochs to use for inclusion model
+INCLUSION_MODELS_TO_USE = {
+    'inclusion_biobert':{'relpath':'/models/production_models/inclusion_biobert','threshold_relpath':'/data/second_gen/thresholds_biobert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'dmis-lab/biobert-base-cased-v1.2', 'lr':1e-5, 'epochs':4},
+    'inclusion_biomedbert':{'relpath':'/models/production_models/inclusion_biomedbert','threshold_relpath':'/data/second_gen/thresholds_biomedbert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract', 'lr':2e-5, 'epochs':3},
+    } # DICT OF MODELS TO USE AND ASSOCIATED PARAMETERS
 
 # FUNCTIONS
 
-def get_google_sheets(google_spreadsheet_id, data_sheet_name, threshold_sheet_name):
+def force_update_google_credentials():
     credentials_filepath = FILEPATH + '/credentials/credentials.json'
     authorized_user_filepath = FILEPATH + '/credentials/authorized_user.json'
     if os.path.exists(authorized_user_filepath):
@@ -31,10 +31,12 @@ def get_google_sheets(google_spreadsheet_id, data_sheet_name, threshold_sheet_na
         credentials_filename = credentials_filepath,
         authorized_user_filename = authorized_user_filepath
     )
+    return gc
+
+def get_google_sheet(gc, google_spreadsheet_id, sheet_name):
     sht = gc.open_by_key(google_spreadsheet_id)
-    ratings_sheet = sht.worksheet(data_sheet_name)
-    threshold_sheet = sht.worksheet(threshold_sheet_name)
-    return ratings_sheet, threshold_sheet
+    sheet = sht.worksheet(sheet_name)
+    return sheet
 
 def get_end_date(local_log_relpath):
     extraction_log_df = pd.read_csv(FILEPATH + local_log_relpath, index_col=0).fillna('')
@@ -54,7 +56,7 @@ def update_threshold_local_data(local_threshold_relpath, end_date, new_threshold
 def update_threshold_google_sheet(threshold_sheet, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl):
     threshold_sheet.append_row([end_date, new_threshold, ', '.join([str(t) for t in thresholds]), ', '.join([str(p) for p in precisions]), ', '.join([str(r) for r in recalls]), ', '.join([str(f) for f in f1s]), ', '.join([str(a) for a in accuracies]), ', '.join([str(r) for r in excl_ratios]), ', '.join([str(i) for i in n_inc_excl])])
 
-def compute_new_threshold(local_data_relpath, inclusion_model_lr, inclusion_model_epochs, tokenizer_function, tokenizer, tokenizer_kwargs):
+def compute_new_threshold(local_data_relpath, inclusion_model_source, inclusion_model_lr, inclusion_model_epochs, tokenizer_function, tokenizer, tokenizer_kwargs):
     df = pd.read_csv(FILEPATH + local_data_relpath)[1:].fillna('')
     df['labels'] = df.apply(lambda x: x['rating_consensus'] if x['rating_consensus'] != '' else x['rating1'] if ((x['rating1'] == x['rating2']) and (x['consensus_reason'] == '') and (x['rating1'] != '')) else 'error', axis=1)
     df_columns_to_keep = ['text', 'labels']
@@ -82,13 +84,13 @@ def compute_new_threshold(local_data_relpath, inclusion_model_lr, inclusion_mode
 
         tokenized_ds = ds.map(tokenizer_function, batched=True)
 
-        model = AutoModelForSequenceClassification.from_pretrained('dmis-lab/biobert-base-cased-v1.2', num_labels=2)
-        training_args = TrainingArguments(FILEPATH + '/.temp', save_strategy='no', evaluation_strategy='no', logging_strategy='no', overwrite_output_dir=True, learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
+        model = AutoModelForSequenceClassification.from_pretrained(inclusion_model_source, num_labels=2)
+        training_args = TrainingArguments(FILEPATH + '/.temp', save_strategy='no', eval_strategy='no', logging_strategy='no', overwrite_output_dir=True, learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
         trainer = Trainer(model=model, args=training_args, train_dataset=tokenized_ds)
         trainer.train()
 
         print('Starting threshold calculation for fold: {}'.format(n_fold))
-        pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, return_all_scores=True, device=0)
+        pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, top_k=None, device=0)
         scores = []
         for i in range(len(val)):
             scores.append(pipe(val.iloc[i]['text'], **tokenizer_kwargs)[0][1]['score'])
@@ -123,7 +125,7 @@ def compute_new_threshold(local_data_relpath, inclusion_model_lr, inclusion_mode
     print('Mean threshold: {:.20f}'.format(new_threshold))
     return(new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
 
-def update_inclusion_model(local_data_relpath, inclusion_model_relpath, current_model_version, inclusion_model_lr, inclusion_model_epochs, tokenizer_function):
+def update_inclusion_model(local_data_relpath, inclusion_model_source, inclusion_model_relpath, current_model_version, inclusion_model_lr, inclusion_model_epochs, tokenizer_function):
     new_model_version = int(current_model_version) + 1
     print('Training new version of inclusion model going from version {} to version {}'.format(current_model_version, new_model_version))
 
@@ -138,8 +140,8 @@ def update_inclusion_model(local_data_relpath, inclusion_model_relpath, current_
 
     tokenized_ds = ds.map(tokenizer_function, batched=True)
 
-    model = AutoModelForSequenceClassification.from_pretrained('dmis-lab/biobert-base-cased-v1.2', num_labels=2)
-    training_args = TrainingArguments(FILEPATH + inclusion_model_relpath + '/v{}'.format(new_model_version), save_strategy='no', evaluation_strategy='no', logging_strategy='no', learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
+    model = AutoModelForSequenceClassification.from_pretrained(inclusion_model_source, num_labels=2)
+    training_args = TrainingArguments(FILEPATH + inclusion_model_relpath + '/v{}'.format(new_model_version), save_strategy='no', eval_strategy='no', logging_strategy='no', learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
     trainer = Trainer(model=model, args=training_args, train_dataset=tokenized_ds)
     trainer.train()
     trainer.save_model(FILEPATH + '/models/production_models/inclusion_biobert/v{}'.format(new_model_version))
@@ -156,17 +158,20 @@ if __name__ == '__main__':
     else:
         google_spreadsheet_id = spreadsheet_ids['test_google_spreadsheet_id']
 
-    ratings_sheet, threshold_sheet = get_google_sheets(google_spreadsheet_id, DATA_SHEET_NAME, THRESHOLD_SHEET_NAME)
-    current_inclusion_model_version = get_inclusion_model_version(INCLUSION_MODEL_RELPATH)
     end_date = get_end_date(LOCAL_LOG_RELPATH)
 
-    tokenizer = AutoTokenizer.from_pretrained('dmis-lab/biobert-base-cased-v1.2')
-    def tokenizer_function(samples):
-        return tokenizer(samples['text'], padding="max_length", truncation=True, max_length=512)
-    tokenizer_kwargs = {'padding':True,'truncation':True,'max_length':512}
-
-    new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl = compute_new_threshold(LOCAL_DATA_RELPATH, INCLUSION_MODEL_LR, INCLUSION_MODEL_EPOCHS, tokenizer_function, tokenizer, tokenizer_kwargs)
-    update_threshold_local_data(LOCAL_THRESHOLD_RELPATH, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
-    update_threshold_google_sheet(threshold_sheet, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
-    update_inclusion_model(LOCAL_DATA_RELPATH, INCLUSION_MODEL_RELPATH, current_inclusion_model_version, INCLUSION_MODEL_LR, INCLUSION_MODEL_EPOCHS, tokenizer_function)
+    google_credentials = force_update_google_credentials()
+    
+    for inclusion_model_name, inclusion_model_parameters in INCLUSION_MODELS_TO_USE.items():
+        print('\n\nPreparing inclusion model for update: {}'.format(inclusion_model_name))
+        current_inclusion_model_version = get_inclusion_model_version(inclusion_model_parameters['relpath'])
+        threshold_sheet = get_google_sheet(google_credentials, google_spreadsheet_id, inclusion_model_parameters['threshold_sheet_name'])
+        tokenizer = AutoTokenizer.from_pretrained(inclusion_model_parameters['model_source'])
+        def tokenizer_function(samples):
+            return tokenizer(samples['text'], padding="max_length", truncation=True, max_length=512)
+        tokenizer_kwargs = {'padding':True,'truncation':True,'max_length':512}
+        new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl = compute_new_threshold(LOCAL_DATA_RELPATH, inclusion_model_parameters['model_source'], inclusion_model_parameters['lr'], inclusion_model_parameters['epochs'], tokenizer_function, tokenizer, tokenizer_kwargs)
+        update_threshold_local_data(inclusion_model_parameters['threshold_relpath'], end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
+        update_threshold_google_sheet(threshold_sheet, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
+        update_inclusion_model(LOCAL_DATA_RELPATH, inclusion_model_parameters['model_source'], inclusion_model_parameters['relpath'], current_inclusion_model_version, inclusion_model_parameters['lr'], inclusion_model_parameters['epochs'], tokenizer_function)
     print('Done !')

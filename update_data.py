@@ -18,8 +18,11 @@ GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOG_SHEET_NAME = 'extraction_log' # NAME OF LOG SHEET IN SPREADSHEET
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv' # RELATIVE PATH TO LOCAL EXTRACTION LOG
-LOCAL_THRESHOLD_RELPATH = '/data/second_gen/thresholds.csv' # RELATIVE PATH TO LOCAL THRESHOLD LOG
-INCLUSION_MODEL_RELPATH = '/models/production_models/inclusion_biobert' # RELATIVE PATH TO PRODUCTION INCLUSION MODELS (NOT A SPECIFIC VERSION)
+INCLUSION_MODELS_TO_USE = {
+    'inclusion_biobert':{'relpath':'/models/production_models/inclusion_biobert','threshold_relpath':'/data/second_gen/thresholds_biobert.csv','model_source':'dmis-lab/biobert-base-cased-v1.2'},
+    'inclusion_biomedbert':{'relpath':'/models/production_models/inclusion_biomedbert','threshold_relpath':'/data/second_gen/thresholds_biomedbert.csv','model_source':'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract'},
+    } # DICT OF MODELS TO USE AND ASSOCIATED PARAMETERS
+BASELINE_INCLUSION_MODEL_TO_USE = 'inclusion_biobert' # NAME (KEY) OF BASELINE INCLUSION MODEL IN INCLUSION_MODELS_TO_USE ON WHICH INCLUSION SUGGESTIONS WILL BE BASED
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
 START_DATE = '2024/12/01' # FORMAT 'YYYY/MM/DD'
 END_DATE = '2024/12/07' # FORMAT 'YYYY/MM/DD'
@@ -205,28 +208,32 @@ def build_text_and_filter_dataset(ds, abstract_sections_to_exclude):
     
     return filtered_dataset
 
-def make_inclusion_predictions(data, exclusion_threshold, model_version, inclusion_model_relpath):
-    df = pd.DataFrame.from_dict(data, orient='index', columns=['text'])
+def make_inclusion_predictions(df, exclusion_threshold, model_name, model_source, model_version, inclusion_model_relpath):
     ds = Dataset.from_pandas(df)
     ds.cleanup_cache_files()
-    tokenizer = AutoTokenizer.from_pretrained('dmis-lab/biobert-base-cased-v1.2')
+    tokenizer = AutoTokenizer.from_pretrained(model_source)
     tokenizer_kwargs = {'padding':True,'truncation':True,'max_length':512}
     model = AutoModelForSequenceClassification.from_pretrained(FILEPATH + inclusion_model_relpath + '/v{}'.format(model_version), local_files_only=True)
-    pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, return_all_scores=True, device=0)
+    pipe = TextClassificationPipeline(model=model, tokenizer=tokenizer, top_k=None, device=0)
     scores = []
     for i in range(len(ds)):
         scores.append(pipe(ds[i]['text'], **tokenizer_kwargs)[0][1]['score'])
-    df['inclusion_score'] = scores
-    df['inclusion_suggestion'] = df['inclusion_score'].apply(lambda x: 'Exclude' if x < exclusion_threshold else 'Review')
-    df['inclusion_model_version'] = model_version
-    df = df.drop('inclusion_score', axis=1)
+    df[model_name+'_score'] = scores
+    df[model_name+'_suggestion'] = df[model_name+'_score'].apply(lambda x: 'Exclude' if x < exclusion_threshold else 'Review')
+    df[model_name+'_model_version'] = model_version
+    df = df.drop(model_name+'_score', axis=1)
     df['rating1'] = ''
     df['rating2'] = ''
-    df['rating_consensus'] = df.apply(lambda x: 0 if x['inclusion_suggestion'] == 'Exclude' else '', axis=1)
-    df['consensus_reason'] = df.apply(lambda x: 'Excluded by ML model' if x['inclusion_suggestion'] == 'Exclude' else '', axis=1)
+    if model_name == BASELINE_INCLUSION_MODEL_TO_USE:
+        df['rating_consensus'] = df.apply(lambda x: 0 if x[model_name+'_suggestion'] == 'Exclude' else '', axis=1)
+        df['consensus_reason'] = df.apply(lambda x: 'Excluded by ML model {}'.format(model_name) if x[model_name+'_suggestion'] == 'Exclude' else '', axis=1)
+    else:
+        df['rating_consensus'] = ''
+        df['consensus_reason'] = ''    
     n_filtered = len(df[df['inclusion_suggestion']=='Exclude'])
     n_included = len(df[df['inclusion_suggestion']=='Review'])
-    print('Number of elements excluded by inclusion model: {}'.format(n_filtered))
+    print('For inclusion model: {}'.format(model_name))
+    print('Number of elements excluded by model: {}'.format(n_filtered))
     print('Number of elements to review: {}'.format(n_included))
     return(df)
 
@@ -234,21 +241,22 @@ def convert_df_to_rows (df):
     rows_to_append = df.reset_index().rename({'index':'PMID'},axis='columns').values.tolist()
     return rows_to_append
 
-def update_local_data(pmids, start_date, end_date, exclusion_threshold, local_log_relpath):
-    df_to_append = pd.DataFrame.from_dict([{'date_begin':start_date,'date_end':end_date,'n_results':len(pmids),'pmids':', '.join(pmids), 'exclusion_threshold':exclusion_threshold}])
+def update_local_data(pmids, start_date, end_date, exclusion_threshold, inclusion_model_used, local_log_relpath):
+    df_to_append = pd.DataFrame.from_dict([{'date_begin':start_date,'date_end':end_date,'n_results':len(pmids),'pmids':', '.join(pmids), 'exclusion_threshold':exclusion_threshold, 'baseline_inclusion_model_name':inclusion_model_used}])
     extraction_log_df = pd.read_csv(FILEPATH + local_log_relpath, index_col=0).fillna('')
     updated_extraction_log = pd.concat([extraction_log_df, df_to_append], ignore_index=True)
     updated_extraction_log.to_csv(FILEPATH + local_log_relpath)
 
-def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids, exclusion_threshold):
+def update_google_sheet(sht, data_sheet_name, log_sheet_name, rows_to_append, start_date, end_date, pmids, exclusion_threshold, inclusion_model_used):
     data_sheet = sht.worksheet(data_sheet_name)
     data_sheet.batch_clear(['data_contents'])
     data_sheet.append_rows(rows_to_append)
-    data_sheet.hide_columns(9,11)
-    data_sheet.hide_columns(12,15)
-    data_sheet.hide_columns(16,17)
+    data_sheet.hide_columns(4,6)
+    data_sheet.hide_columns(11,13)
+    data_sheet.hide_columns(14,17)
+    data_sheet.hide_columns(18,19)
     log_sheet = sht.worksheet(log_sheet_name)
-    log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids), exclusion_threshold])
+    log_sheet.append_row([start_date, end_date, len(pmids), ', '.join(pmids), exclusion_threshold, inclusion_model_used])
 
 # MAIN
 
@@ -266,16 +274,24 @@ if __name__ == '__main__':
         pubmed_credentials = json.load(file)
 
     google_sheet = get_google_sheet(google_spreadsheet_id, DATA_SHEET_NAME)
-    model_version = get_model_version(INCLUSION_MODEL_RELPATH)
-    exclusion_threshold = get_exclusion_threshold(LOCAL_THRESHOLD_RELPATH)
     n_results = get_n_results(pubmed_credentials, SEARCH_QUERY, START_DATE, END_DATE)
     previous_pmids = get_previous_pmids(LOCAL_LOG_RELPATH)
     pmids = build_pmid_list(n_results, previous_pmids, pubmed_credentials, SEARCH_QUERY, ORIGINAL_START_DATE, START_DATE, END_DATE)
     ds = retrieve_pubmed_data(pmids, pubmed_credentials)
     verify_pubmed_retrieval(ds)
     filtered_ds = build_text_and_filter_dataset(ds, ABSTRACT_SECTIONS_TO_EXCLUDE)
-    df = make_inclusion_predictions(filtered_ds, exclusion_threshold, model_version, INCLUSION_MODEL_RELPATH)
+    df = pd.DataFrame.from_dict(filtered_ds, orient='index', columns=['text'])
+
+    for inclusion_model_name, inclusion_model_parameters in INCLUSION_MODELS_TO_USE.items():
+        print('\n\nPreparing inclusion model for prediction: {}'.format(inclusion_model_name))
+        inclusion_model_version = get_model_version(inclusion_model_parameters['relpath'])
+        inclusion_model_exclusion_threshold = get_exclusion_threshold(inclusion_model_parameters['threshold_relpath'])
+        if inclusion_model_name == BASELINE_INCLUSION_MODEL_TO_USE:
+            exclusion_threshold = inclusion_model_exclusion_threshold
+            inclusion_model_used = inclusion_model_name
+        df = make_inclusion_predictions(df, inclusion_model_exclusion_threshold, inclusion_model_name, inclusion_model_parameters['model_source'], inclusion_model_version, inclusion_model_parameters['relpath'])
+    
     rows_to_append = convert_df_to_rows(df)
-    update_local_data(pmids, START_DATE, END_DATE, exclusion_threshold, LOCAL_LOG_RELPATH)
-    update_google_sheet(google_sheet, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids, exclusion_threshold)
+    update_local_data(pmids, START_DATE, END_DATE, exclusion_threshold, inclusion_model_used, LOCAL_LOG_RELPATH)
+    update_google_sheet(google_sheet, DATA_SHEET_NAME, LOG_SHEET_NAME, rows_to_append, START_DATE, END_DATE, pmids, exclusion_threshold, inclusion_model_used)
     print('DONE !')
