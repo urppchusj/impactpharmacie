@@ -14,7 +14,6 @@ GOOGLE_SPREADSHEET_ID = 'REAL' # 'REAL' OR 'TEST'
 DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
-LOCAL_THRESHOLD_RELPATH = '/data/second_gen/thresholds.csv' # RELATIVE PATH TO LOCAL THRESHOLD LOG
 INCLUSION_MODELS_TO_USE = {
     'inclusion_biobert':{'relpath':'/models/production_models/inclusion_biobert','threshold_relpath':'/data/second_gen/thresholds_biobert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'dmis-lab/biobert-base-cased-v1.2', 'lr':1e-5, 'epochs':4},
     'inclusion_biomedbert':{'relpath':'/models/production_models/inclusion_biomedbert','threshold_relpath':'/data/second_gen/thresholds_biomedbert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract', 'lr':2e-5, 'epochs':3},
