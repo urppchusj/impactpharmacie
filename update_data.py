@@ -24,8 +24,8 @@ INCLUSION_MODELS_TO_USE = {
     } # DICT OF MODELS TO USE AND ASSOCIATED PARAMETERS
 BASELINE_INCLUSION_MODEL_TO_USE = 'inclusion_biobert' # NAME (KEY) OF BASELINE INCLUSION MODEL IN INCLUSION_MODELS_TO_USE ON WHICH INCLUSION SUGGESTIONS WILL BE BASED
 ORIGINAL_START_DATE = '2021/11/07' # FORMAT 'YYYY/MM/DD'
-START_DATE = '2024/12/01' # FORMAT 'YYYY/MM/DD'
-END_DATE = '2024/12/07' # FORMAT 'YYYY/MM/DD'
+START_DATE = '2024/12/08' # FORMAT 'YYYY/MM/DD'
+END_DATE = '2024/12/28' # FORMAT 'YYYY/MM/DD'
 SEARCH_QUERY = 'pharmacists[All Fields] OR pharmacist[All Fields] OR pharmacy[title]' # PUBMED QUERY STRING
 ABSTRACT_SECTIONS_TO_EXCLUDE = ['DISCLAIMER'] # List of abstract labels that will be excluded from data 
 
@@ -209,7 +209,7 @@ def build_text_and_filter_dataset(ds, abstract_sections_to_exclude):
     return filtered_dataset
 
 def make_inclusion_predictions(df, exclusion_threshold, model_name, model_source, model_version, inclusion_model_relpath):
-    ds = Dataset.from_pandas(df)
+    ds = Dataset.from_pandas(df[['text']])
     ds.cleanup_cache_files()
     tokenizer = AutoTokenizer.from_pretrained(model_source)
     tokenizer_kwargs = {'padding':True,'truncation':True,'max_length':512}
@@ -222,22 +222,20 @@ def make_inclusion_predictions(df, exclusion_threshold, model_name, model_source
     df[model_name+'_suggestion'] = df[model_name+'_score'].apply(lambda x: 'Exclude' if x < exclusion_threshold else 'Review')
     df[model_name+'_model_version'] = model_version
     df = df.drop(model_name+'_score', axis=1)
-    df['rating1'] = ''
-    df['rating2'] = ''
     if model_name == BASELINE_INCLUSION_MODEL_TO_USE:
+        df['rating1'] = ''
+        df['rating2'] = ''
         df['rating_consensus'] = df.apply(lambda x: 0 if x[model_name+'_suggestion'] == 'Exclude' else '', axis=1)
-        df['consensus_reason'] = df.apply(lambda x: 'Excluded by ML model {}'.format(model_name) if x[model_name+'_suggestion'] == 'Exclude' else '', axis=1)
-    else:
-        df['rating_consensus'] = ''
-        df['consensus_reason'] = ''    
-    n_filtered = len(df[df['inclusion_suggestion']=='Exclude'])
-    n_included = len(df[df['inclusion_suggestion']=='Review'])
+        df['consensus_reason'] = df.apply(lambda x: 'Excluded by ML model {}'.format(model_name) if x[model_name+'_suggestion'] == 'Exclude' else '', axis=1)   
+    n_filtered = len(df[df[model_name+'_suggestion']=='Exclude'])
+    n_included = len(df[df[model_name+'_suggestion']=='Review'])
     print('For inclusion model: {}'.format(model_name))
     print('Number of elements excluded by model: {}'.format(n_filtered))
     print('Number of elements to review: {}'.format(n_included))
     return(df)
 
 def convert_df_to_rows (df):
+    df = df[['text', 'inclusion_biobert_suggestion', 'inclusion_biobert_model_version', 'inclusion_biomedbert_suggestion', 'inclusion_biomedbert_model_version', 'rating1', 'rating2', 'rating_consensus', 'consensus_reason']]
     rows_to_append = df.reset_index().rename({'index':'PMID'},axis='columns').values.tolist()
     return rows_to_append
 

@@ -15,8 +15,9 @@ DATA_SHEET_NAME = 'data' # NAME OF DATA SHEET IN SPREADSHEET
 LOCAL_DATA_RELPATH = '/data/second_gen/ratings.csv'
 LOCAL_LOG_RELPATH = '/data/second_gen/extraction_log.csv'
 INCLUSION_MODELS_TO_USE = {
-    'inclusion_biobert':{'relpath':'/models/production_models/inclusion_biobert','threshold_relpath':'/data/second_gen/thresholds_biobert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'dmis-lab/biobert-base-cased-v1.2', 'lr':1e-5, 'epochs':4},
-    'inclusion_biomedbert':{'relpath':'/models/production_models/inclusion_biomedbert','threshold_relpath':'/data/second_gen/thresholds_biomedbert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract', 'lr':2e-5, 'epochs':3},
+    #
+    # 'inclusion_biobert':{'relpath':'/models/production_models/inclusion_biobert','threshold_relpath':'/data/second_gen/thresholds_biobert.csv','threshold_sheet_name':'thresholds_biobert','model_source':'dmis-lab/biobert-base-cased-v1.2', 'lr':1e-5, 'epochs':4},
+    'inclusion_biomedbert':{'relpath':'/models/production_models/inclusion_biomedbert','threshold_relpath':'/data/second_gen/thresholds_biomedbert.csv','threshold_sheet_name':'thresholds_biomedbert','model_source':'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract', 'lr':2e-5, 'epochs':3},
     } # DICT OF MODELS TO USE AND ASSOCIATED PARAMETERS
 
 # FUNCTIONS
@@ -140,10 +141,11 @@ def update_inclusion_model(local_data_relpath, inclusion_model_source, inclusion
     tokenized_ds = ds.map(tokenizer_function, batched=True)
 
     model = AutoModelForSequenceClassification.from_pretrained(inclusion_model_source, num_labels=2)
+    for param in model.parameters(): param.data = param.data.contiguous() # LINE ADDED BECAUSE OF A WEIRD BUG THAT PREVENTS SAVING BIOMEDBERT MODELS BECAUSE OF NON CONTIGUOUS TENSORS
     training_args = TrainingArguments(FILEPATH + inclusion_model_relpath + '/v{}'.format(new_model_version), save_strategy='no', eval_strategy='no', logging_strategy='no', learning_rate=inclusion_model_lr, num_train_epochs=inclusion_model_epochs)
     trainer = Trainer(model=model, args=training_args, train_dataset=tokenized_ds)
     trainer.train()
-    trainer.save_model(FILEPATH + '/models/production_models/inclusion_biobert/v{}'.format(new_model_version))
+    trainer.save_model(FILEPATH + inclusion_model_relpath + '/v{}'.format(new_model_version))
 
 # MAIN
 
@@ -169,8 +171,8 @@ if __name__ == '__main__':
         def tokenizer_function(samples):
             return tokenizer(samples['text'], padding="max_length", truncation=True, max_length=512)
         tokenizer_kwargs = {'padding':True,'truncation':True,'max_length':512}
-        new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl = compute_new_threshold(LOCAL_DATA_RELPATH, inclusion_model_parameters['model_source'], inclusion_model_parameters['lr'], inclusion_model_parameters['epochs'], tokenizer_function, tokenizer, tokenizer_kwargs)
-        update_threshold_local_data(inclusion_model_parameters['threshold_relpath'], end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
-        update_threshold_google_sheet(threshold_sheet, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
+        #new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl = compute_new_threshold(LOCAL_DATA_RELPATH, inclusion_model_parameters['model_source'], inclusion_model_parameters['lr'], inclusion_model_parameters['epochs'], tokenizer_function, tokenizer, tokenizer_kwargs)
+        #update_threshold_local_data(inclusion_model_parameters['threshold_relpath'], end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
+        #update_threshold_google_sheet(threshold_sheet, end_date, new_threshold, thresholds, precisions, recalls, f1s, accuracies, excl_ratios, n_inc_excl)
         update_inclusion_model(LOCAL_DATA_RELPATH, inclusion_model_parameters['model_source'], inclusion_model_parameters['relpath'], current_inclusion_model_version, inclusion_model_parameters['lr'], inclusion_model_parameters['epochs'], tokenizer_function)
     print('Done !')
