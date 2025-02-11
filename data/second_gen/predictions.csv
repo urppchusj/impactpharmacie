@@ -746,7 +746,11 @@
 744,39822966.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Diabetes,Community,0.1,Ambulatory
 745,39810205.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Inpatient
 746,39805472.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Inpatient
-747,39847313,Study,1,Study,Other,0.1,"Diabetes, Cardiology",Community,0.1,Community
-748,39846626,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
-749,39835655,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Oncology,Inpatient,0.1,Inpatient
-750,39827716,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+747,39847313.0,Study,1.0,Study,Other,0.1,"Diabetes, Cardiology",Community,0.1,Community
+748,39846626.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
+749,39835655.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Oncology,Inpatient,0.1,Inpatient
+750,39827716.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+751,39911588,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+752,39899613,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Other
+753,39887291,Study,1,Study,Other,0.1,Critical care,Inpatient,0.1,Inpatient
+754,39880783,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
