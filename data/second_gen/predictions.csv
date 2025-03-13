@@ -758,7 +758,13 @@
 756,39945968.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 757,39933700.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
 758,39931646.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
-759,39971482,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Ambulatory
-760,39968320,Systematic review or meta-analysis,1,Systematic review or meta-anlysis,Other,0.1,Other,Community,0.1,Community
-761,39962166,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
-762,39956726,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+759,39971482.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Ambulatory
+760,39968320.0,Systematic review or meta-analysis,1.0,Systematic review or meta-anlysis,Other,0.1,Other,Community,0.1,Community
+761,39962166.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+762,39956726.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+763,40041763,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+764,40034877,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+765,40032596,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+766,40022158,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+767,40004736,Study,1,Study,Other,0.1,Pneumology,Ambulatory,0.1,Ambulatory
+768,39991504,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
