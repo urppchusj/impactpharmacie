@@ -762,9 +762,15 @@
 760,39968320.0,Systematic review or meta-analysis,1.0,Systematic review or meta-anlysis,Other,0.1,Other,Community,0.1,Community
 761,39962166.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
 762,39956726.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
-763,40041763,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
-764,40034877,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
-765,40032596,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-766,40022158,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-767,40004736,Study,1,Study,Other,0.1,Pneumology,Ambulatory,0.1,Ambulatory
-768,39991504,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+763,40041763.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+764,40034877.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+765,40032596.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+766,40022158.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+767,40004736.0,Study,1.0,Study,Other,0.1,Pneumology,Ambulatory,0.1,Ambulatory
+768,39991504.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+769,40085434,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+770,40075535,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,"Inpatient, Community"
+771,40072914,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Palliative care,0.1,Palliative care,Ambulatory,0.1,Other
+772,40071277,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
+773,40067297,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
+774,40064123,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
