@@ -768,9 +768,19 @@
 766,40022158.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
 767,40004736.0,Study,1.0,Study,Other,0.1,Pneumology,Ambulatory,0.1,Ambulatory
 768,39991504.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-769,40085434,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
-770,40075535,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,"Inpatient, Community"
-771,40072914,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Palliative care,0.1,Palliative care,Ambulatory,0.1,Other
-772,40071277,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
-773,40067297,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
-774,40064123,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+769,40085434.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+770,40075535.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,"Inpatient, Community"
+771,40072914.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Palliative care,0.1,Palliative care,Ambulatory,0.1,Other
+772,40071277.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
+773,40067297.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
+774,40064123.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+775,40156301,Study,1,Study,Other,0.1,Oncology,Ambulatory,0.1,Ambulatory
+776,40153788,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+777,40149048,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+778,40137078,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+779,40134041,Study,1,Study,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
+780,40133139,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+781,40132025,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+782,40130309,Study,1,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
+783,40111584,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+784,40110423,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
