@@ -774,13 +774,18 @@
 772,40071277.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
 773,40067297.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
 774,40064123.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-775,40156301,Study,1,Study,Other,0.1,Oncology,Ambulatory,0.1,Ambulatory
-776,40153788,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-777,40149048,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-778,40137078,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
-779,40134041,Study,1,Study,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
-780,40133139,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
-781,40132025,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
-782,40130309,Study,1,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
-783,40111584,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-784,40110423,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+775,40156301.0,Study,1.0,Study,Other,0.1,Oncology,Ambulatory,0.1,Ambulatory
+776,40153788.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+777,40149048.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+778,40137078.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+779,40134041.0,Study,1.0,Study,Other,0.1,Geriatric,Ambulatory,0.1,Nursing home
+780,40133139.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+781,40132025.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+782,40130309.0,Study,1.0,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
+783,40111584.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+784,40110423.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+785,40219764,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+786,40219736,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
+787,40204153,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+788,40200273,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+789,40161392,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Community
