@@ -789,12 +789,15 @@
 787,40204153.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 788,40200273.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 789,40161392.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Community
-790,40285823,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-791,40281848,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
-792,40279452,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-793,40279301,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-794,40277377,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-795,40275971,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
-796,40268193,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-797,40235711,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-798,40224172,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,"Community, Ambulatory"
+790,40285823.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+791,40281848.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+792,40279452.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+793,40279301.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+794,40277377.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+795,40275971.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Ambulatory
+796,40268193.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+797,40235711.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+798,40224172.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,"Community, Ambulatory"
+799,40296244,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+800,40293767,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+801,40290828,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
