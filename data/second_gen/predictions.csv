@@ -798,6 +798,11 @@
 796,40268193.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 797,40235711.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
 798,40224172.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,"Community, Ambulatory"
-799,40296244,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-800,40293767,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-801,40290828,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+799,40296244.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+800,40293767.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+801,40290828.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+802,40357005,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Diabetes,Inpatient,0.1,Other
+803,40344871,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Infectious diseases",Inpatient,0.1,Inpatient
+804,40342611,Study,1,Study,Other,0.1,"Critical care, Infectious diseases",Inpatient,0.1,Inpatient
+805,40339647,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+806,40334268,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
