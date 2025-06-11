@@ -809,8 +809,11 @@
 807,40407498.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
 808,40400907.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 809,40397289.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Inpatient
-810,40448592,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-811,40448431,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-812,40443003,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-813,40417647,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-814,40414699,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+810,40448592.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+811,40448431.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+812,40443003.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+813,40417647.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+814,40414699.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+815,40474457,Study,1,Study,Other,0.1,Geriatric,Inpatient,0.1,Nursing home
+816,40458234,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+817,40450951,Study,1,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
