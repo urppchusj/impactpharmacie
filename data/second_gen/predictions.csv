@@ -823,12 +823,17 @@
 821,40490672.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Community
 822,40549358.0,Study,1.0,Study,Emergency medicine,0.1,Other,Ambulatory,0.1,Ambulatory
 823,40527546.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-824,40592577,Study,1,Study,Other,0.1,"Cardiology, Diabetes",Ambulatory,0.1,Community
-825,40602717,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
-826,40587818,Study,1,Study,Other,0.1,Oncology,Inpatient,0.1,Ambulatory
-827,40593995,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
-828,40615962,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-829,40601374,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Inpatient,0.1,Ambulatory
-830,40612933,Study,1,Study,Emergency medicine,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
-831,40603140,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
-832,40610363,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+824,40592577.0,Study,1.0,Study,Other,0.1,"Cardiology, Diabetes",Ambulatory,0.1,Community
+825,40602717.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
+826,40587818.0,Study,1.0,Study,Other,0.1,Oncology,Inpatient,0.1,Ambulatory
+827,40593995.0,Study,1.0,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+828,40615962.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+829,40601374.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Other,Inpatient,0.1,Ambulatory
+830,40612933.0,Study,1.0,Study,Emergency medicine,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+831,40603140.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+832,40610363.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+833,40636367,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+834,40668584,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+835,40675326,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+836,40659017,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Pneumology,Ambulatory,0.1,Other
+837,40671935,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
