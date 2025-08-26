@@ -832,8 +832,25 @@
 830,40612933.0,Study,1.0,Study,Emergency medicine,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
 831,40603140.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
 832,40610363.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-833,40636367,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-834,40668584,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-835,40675326,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-836,40659017,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Pneumology,Ambulatory,0.1,Other
-837,40671935,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+833,40636367.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+834,40668584.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+835,40675326.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+836,40659017.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Pneumology,Ambulatory,0.1,Other
+837,40671935.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+838,40814301,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+839,40749146,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+840,40835508,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Solid organ transplantation,0.1,Other,Inpatient,0.1,Ambulatory
+841,40836872,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+842,40782983,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+843,40767560,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+844,40846576,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Community,0.1,Other
+845,40845675,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+846,40838559,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+847,40843858,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Oncology",Inpatient,0.1,Inpatient
+848,40775483,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Other,Community,0.1,Other
+849,40803979,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+850,40726768,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+851,40840401,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Emergency medicine,Inpatient,0.1,Inpatient
+852,40831590,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+853,40821961,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+854,40840922,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,"Ambulatory, Inpatient"
