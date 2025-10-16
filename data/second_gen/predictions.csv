@@ -857,7 +857,27 @@
 855,40864118.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
 856,40863696.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
 857,40863706.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Other
-858,40900289,Study,1,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
-859,40900718,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-860,40883843,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
-861,40901572,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,"Cardiology, Anticoagulation",Ambulatory,0.1,Other
+858,40900289.0,Study,1.0,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+859,40900718.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+860,40883843.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Community
+861,40901572.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,"Cardiology, Anticoagulation",Ambulatory,0.1,Other
+862,40922589.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+863,40978481.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+864,40985740.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+865,40959956.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
+866,40988069.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Inpatient,0.1,Inpatient
+867,40994060.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Ambulatory
+868,40980188.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+869,40989843.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+870,40962482.0,Study,1.0,Study,Other,0.1,"Infectious diseases, Geriatric",Inpatient,0.1,Inpatient
+871,40986816.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+872,40959457.0,Study,1.0,Study,Psychiatric,0.1,"Geriatric, Psychiatric",Inpatient,0.1,Inpatient
+873,40971075.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+874,41034884.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,"Diabetes, Cardiology",Ambulatory,0.1,Other
+875,41031609.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+876,41023004.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+877,41044881.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+878,41073168,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
+879,41065857,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+880,41063219,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+881,41070304,Study,1,Study,Cardiology,0.1,"Cardiology, Geriatric",Inpatient,0.1,"Inpatient, Ambulatory"
