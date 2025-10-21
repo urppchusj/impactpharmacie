@@ -877,7 +877,13 @@
 875,41031609.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
 876,41023004.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 877,41044881.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-878,41073168,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
-879,41065857,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-880,41063219,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
-881,41070304,Study,1,Study,Cardiology,0.1,"Cardiology, Geriatric",Inpatient,0.1,"Inpatient, Ambulatory"
+878,41073168.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Community
+879,41065857.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+880,41063219.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Inpatient,0.1,Other
+881,41070304.0,Study,1.0,Study,Cardiology,0.1,"Cardiology, Geriatric",Inpatient,0.1,"Inpatient, Ambulatory"
+882,41099719,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Community
+883,41087947,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+884,41080829,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
+885,41087738,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Emergency medicine,0.1,Other,Ambulatory,0.1,Other
+886,41079470,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Other,Community,0.1,Community
+887,41079967,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
