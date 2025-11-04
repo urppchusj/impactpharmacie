@@ -887,11 +887,16 @@
 885,41087738.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Emergency medicine,0.1,Other,Ambulatory,0.1,Other
 886,41079470.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Other,Community,0.1,Community
 887,41079967.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-888,41126963,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
-889,41127151,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-890,41110456,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-891,41136398,Study,1,Study,Other,0.1,Pneumology,Ambulatory,0.1,Ambulatory
-892,41131189,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
-893,41126511,Study,1,Study,Critical care,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
-894,41129891,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
-895,41115593,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Other
+888,41126963.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Inpatient
+889,41127151.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+890,41110456.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+891,41136398.0,Study,1.0,Study,Other,0.1,Pneumology,Ambulatory,0.1,Ambulatory
+892,41131189.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+893,41126511.0,Study,1.0,Study,Critical care,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+894,41129891.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+895,41115593.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Other
+896,41170382,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+897,41148669,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+898,41159575,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
+899,41140003,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+900,41171061,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
