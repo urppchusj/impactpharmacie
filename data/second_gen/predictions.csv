@@ -900,6 +900,11 @@
 898,41159575.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Other
 899,41140003.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
 900,41171061.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Community,0.1,Ambulatory
-901,41176548,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
-902,41190176,Study,1,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
-903,41188755,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+901,41176548.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
+902,41190176.0,Study,1.0,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
+903,41188755.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+904,41230337,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+905,41225639,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+906,41218932,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
+907,41231384,Study,1,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Ambulatory
+908,41221665,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
