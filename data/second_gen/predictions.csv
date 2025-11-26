@@ -903,8 +903,14 @@
 901,41176548.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Community
 902,41190176.0,Study,1.0,Study,Other,0.1,Anticoagulation,Inpatient,0.1,Inpatient
 903,41188755.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
-904,41230337,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
-905,41225639,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-906,41218932,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
-907,41231384,Study,1,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Ambulatory
-908,41221665,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+904,41230337.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+905,41225639.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+906,41218932.0,Study,1.0,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
+907,41231384.0,Study,1.0,Study,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Ambulatory
+908,41221665.0,Study,1.0,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+909,41266400,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Community,0.1,Other
+910,41271463,Study,1,Study,Other,0.1,Other,Community,0.1,Community
+911,41254567,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+912,41261654,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
+913,41272526,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Other
+914,41261148,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
