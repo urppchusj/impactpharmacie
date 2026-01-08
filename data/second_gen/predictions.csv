@@ -914,14 +914,26 @@
 912,41261654.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
 913,41272526.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Community,0.1,Other
 914,41261148.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Cardiology,0.1,Cardiology,Inpatient,0.1,Other
-915,41383439,Study,1,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
-916,41381296,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-917,41338392,Study,1,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
-918,41345860,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
-919,41328842,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
-920,41321907,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
-921,41313582,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Diabetes,Ambulatory,0.1,Other
-922,41341804,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
-923,41318267,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
-924,41358047,Study,1,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
-925,41365547,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+915,41383439.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Community,0.1,Ambulatory
+916,41381296.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+917,41338392.0,Study,1.0,Study,Critical care,0.1,Critical care,Inpatient,0.1,Inpatient
+918,41345860.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+919,41328842.0,Study,1.0,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+920,41321907.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
+921,41313582.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Diabetes,Ambulatory,0.1,Other
+922,41341804.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Community
+923,41318267.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Other,Ambulatory,0.1,Other
+924,41358047.0,Study,1.0,Study,Psychiatric,0.1,Psychiatric,Ambulatory,0.1,Ambulatory
+925,41365547.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Oncology,0.1,Oncology,Inpatient,0.1,Ambulatory
+926,41458502,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Other
+927,41453079,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+928,41421742,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+929,41442173,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+930,41400690,Study,1,Study,Oncology,0.1,Oncology,Ambulatory,0.1,Ambulatory
+931,41461687,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+932,41424800,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+933,41394361,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+934,41467772,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Ambulatory,0.1,Other
+935,41463763,Study,1,Study,Emergency medicine,0.1,"Infectious diseases, Emergency medicine",Inpatient,0.1,Inpatient
+936,41425737,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Psychiatric,0.1,Other,Ambulatory,0.1,Other
+937,41467757,Study,1,Study,Other,0.1,"Maternal / pediatric / neonatal, Critical care",Inpatient,0.1,Inpatient
