@@ -944,6 +944,12 @@
 942,41488037.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 943,41528868.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
 944,41531708.0,Study,1.0,Study,Emergency medicine,0.1,Emergency medicine,Inpatient,0.1,Inpatient
-945,41566254,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-946,41554772,Study,1,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
-947,41550209,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+945,41566254.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+946,41554772.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
+947,41550209.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+948,41592209,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+949,41607686,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+950,41610902,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
+951,41605655,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+952,41603307,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
+953,41619153,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
