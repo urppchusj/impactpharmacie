@@ -947,9 +947,21 @@
 945,41566254.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 946,41554772.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 947,41550209.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-948,41592209,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-949,41607686,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
-950,41610902,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
-951,41605655,Study,1,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-952,41603307,Study,1,Study,Emergency medicine,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
-953,41619153,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+948,41592209.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+949,41607686.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Ambulatory
+950,41610902.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Ambulatory
+951,41605655.0,Study,1.0,Study,Other,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+952,41603307.0,Study,1.0,Study,Emergency medicine,0.1,"Emergency medicine, Geriatric",Inpatient,0.1,Inpatient
+953,41619153.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Inpatient
+954,41655890.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+955,41663175.0,Study,1.0,Study,Anticoagulation,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
+956,41672146.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+957,41689279.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+958,41682809.0,Study,1.0,Study,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+959,41655793.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+960,41645920.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
+961,41706448,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+962,41704941,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+963,41697773,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+964,41717677,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+965,41698168,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
