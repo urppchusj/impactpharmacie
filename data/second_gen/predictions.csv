@@ -960,8 +960,14 @@
 958,41682809.0,Study,1.0,Study,Other,0.1,Geriatric,Ambulatory,0.1,Ambulatory
 959,41655793.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
 960,41645920.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Ambulatory
-961,41706448,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-962,41704941,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
-963,41697773,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
-964,41717677,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
-965,41698168,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+961,41706448.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+962,41704941.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+963,41697773.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Nursing home
+964,41717677.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
+965,41698168.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+966,41729521,Study,1,Study,Cardiology,0.1,"Cardiology, Diabetes",Community,0.1,Community
+967,41724433,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Other,0.1,Pneumology,Community,0.1,Other
+968,41748318,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Cardiology,0.1,Other,Inpatient,0.1,Other
+969,41788873,Study,1,Study,Infectious diseases,0.1,"Critical care, Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
+970,41746649,Study,1,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
+971,41777149,Study,1,Study,Oncology,0.1,Oncology,Inpatient,0.1,Inpatient
