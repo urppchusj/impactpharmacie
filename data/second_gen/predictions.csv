@@ -971,6 +971,12 @@
 969,41788873.0,Study,1.0,Study,Infectious diseases,0.1,"Critical care, Maternal / pediatric / neonatal, Infectious diseases",Inpatient,0.1,Inpatient
 970,41746649.0,Study,1.0,Study,Geriatric,0.1,Geriatric,Ambulatory,0.1,Ambulatory
 971,41777149.0,Study,1.0,Study,Oncology,0.1,Oncology,Inpatient,0.1,Inpatient
-972,41810313,Study,1,Study,Critical care,0.1,Other,Community,0.1,Community
-973,41824949,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
-974,41797172,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+972,41810313.0,Study,1.0,Study,Critical care,0.1,Other,Community,0.1,Community
+973,41824949.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+974,41797172.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Community,0.1,Other
+975,41852060,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Geriatric,0.1,Geriatric,Community,0.1,Other
+976,41847392,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+977,41857780,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Inpatient
+978,41860902,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+979,41848285,Study,1,Study,Oncology,0.1,"Anticoagulation, Oncology",Inpatient,0.1,Other
+980,41862362,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
