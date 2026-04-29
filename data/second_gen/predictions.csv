@@ -980,9 +980,12 @@
 978,41860902.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
 979,41848285.0,Study,1.0,Study,Oncology,0.1,"Anticoagulation, Oncology",Inpatient,0.1,Other
 980,41862362.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Ambulatory
-981,41939852,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-982,41906602,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Inpatient
-983,41913913,Study,1,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
-984,41888712,Study,1,Study,Other,0.1,Geriatric,Inpatient,0.1,Inpatient
-985,41937165,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
-986,41870187,Study,1,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+981,41939852.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+982,41906602.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Inpatient
+983,41913913.0,Study,1.0,Study,Cardiology,0.1,Other,Inpatient,0.1,Ambulatory
+984,41888712.0,Study,1.0,Study,Other,0.1,Geriatric,Inpatient,0.1,Inpatient
+985,41937165.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Critical care",Inpatient,0.1,Inpatient
+986,41870187.0,Study,1.0,Study,Other,0.1,Diabetes,Ambulatory,0.1,Ambulatory
+987,41969753,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+988,42009474,Study,1,Study,Cardiology,0.1,Cardiology,Community,0.1,Community
+989,42009521,Study,1,Study,Psychiatric,0.1,Other,Ambulatory,0.1,Ambulatory
