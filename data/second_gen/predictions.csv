@@ -1004,10 +1004,14 @@
 1002,42144382.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Emergency medicine,0.1,Other,Inpatient,0.1,Inpatient
 1003,42079790.0,Study,1.0,Study,Other,0.1,Other,Ambulatory,0.1,Ambulatory
 1004,42155679.0,Study,1.0,Study,Cardiology,0.1,"Cardiology, Diabetes",Community,0.1,Ambulatory
-1005,42253380,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-1006,42229846,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-1007,42267057,Study,1,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Inpatient,0.1,Inpatient
-1008,42261817,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-1009,42276231,Study,1,Study,Maternal / pediatric / neonatal,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Inpatient,0.1,Inpatient
-1010,42219521,Study,1,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
-1011,42219110,Study,1,Study,Other,0.1,Other,Community,0.1,Inpatient
+1005,42253380.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+1006,42229846.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+1007,42267057.0,Study,1.0,Study,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Inpatient,0.1,Inpatient
+1008,42261817.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
+1009,42276231.0,Study,1.0,Study,Maternal / pediatric / neonatal,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Inpatient,0.1,Inpatient
+1010,42219521.0,Study,1.0,Study,Other,0.1,Other,Inpatient,0.1,Inpatient
+1011,42219110.0,Study,1.0,Study,Other,0.1,Other,Community,0.1,Inpatient
+1012,42317934,Study,1,Study,Psychiatric,0.1,Psychiatric,Inpatient,0.1,Inpatient
+1013,42317076,Study,1,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Community"
+1014,42297649,Study,1,Study,Other,0.1,Diabetes,Community,0.1,Community
+1015,42304334,Study,1,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
