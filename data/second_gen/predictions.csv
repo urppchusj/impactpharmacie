@@ -1015,8 +1015,13 @@
 1013,42317076.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,"Inpatient, Community"
 1014,42297649.0,Study,1.0,Study,Other,0.1,Diabetes,Community,0.1,Community
 1015,42304334.0,Study,1.0,Study,Other,0.1,Pneumology,Inpatient,0.1,Ambulatory
-1016,42375656,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Nursing home
-1017,42361002,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
-1018,42386490,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
-1019,42347626,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Community,0.1,Other
-1020,42390435,Study,1,Study,Oncology,0.1,Oncology,Community,0.1,Community
+1016,42375656.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Ambulatory,0.1,Nursing home
+1017,42361002.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
+1018,42386490.0,Study,1.0,Study,Infectious diseases,0.1,Infectious diseases,Community,0.1,Community
+1019,42347626.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,"Infectious diseases, Maternal / pediatric / neonatal",Community,0.1,Other
+1020,42390435.0,Study,1.0,Study,Oncology,0.1,Oncology,Community,0.1,Community
+1021,42405533,Study,1,Study,Emergency medicine,0.1,"Anticoagulation, Emergency medicine",Inpatient,0.1,Inpatient
+1022,42426980,Study,1,Study,Anticoagulation,0.1,Anticoagulation,Ambulatory,0.1,Ambulatory
+1023,42432611,Study,1,Study,Other,0.1,Diabetes,Inpatient,0.1,Ambulatory
+1024,42413459,Study,1,Study,Geriatric,0.1,Other,Community,0.1,Community
+1025,42433623,Study,1,Study,Infectious diseases,0.1,Infectious diseases,Inpatient,0.1,Inpatient
