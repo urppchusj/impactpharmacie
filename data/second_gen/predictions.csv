@@ -1041,6 +1041,10 @@
 1039,42594310.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Other,0.1,Solid organ transplantation,Inpatient,0.1,Other
 1040,42591290.0,Study,1.0,Study,Cardiology,0.1,Anticoagulation,Inpatient,0.1,Ambulatory
 1041,42541281.0,Study,1.0,Study,Cardiology,0.1,Cardiology,Inpatient,0.1,Inpatient
-1042,42642859,Study,1,Study,Other,0.1,"Infectious diseases, Pneumology",Inpatient,0.1,Inpatient
-1043,42646680,Systematic review or meta-analysis,1,Systematic review or meta-analysis,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Community,0.1,Other
-1044,42658556,Study,1,Study,Other,0.1,Oncology,Inpatient,0.1,Ambulatory
+1042,42642859.0,Study,1.0,Study,Other,0.1,"Infectious diseases, Pneumology",Inpatient,0.1,Inpatient
+1043,42646680.0,Systematic review or meta-analysis,1.0,Systematic review or meta-analysis,Infectious diseases,0.1,"Maternal / pediatric / neonatal, Infectious diseases",Community,0.1,Other
+1044,42658556.0,Study,1.0,Study,Other,0.1,Oncology,Inpatient,0.1,Ambulatory
+1045,42703344,Study,1,Study,Geriatric,0.1,Geriatric,Inpatient,0.1,Ambulatory
+1046,42682850,Study,1,Study,Maternal / pediatric / neonatal,0.1,Maternal / pediatric / neonatal,Inpatient,0.1,Other
+1047,42706917,Study,1,Study,Infectious diseases,0.1,Other,Ambulatory,0.1,Ambulatory
+1048,42722229,Study,1,Study,Cardiology,0.1,Cardiology,Ambulatory,0.1,Ambulatory
